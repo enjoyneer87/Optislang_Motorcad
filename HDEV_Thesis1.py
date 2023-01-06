@@ -126,9 +126,10 @@ p_Stator_Slots         = 72.   # Number of stator slots
 
 #### Absoulute Input (left table)
 i_Slot_Corner_Radius    = 1.4     
+i_Tooth_Width  = 6     
 p_Tooth_Tip_Depth       = 1    # Tooth tip depth 
 p_Tooth_Tip_Angle       = 20   # Tooth tip angle 
-# i_Stator_OD             = 400  # Stator outer diameter
+i_Stator_OD             = 400  # Stator outer diameter
 
 
 #### Ratio(Stator w Hierachy)
@@ -189,10 +190,9 @@ if run_mode in ['OSL_setup', 'IDE_run']:
     #### Ratio(Stator w Hierachy)
     i_Tooth_Width_Ratio                 =0.6
     i_Split_Ratio                       =0.77    
-    # u_YtoT                              =2.5                                           #ratio user defined YtoT 
-    # ex, i_Tooth_Width                   = mcApp.GetVariable("Tooth_Width")        # Absolute Tooth_Width
-    # i_Tooth_Width  = 6                                                                     #get absolute value from ratio
-    # i_MinBackIronThickness             =fun_YtoT(u_YtoT,i_Tooth_Width)                             
+    u_YtoT                              =2.5                                           #ratio user defined YtoT 
+                                                                    #get absolute value from ratio
+    i_MinBackIronThickness             =fun_YtoT(u_YtoT,i_Tooth_Width)                             
     i_Slot_Op_Ratio        =0.8     
 
     ### Rotor 
@@ -289,12 +289,12 @@ if run_mode.endswith('run'):
  
 
     #### Ratio
-    # u_YtoT                              =2.5                                          #ratio user defined YtoT 
-    # ex, i_Tooth_Width                   = mcApp.GetVariable("Tooth_Width")           # Absolute Tooth_Width
+    u_YtoT                              =2.5                                         #ratio user defined YtoT 
+    ex, i_Tooth_Width                   = mcApp.GetVariable("Tooth_Width")           # Absolute Tooth_Width
     # i_Tooth_Width  = 6                                                                     #get absolute value from ratio
-    # i_MinBackIronThickness              = fun_YtoT(u_YtoT,i_Tooth_Width) 
+    i_MinBackIronThickness              = fun_YtoT(u_YtoT,i_Tooth_Width) 
     mcApp.SetVariable("Ratio_SlotDepth_ParallelTooth"           , p_Slot_Depth_Ratio     )        #Ratio_SlotDepth_ParallelTooth" )   %% Fixed     
-    # mcApp.SetVariable('MinBackIronThickness'                    , i_MinBackIronThickness )        #Abosolute be user-defined with Y to T ratio     
+    mcApp.SetVariable('MinBackIronThickness'                    , i_MinBackIronThickness )        #Abosolute be user-defined with Y to T ratio     
     mcApp.SetVariable("Ratio_ToothWidth"                        , i_Tooth_Width_Ratio    )        #Ratio_ToothWidth" )      
     mcApp.SetVariable("Ratio_SlotOpening_ParallelTooth"         , i_Slot_Op_Ratio        )        #Ratio_SlotOpening_ParallelTooth" )      
     
@@ -370,7 +370,7 @@ if run_mode.endswith('run'):
         if run_mode in ['OSL_run']:
             o_Sig_Peak_Torque    = list_list_2_variant_signal([[0]*Speed_Lab_Len], Speed_Lab) 
             o_Sig_Peak_Power     = list_list_2_variant_signal([[0]*Speed_Lab_Len], Speed_Lab) 
-            o_Sig_Torque_Ripples = list_list_2_variant_signal([[0]*(p_Torque_Pts+1)], [0]*(p_Torque_Pts+1)) 
+            # o_Sig_Torque_Ripples = list_list_2_variant_signal([[0]*(p_Torque_Pts+1)], [0]*(p_Torque_Pts+1)) 
         mcApp.SaveToFile(mot_file_new_path)  # Save design   
         mcApp.Quit()                         # Close Motor-CAD
         mcApp = 0                            # Reset mcApp variable  
@@ -419,20 +419,24 @@ if run_mode.endswith('run'):
 ### Shows automatically after assigning options for the saturation & loss models)
 
 ### Lab: model Build tab 
-    mcApp.ClearModelBuild_Lab()  # Clear existing models
+    #mcApp.ClearModelBuild_Lab()  # Clear existing models
     if run_mode in ['IDE_run']:
-        mcApp.SetVariable("ModelType_MotorLAB", 2)       # Saturation model type: Full Cycle
+        mcApp.SetVariable("ModelType_MotorLAB", 2)       # Saturation model type: 1- sigle 2-Full Cycle
         mcApp.SetVariable("SatModelPoints_MotorLAB", 0)  # Saturation model: coarse resolution (15 points)    
         mcApp.SetVariable("LossModel_LAB", 0)            # Loss model type: neglect
         mcApp.SetMotorLABContext()                       # Lab context
         mcApp.SetVariable("BuildSatModel_MotorLAB", 1)   # Activate saturation model   
     else: 
-        mcApp.SetVariable("ModelType_MotorLAB", 2)       # Saturation model type: Full Cycle
+        mcApp.SetVariable("ModelType_MotorLAB", 1)       # Saturation model type: Full Cycle
         mcApp.SetVariable("SatModelPoints_MotorLAB", 1)  # Saturation model: fine resolution (30 points)  
-        mcApp.SetVariable("LossModel_Lab", 1)            # Loss model type: FEA
+        mcApp.SetVariable("LossModel_Lab", 2)            # Loss model type: 1-FEA 2 -custom
+        
         mcApp.SetMotorLABContext()                       # Lab context
         mcApp.SetVariable("BuildSatModel_MotorLAB", 1)   # Activate saturation model  
         mcApp.SetVariable("BuildLossModel_MotorLAB", 1)  # Activate loss model  
+        mcApp.SetVariable("CalcTypeCuLoss_MotorLAB", 2)  # 0 DC only 1 DC+AC(User) 2 DC+AC (FEA single Point) 3 DC+AC (FEA Map)
+        mcApp.SetVariable("IronLossCalc_Lab", 2)          # 0 Neglect 1 OC+SC(User) 2 OC+SC (FEA single Point) 3 (FEA Map)
+        mcApp.SetVariable("LabModel_MagnetLoss_Method", 2) #0 Neglect 1 User Defined 2 OC+SC (FEA single Point) 3 (FEA Map)
 
     mcApp.SetVariable("MaxModelCurrent_RMS_MotorLAB", i_Line_Current_RMS)       # Max line current (rms)
     mcApp.SetVariable("MaxModelCurrent_MotorLAB", i_Line_Current_RMS*sqrt(2))   # Max line current (peak)
@@ -584,6 +588,7 @@ if run_mode.endswith('run'):
 ### Current density
     o_Current_Density = mcApp.GetVariable('ArmatureConductorCurrentDensity')
     o_Current_Density = o_Current_Density[1]
+    ex, i_Tooth_Width                   = mcApp.GetVariable("Tooth_Width")        # Absolute Tooth_Width
 
 ### Re-set initial settings
     # mcApp.SetVariable("TorqueCalculation", False)      # Torque calculation
@@ -616,7 +621,7 @@ if run_mode.endswith('run'):
     #mcApp.Quit()                         # Close Motor-CAD
     #mcApp = 0                            # Reset mcApp variable  
     #time.sleep(0.5)                      # Freeze for 0.5s
-
+    
 ### ----------------------------------------------      INITIALISATION (END)     ------------------------------------------------
 
 ### Responses to be drag and drop during 'OSL_setup' mode 
