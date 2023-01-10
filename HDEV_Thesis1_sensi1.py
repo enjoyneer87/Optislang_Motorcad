@@ -77,10 +77,6 @@ else:                                                          # Working in IDE 
 #-------------------------------------------------       Functions        ------------------------------------------------------
 
 ### Geometry
-def fun_Turn_byAmpT(i_AmpT,i_Line_Current_RMS):
-    res = i_AmpT/i_Line_Current_RMS
-    return res
-
 def fun_YtoT(u_YtoT, i_Tooth_Width):
     res = i_Tooth_Width*u_YtoT
     return res
@@ -115,7 +111,7 @@ def fun_Stress_Safety(Rotor_Yield, Stress_Max):
 #-------------------------------------------------        Inputs        --------------------------------------------------------
 
 ### Motor-CAD options
-Design_Name     = "HDEV_Thesis1_1"   # Reference Motor-CAD design
+Design_Name     = "HDEV_Thesis1"   # Reference Motor-CAD design
 Visible_Opt     = 1.           # Set Motor-CAD visible
 Message_Display = 2.           # Display all pop-up messages 
 Save_Prompt     = 1.           # Never prompt to save file
@@ -133,7 +129,7 @@ i_Slot_Corner_Radius    = 1.4
 i_Tooth_Width  = 6     
 p_Tooth_Tip_Depth       = 1    # Tooth tip depth 
 p_Tooth_Tip_Angle       = 20   # Tooth tip angle 
-i_Stator_OD             = 400  # Stator outer diameter
+#i_Stator_OD             = 400  # Stator outer diameter
 
 
 #### Ratio(Stator w Hierachy)
@@ -165,11 +161,11 @@ p_Temp_Wdg_Max = 180.   # Maximum winding temperature
 p_Temp_Mag_Max = 140.   # Maximum magnet temperature
 
 ### Performance
-p_Speed_Max        = 5500.   # Maximum operating speed
+p_Speed_Max        = 5000.   # Maximum operating speed
 
 ### Calculation settings
 p_Speed_Lab_Step    = 100.                              # Speed step used in Lab
-p_Speed_Peak_Array  = np.array([1700.])    # Speeds for peak performance calculation 
+p_Speed_Peak_Array  = np.array([1000., 1700.])    # Speeds for peak performance calculation 
 p_Speed_Cont_Array  = np.array([1700., 4000.])          # Speeds for continuous performance calculation
 p_Torque_Pts        = 90                                # Timesteps per cycle for torque calculation                                              
 
@@ -233,15 +229,13 @@ if run_mode in ['OSL_setup', 'IDE_run']:
     L2_Web_Length          = 0.064       
 
     i_Active_Length     = 130.   # Active length
-    ### Performance
-    i_Line_Current_RMS = 1000/sqrt(2)    # Maximum RMS line current
-    i_AmpT_rms=2500/sqrt(2)                  # Maximum Ampere turn current 2.5T*1000Apk
-    ### Duty Cycle Study
-    #i_Gear_Ratio = 7.
     ### Winding
-    i_Turns_Coil    = fun_Turn_byAmpT(i_AmpT_rms,i_Line_Current_RMS)*p_Parallel_Path   # Number of turns per coil
+    i_Turns_Coil    = 11.   # Number of turns per coil
 
-
+    ### Performance
+    i_Line_Current_RMS = 560.    # Maximum RMS line current
+    ### Duty Cycle Study
+    i_Gear_Ratio = 7.
 ### Real solver run: 'IDE_run' mode or 'OSL_run' mode
 if run_mode.endswith('run'):   
     
@@ -255,6 +249,7 @@ if run_mode.endswith('run'):
 ### Geometry parameters
     Machine_Length = fun_Machine_Length(p_EndSpace_Height, p_Wdg_Overhang, i_Active_Length)
     # Air_Pocket     = fun_Air_Pocket(i_Mag_Thick, p_Mag_Clear)
+    Active_Volume  = fun_Active_Volume(i_Stator_OD, i_Active_Length)     # In [m3]
     
 ### ---------------------------------------------------      MOTOR-CAD     -----------------------------------------------------
 
@@ -291,16 +286,13 @@ if run_mode.endswith('run'):
     mcApp.SetVariable('Slot_Corner_Radius'  , i_Slot_Corner_Radius)               # Slot_Corner_Radius      
     mcApp.SetVariable('Tooth_Tip_Depth'     , p_Tooth_Tip_Depth)                  # Tooth tip depth
     mcApp.SetVariable('Tooth_Tip_Angle'     , p_Tooth_Tip_Angle)                  # Tooth tip angle
-    Active_Volume  = fun_Active_Volume(i_Stator_OD, i_Active_Length)     # In [m3]
-
+ 
 
     #### Ratio
-    #u_YtoT                              =2.5                                         #ratio user defined YtoT 
+    u_YtoT                              =2.5                                         #ratio user defined YtoT 
     ex, i_Tooth_Width                   = mcApp.GetVariable("Tooth_Width")           # Absolute Tooth_Width
     # i_Tooth_Width  = 6                                                                     #get absolute value from ratio
     i_MinBackIronThickness              = fun_YtoT(u_YtoT,i_Tooth_Width) 
-    i_Turns_Coil    = fun_Turn_byAmpT(i_AmpT_rms,i_Line_Current_RMS)*p_Parallel_Path   # Number of turns per coil
-
     mcApp.SetVariable("Ratio_SlotDepth_ParallelTooth"           , p_Slot_Depth_Ratio     )        #Ratio_SlotDepth_ParallelTooth" )   %% Fixed     
     mcApp.SetVariable('MinBackIronThickness'                    , i_MinBackIronThickness )        #Abosolute be user-defined with Y to T ratio     
     mcApp.SetVariable("Ratio_ToothWidth"                        , i_Tooth_Width_Ratio    )        #Ratio_ToothWidth" )      
@@ -360,13 +352,12 @@ if run_mode.endswith('run'):
     success = mcApp.CheckIfGeometryIsValid(0)
     if success == 0:
         # If not valid, generate zero outputs instead of getting an error message in optiSLang
-        o_Cont_Torque_1700rpm  = 0.  
+        o_Cont_Torque_1krpm  = 0.  
         o_Cont_Torque_4krpm  = 0.
+        o_Peak_Power_1krpm   = 0.
+        o_Peak_Power_4krpm    = 0.
         o_Peak_Torque_1700rpm = 0.
-        o_Peak_Power_1700rpm   = 0
-        o_Wh_Loss           =0
-        o_Wh_Shaft          =0
-        o_Wh_input          =0
+        o_WLTP3_Eff          = 0.
         o_Current_Density    = 0.
         o_Torque_Density     = 0.
         #o_Torque_Ripples     = 0.
@@ -437,7 +428,7 @@ if run_mode.endswith('run'):
         mcApp.SetVariable("BuildSatModel_MotorLAB", 1)   # Activate saturation model   
     else: 
         mcApp.SetVariable("ModelType_MotorLAB", 1)       # Saturation model type: Full Cycle
-        mcApp.SetVariable("SatModelPoints_MotorLAB", 0)  # Saturation model: fine resolution (30 points)  
+        mcApp.SetVariable("SatModelPoints_MotorLAB", 1)  # Saturation model: fine resolution (30 points)  
         mcApp.SetVariable("LossModel_Lab", 2)            # Loss model type: 1-FEA 2 -custom
         
         mcApp.SetMotorLABContext()                       # Lab context
@@ -450,8 +441,6 @@ if run_mode.endswith('run'):
     mcApp.SetVariable("MaxModelCurrent_RMS_MotorLAB", i_Line_Current_RMS)       # Max line current (rms)
     mcApp.SetVariable("MaxModelCurrent_MotorLAB", i_Line_Current_RMS*sqrt(2))   # Max line current (peak)
     mcApp.SetVariable('ModelBuildSpeed_MotorLAB', p_Speed_Max)                  # Maximum operating speed
-    Active_Volume  = fun_Active_Volume(i_Stator_OD, i_Active_Length)     # In [m3]
-
     mcApp.BuildModel_Lab()                                                      # Build activated models
               
 ### Lab: peak performance
@@ -484,10 +473,11 @@ if run_mode.endswith('run'):
         Peak_Power_Array[i]  = Mat_File_Power[Ind_Speed]                        # Peak power at the required speed 
         Peak_Torque_Array[i] = Mat_File_Torque[Ind_Speed]                       # Peak torque at the required speed 
     o_Peak_Torque_1700rpm    = Peak_Torque_Array[0]      # In [Nm] 
-    o_Peak_Power_1700krpm      = Peak_Power_Array[0]       # In [kW]    
+    o_Peak_Power_1krpm      = Peak_Power_Array[1]       # In [kW]    
+    o_Peak_Power_4krpm       = Peak_Power_Array[2]       # In [kW]
   
   # Raise exception if wrong performance data
-    if (o_Peak_Torque_1700rpm or o_Peak_Power_1700krpm) < 0:
+    if (o_Peak_Torque_1700rpm or o_Peak_Power_1krpm or o_Peak_Power_4krpm) < 0:
         mcApp.SaveToFile(mot_file_new_path)  # Save design   
         mcApp.Quit()                         # Close Motor-CAD
         mcApp = 0                            # Reset mcApp variable  
@@ -499,7 +489,6 @@ if run_mode.endswith('run'):
 
   # Signals to be read in OSL 
     if run_mode in ['OSL_run']:
-        Active_Volume  = fun_Active_Volume(i_Stator_OD, i_Active_Length)     # In [m3]
         List_Speed        = Mat_File_Speed.tolist()     # Convert to list 
         List_Peak_Torque  = Mat_File_Torque.tolist()
         List_Peak_Power   = Mat_File_Power.tolist()
@@ -509,21 +498,18 @@ if run_mode.endswith('run'):
 ### Lab: efficiency over WLTP-3 drive cycle
 
   # Settings
-    # mcApp.SetVariable('N_d_MotorLAB', i_Gear_Ratio)                     # Gear Ratio
+    mcApp.SetVariable('N_d_MotorLAB', i_Gear_Ratio)                     # Gear Ratio
 
-    mcApp.SetVariable("DutyCycleType_Lab", 0)                 # Automotive drive cycle
-    # mcApp.SetVariable("DrivCycle_MotorLAB", "WLTP Class 3")   # WLTP3 drive cycle
+    mcApp.SetVariable("DutyCycleType_Lab", 1)                 # Automotive drive cycle
+    mcApp.SetVariable("DrivCycle_MotorLAB", "WLTP Class 3")   # WLTP3 drive cycle
     mcApp.SetVariable("LabThermalCoupling_DutyCycle", 0)      # No coupling with Thermal
     
   # Calculation & Post processing
     mcApp.CalculateDutyCycle_Lab()                                                # Run calculation
-    #ex, o_WLTP3_Eff = mcApp.GetVariable("DutyCycleAverageEfficiency_EnergyUse")   # Get efficiency value 
-    ex, o_Wh_Loss = mcApp.GetVariable("DutyCycleTotalLoss")   # Get efficiency value 
-    ex, o_Wh_Shaft = mcApp.GetVariable("DutyCycleTotalEnergy_Shaft_Output")   # Get efficiency value 
-    ex, o_Wh_input = mcApp.GetVariable("DutyCycleTotalEnergy_Electrical_Input")   # Get efficiency value 
+    ex, o_WLTP3_Eff = mcApp.GetVariable("DutyCycleAverageEfficiency_EnergyUse")   # Get efficiency value 
       
   # Raise exception if wrong performance data
-    if o_Wh_Loss < 0:
+    if o_WLTP3_Eff < 0:
         mcApp.SaveToFile(mot_file_new_path)  # Save design   
         mcApp.Quit()                         # Close Motor-CAD
         mcApp = 0                            # Reset mcApp variable  
@@ -548,11 +534,11 @@ if run_mode.endswith('run'):
         mcApp.CalculateOperatingPoint_Lab()                             # Operating point calculation          
         ex, ContTorque = mcApp.GetVariable("LabOpPoint_ShaftTorque")    # Get shaft torque value
         Cont_Torque_Array[i] = ContTorque
-    o_Cont_Torque_1700rpm = Cont_Torque_Array[0]                          # Assigning array variables
+    o_Cont_Torque_1krpm = Cont_Torque_Array[0]                          # Assigning array variables
     o_Cont_Torque_4krpm = Cont_Torque_Array[1]
 
   # Raise exception if negative value    
-    if (o_Cont_Torque_1700rpm or o_Cont_Torque_4krpm) < 0:
+    if (o_Cont_Torque_1krpm or o_Cont_Torque_4krpm) < 0:
         mcApp.SaveToFile(mot_file_new_path)  # Save design   
         mcApp.Quit()                         # Close Motor-CAD
         mcApp = 0                            # Reset mcApp variable  
@@ -642,11 +628,12 @@ if run_mode.endswith('run'):
 else:
     
   # Scalars
-    o_Cont_Torque_1700rpm  = 0.
+    o_Cont_Torque_1krpm  = 0.
     o_Cont_Torque_4krpm  = 0.
-    o_Peak_Power_1700rpm   = 0.
+    o_Peak_Power_1krpm   = 0.
+    o_Peak_Power_4krpm   = 0.
     o_Peak_Torque_1700rpm = 0.
-    #o_WLTP3_Eff          = 0.
+    o_WLTP3_Eff          = 0.
     o_Current_Density    = 0.
     o_Torque_Density     = 0.
     # o_Torque_Ripples     = 0.
@@ -656,9 +643,7 @@ else:
     o_Weight_Stat_Core   = 0.
     o_Weight_Wdg         = 0.
     # o_Stress_Safety      = 0.
-    o_Wh_Loss           =0
-    o_Wh_Shaft          =0
-    o_Wh_input          =0
+
   # Signals
     o_Sig_Peak_Torque    = list_list_2_variant_signal([[0]*Speed_Lab_Len], Speed_Lab) 
     o_Sig_Peak_Power     = list_list_2_variant_signal([[0]*Speed_Lab_Len], Speed_Lab) 
