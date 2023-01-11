@@ -7,3 +7,16 @@ IPM_HDEV_2/OPD/
 **/backup/
 **/MessageLogs/
 **/Matlab
+*.mot
+*.zip
+**/IPM using Integrated Export/
+**/MCAD/
+**/OPD/
+/MotorCAD_code2
+/transientResults/
+/Rotem_HDEV/
+/IPM_HDEV_122/
+/HDEV_Thesis1/
+**/backup/
+**/Matlab/
+
