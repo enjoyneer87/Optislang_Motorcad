@@ -1,0 +1,8 @@
+IPM_HDEV_2/MCAD/
+IPM_HDEV_2/OPD/
+**/OPD/
+**/MCAD/
+*.zip
+*.bak
+**/backup/
+**/MessageLogs/
