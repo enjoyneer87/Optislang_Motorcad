@@ -17,6 +17,7 @@ from os import getcwd
 from os.path import join, dirname, exists
 from math import pi, sqrt
 from scipy.io import loadmat
+import re
 # from MotorCAD_Methods import MotorCAD
 #------------------------------------------   Running Mode & Working directories     -------------------------------------------
 
@@ -66,15 +67,20 @@ else:                                                          # Working in IDE 
 
 #-------------------------------------------------       Functions        ------------------------------------------------------
 
+## Post Work flow
+def fun_load_temp_rise_2csvfile(lab_transient_fullpath_w_filename):
+    Temp_filename=lab_transient_fullpath_w_filename+'_temp.csv'
+    power_filename=lab_transient_fullpath_w_filename+'_power.csv'
+    mcApp.ExportResults('Transient', power_filename)
+    mcApp.ExportResults('Transient', Temp_filename)
+    
+
 def fun_temp_rise_external_dutycyle(path,ext_Duty_Cycle):
     ext_Duty_Cycle_full=join(path,ext_Duty_Cycle,'.dat')
     mcapp.LoadDutyCycle(ext_Duty_Cycle_full)
     mcapp.SetVariable('InitialTransientTemperatureOption',3)
     mcapp.CalculateDutyCycle_Lab()
-    Temp_filename=join(ext_Duty_Cycle,'_temp.csv')
-    power_filename=join(ext_Duty_Cycle,'_power.csv')
-    SaveTransientTemperatures(Temp_filename)
-    SaveTransientPowerValues(power_filename)
+
 
 def fun_rename_matfile_lab_duty(ext_Duty_Cycle):
     ex, motpath=mcApp.GetVariable("CurrentMotFilePath_MotorLAB")
@@ -82,23 +88,60 @@ def fun_rename_matfile_lab_duty(ext_Duty_Cycle):
     Lab_path=motpath+'/Lab/'
     os.chdir(Lab_path)
     rename_matfile=ext_Duty_Cycle+'_lab_result.mat'
-    os.rename('MotorLAB_drivecycledata.mat',rename_matfile)
+    if os.path.exists('MotorLAB_drivecycledata.mat'):
+        os.rename('MotorLAB_drivecycledata.mat',rename_matfile)
+        
+    
+def fun_load_matfile(ext_Duty_Cycle):
+    ## This mat file consisted of Ndarray when we are using loadmat function
+    ex, motpath=mcApp.GetVariable("CurrentMotFilePath_MotorLAB")
+    motpath=re.sub(".mot","",motpath)
+    Lab_path=motpath+'/Lab/'
+    os.chdir(Lab_path)
+    rename_matfile=ext_Duty_Cycle+'_lab_result.mat'
+    Mat_File_Data=loadmat(rename_matfile)
+    return Mat_File_Data
+
+def fun_check_temp_rise_allcomponent(ext_Duty_Cycle):
+    ## init
+    init_final_temp=[]
+    ## change name of mat file
+    fun_rename_matfile_lab_duty(ext_Duty_Cycle)
+    ## load mat file
+    list_from_mat=fun_load_matfile(ext_Duty_Cycle)
+    
+    ## 
+    mat_temp=[list_from_mat.get(key) for key in list_from_mat.keys() if 'Temp' in key]
+    mat_temp_key=[key for key in list_from_mat.keys() if 'Temp' in key]
+
+    ## check temp rise
+    for i in range(len(mat_temp)):
+        temp=mat_temp[i].ravel().tolist()
+        init_final_temp.append((temp[0],temp[-1]))
+        check_temp=max(max(init_final_temp))
+    
+    ## 
+    max_temp_key=[key for key in mat_temp_key if max(list_from_mat.get(key))==check_temp]
+    dic_init_final_temp=dict(zip(mat_temp_key,init_final_temp))
+    
+    return dic_init_final_temp, max_temp_key, check_temp
+
+
+
+
+
+## Simple Calc
 
 
 def fun_Turn_byAmpT(i_AmpT,i_Line_Current_RMS):
     res = i_AmpT/i_Line_Current_RMS
     return res
 
-def fun_Ipk_by_Trq():
-    ex, res = mcApp.GetVariable("LabOpPoint_StatorCurrent_Line_Peak")    # Get shaft torque value
-    ex
-    return res
-### Geometry
+def fun_Ipk_beta_by_Trq():
+    ex, ipk = mcApp.GetVariable("LabOpPoint_StatorCurrent_Line_Peak")    # Get shaft torque value
+    ex, beta = mcApp.GetVariable("LabOpPoint_PhaseAdvance")    # Get shaft torque value
+    return ipk, beta
 
-def fun_beta_by_Trq():
-    ex, res = mcApp.GetVariable("LabOpPoint_PhaseAdvance")    # Get shaft torque value
-    ex
-    return res
 ### Geometry
 
 
@@ -490,7 +533,7 @@ if run_mode.endswith('run'):
     mcApp.CalculateOperatingPoint_Lab()                             # Operating point calculation
     
     # ex, LabOpPoint_ShaftTorque = mcApp.GetVariable("LabOpPoint_ShaftTorque")    # Get shaft torque value
-    o_LabPeak_IPeak=fun_Ipk_by_Trq()
+    o_LabPeak_IPeak, OLabPeak_beta=fun_Ipk_beta_by_Trq()
     
   # Settings
     mcApp.SetVariable("OperatingMode_Lab", 0)                      # Motoring mode
