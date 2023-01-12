@@ -68,6 +68,30 @@ else:                                                          # Working in IDE 
 #-------------------------------------------------       Functions        ------------------------------------------------------
 
 ## Post Work flow
+def fun_find_current_for_required_torque65C(Oppoint,i_Turns_Coil):
+    mcApp.SetVariable('TurnsCalc_MotorLAB', i_Turns_Coil)            # Turns per coil
+    mcApp.SetVariable("LabThermalCoupling", 0)                         # Coupling with Thermal
+    mcApp.SetVariable("OpPointSpec_MotorLAB", 0)                       # 0- Torque 4-Max temperature definition
+    mcApp.SetVariable("SpeedDemand_MotorLAB", Oppoint[0])                       # 0- Torque 4-Max temperature definition
+    mcApp.SetVariable("TorqueDemand_MotorLAB", Oppoint[1])                       # 0- Torque 4-Max temperature definition  
+    mcApp.CalculateOperatingPoint_Lab()                             # Operating point calculation
+    ex, ipk = mcApp.GetVariable("LabOpPoint_StatorCurrent_Line_Peak")    # Get shaft torque value
+    ex, beta = mcApp.GetVariable("LabOpPoint_PhaseAdvance")    # Get shaft torque value
+    return ipk, beta
+
+def fun_save_Duty_Cycle_change_I(path,ext_Duty_Cycle,Ipk):
+    ## change current
+    ex, Duty_Cycle_Num=mcApp.GetVariable('Duty_Cycle_Num_Periods')
+    ex, Duty_Cycle_Current_before=mcApp.GetVariable('Duty_Cycle_Current_Start')
+    for i in range(0,Duty_Cycle_Num):   
+        mcApp.SetArrayVariable('Duty_Cycle_Current_Start',i,Ipk/sqrt(2))
+    ex, Duty_Cycle_Current_After=mcApp.GetVariable('Duty_Cycle_Current_Start')
+    ## Save Duty Cycle current    
+    ext_Duty_Cycle_full=join(path,ext_Duty_Cycle)+'_new.dat'
+    mcApp.SaveDutyCycle(ext_Duty_Cycle_full)
+    return Duty_Cycle_Current_before,Duty_Cycle_Current_After
+
+
 def fun_load_temp_rise_2csvfile(lab_transient_fullpath_w_filename):
     Temp_filename=lab_transient_fullpath_w_filename+'_temp.csv'
     power_filename=lab_transient_fullpath_w_filename+'_power.csv'
@@ -75,11 +99,11 @@ def fun_load_temp_rise_2csvfile(lab_transient_fullpath_w_filename):
     mcApp.ExportResults('Transient', Temp_filename)
     
 
-def fun_temp_rise_external_dutycyle(path,ext_Duty_Cycle):
+def fun_calc_temp_rise_external_dutycyle(path,ext_Duty_Cycle):
     ext_Duty_Cycle_full=join(path,ext_Duty_Cycle,'.dat')
-    mcapp.LoadDutyCycle(ext_Duty_Cycle_full)
-    mcapp.SetVariable('InitialTransientTemperatureOption',3)
-    mcapp.CalculateDutyCycle_Lab()
+    mcApp.LoadDutyCycle(ext_Duty_Cycle_full)
+    mcApp.SetVariable('InitialTransientTemperatureOption',3)
+    mcApp.CalculateDutyCycle_Lab()
 
 
 def fun_rename_matfile_lab_duty(ext_Duty_Cycle):
@@ -141,6 +165,7 @@ def fun_Ipk_beta_by_Trq():
     ex, ipk = mcApp.GetVariable("LabOpPoint_StatorCurrent_Line_Peak")    # Get shaft torque value
     ex, beta = mcApp.GetVariable("LabOpPoint_PhaseAdvance")    # Get shaft torque value
     return ipk, beta
+
 
 ### Geometry
 
