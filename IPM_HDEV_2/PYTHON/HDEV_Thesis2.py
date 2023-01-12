@@ -76,7 +76,7 @@ def fun_temp_rise_external_dutycyle(path,ext_Duty_Cycle):
     SaveTransientTemperatures(Temp_filename)
     SaveTransientPowerValues(power_filename)
 
-def fun_lab_duty_temp_rise_2matfile(ext_Duty_Cycle):
+def fun_rename_matfile_lab_duty(ext_Duty_Cycle):
     ex, motpath=mcApp.GetVariable("CurrentMotFilePath_MotorLAB")
     motpath=re.sub(".mot","",motpath)
     Lab_path=motpath+'/Lab/'
