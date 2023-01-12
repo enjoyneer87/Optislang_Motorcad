@@ -66,6 +66,24 @@ else:                                                          # Working in IDE 
 
 #-------------------------------------------------       Functions        ------------------------------------------------------
 
+def fun_temp_rise_external_dutycyle(path,ext_Duty_Cycle):
+    ext_Duty_Cycle_full=join(path,ext_Duty_Cycle,'.dat')
+    mcapp.LoadDutyCycle(ext_Duty_Cycle_full)
+    mcapp.SetVariable('InitialTransientTemperatureOption',3)
+    mcapp.CalculateDutyCycle_Lab()
+    Temp_filename=join(ext_Duty_Cycle,'_temp.csv')
+    power_filename=join(ext_Duty_Cycle,'_power.csv')
+    SaveTransientTemperatures(Temp_filename)
+    SaveTransientPowerValues(power_filename)
+
+def fun_lab_duty_temp_rise_2matfile(ext_Duty_Cycle):
+    ex, motpath=mcApp.GetVariable("CurrentMotFilePath_MotorLAB")
+    motpath=re.sub(".mot","",motpath)
+    Lab_path=motpath+'/Lab/'
+    os.chdir(Lab_path)
+    rename_matfile=ext_Duty_Cycle+'_lab_result.mat'
+    os.rename('MotorLAB_drivecycledata.mat',rename_matfile)
+
 
 def fun_Turn_byAmpT(i_AmpT,i_Line_Current_RMS):
     res = i_AmpT/i_Line_Current_RMS
