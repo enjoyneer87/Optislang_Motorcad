@@ -69,8 +69,8 @@ else:                                                          # Working in IDE 
 
 ## Post Work flow
     # Lab fun_find_current & remake DutyCycle on OSL_Device
-def fun_Find_Ipk_4Trq65C_mk_dat(ext_Duty_Cycle,i_Turns_Coil):
-    mcApp.SetVariable('TurnsCalc_MotorLAB', i_Turns_Coil)            # Turns per coil
+def fun_Find_Ipk_4Trq65C_mk_dat(ext_Duty_Cycle,o_Turn_Coil):
+    mcApp.SetVariable('TurnsCalc_MotorLAB', o_Turn_Coil)            # Turns per coil
     mcApp.SetVariable("LabThermalCoupling", 0)                         # Coupling with Thermal
     mcApp.SetVariable("OpPointSpec_MotorLAB", 0)                       # 0- Torque 4-Max temperature definition
     mcApp.SetVariable("SpeedDemand_MotorLAB", ext_Duty_Cycle[1])                       # 0- Torque 4-Max temperature definition
@@ -143,7 +143,7 @@ def fun_Check_Temp_Rise_allComponent(ext_Duty_Cycle):
     # ## change name of mat file
     # fun_rename_matfile_lab_duty(ext_Duty_Cycle[0])
     ## load mat file
-    list_from_mat=fun_load_matfile(ext_Duty_Cycle[0])
+    list_from_mat=fun_load_matfile_by_OP(ext_Duty_Cycle[0])
     
     ## 
     mat_temp=[list_from_mat.get(key) for key in list_from_mat.keys() if 'Temp' in key]
@@ -163,8 +163,8 @@ def fun_Check_Temp_Rise_allComponent(ext_Duty_Cycle):
 
 # set value for contrainsts
 
-def fun_OP_temp_contraints(ext_Duty_Cycle,i_Turns_Coil):
-    Op_i,OP_beta,Op_after=fun_Find_Ipk_4Trq65C_mk_dat(ext_Duty_Cycle,i_Turns_Coil)
+def fun_OP_temp_contraints(ext_Duty_Cycle,o_Turn_Coil):
+    Op_i,OP_beta,Op_after=fun_Find_Ipk_4Trq65C_mk_dat(ext_Duty_Cycle,o_Turn_Coil)
     fun_Calc_Temp_ext_duty_rename(ext_Duty_Cycle)
     o_max_temp,max_pos,temp_dic=fun_Check_Temp_Rise_allComponent(ext_Duty_Cycle)
     return o_max_temp,max_pos,temp_dic, Op_i,OP_beta,Op_after
@@ -258,7 +258,6 @@ p_Airgap_Mecha         = 1.    # Mechanical airgap
 p_EndSpace_Height      = 24.5   # Space between winding ends and caps
 p_Wdg_Overhang_F         = 56.   # Winding overhang height
 p_Wdg_Overhang_R        = 65.   # Winding overhang height
-
 ### Winding
 p_Coils_Slot    = 1.    # Number of coils going through each slot
 p_Parallel_Path = 4.    # Number of parallel paths per phase
@@ -299,13 +298,12 @@ if run_mode in ['OSL_setup', 'IDE_run']:
     i_Line_Current_RMS = 636.3961030678927     # Maximum RMS line current  1000Apk
     i_AmpT_rms=1750                  # Maximum Ampere turn current 2.75T*1000Apk 
     ### Winding
-    i_Turns_Coil    = 11  # Number of turns per coil
-    i_init_Turns_Coil =11
+    i_init_Turns_Coil =11 # for model build
     i_Tooth_Width           = 6
     i_Stator_OD             = 400  # Stator outer diameter
     #### Ratio(Stator w Hierachy)
     i_Tooth_Width_Ratio                 =0.6
-    i_Split_Ratio                       =0.77    
+    i_Split_Ratio                       =0.70  
     u_YtoT                              =2.5                                           #ratio user defined YtoT 
                                                                      #get absolute value from ratio
     i_MinBackIronThickness             =fun_YtoT(u_YtoT,i_Tooth_Width)                             
@@ -329,7 +327,6 @@ if run_mode in ['OSL_setup', 'IDE_run']:
     # # Layer 2
     L2_Magnet_Thickness      =5.4 
     L2_Bridge_Thickness      =1.5 
-    L2_Pole_V_angle          =180 
     L2_Magnet_Post           =0 
     L2_Magnet_Separation     =0 
     L2_Magnet_Segments       =1 
@@ -360,7 +357,7 @@ if run_mode.endswith('run'):
 ### --------------------------------------------    Pre-calculations in PYTHON    ----------------------------------------------
        
 ### Geometry parameters
-    Machine_Length = fun_Machine_Length(p_EndSpace_Height, p_Wdg_Overhang, i_Active_Length)
+    Machine_Length = fun_Machine_Length(p_EndSpace_Height, p_Wdg_Overhang_R,p_Wdg_Overhang_R, i_Active_Length)
     # Air_Pocket     = fun_Air_Pocket(i_Mag_Thick, p_Mag_Clear)
     
 ### ---------------------------------------------------      MOTOR-CAD     -----------------------------------------------------
@@ -468,11 +465,8 @@ if run_mode.endswith('run'):
     if success == 0:
         # If not valid, generate zero outputs instead of getting an error message in optiSLang
          # Scalars
-        o_Cont_Torque_1700rpm  = 0.
-        o_Cont_Torque_4krpm  = 0.
-        o_Peak_Power_1700rpm   = 0.
-        o_Peak_Torque_1700rpm = 0.
-        
+
+        o_Turn_Coil=0
         # Temp rise test 
         o_Op1_ipk               =0
         o_Op2_ipk               =0
@@ -569,14 +563,13 @@ if run_mode.endswith('run'):
     mcApp.BuildModel_Lab()                                                      # Build activated models
               
 ### Lab: peak performance by duty cycle 
-    i_Turns_Coil    = fun_Turn_byAmpT(i_AmpT_rms,i_Line_Current_RMS)*p_Parallel_Path   # Number of turns per coil
-    o_LabPeak_IPeak, OLabPeak_beta=fun_Ipk_beta_by_Trq()
-    o_OP1_max_temp,Op1_max_pos,Op1_temp_dic, o_Op1_ipk,OP1_beta,Op1_after=fun_OP_temp_contraints(OP1,i_Turns_Coil)
-    o_OP2_max_temp,Op2_max_pos,Op2_temp_dic, o_Op2_ipk,OP2_beta,Op2_after=fun_OP_temp_contraints(OP2,i_Turns_Coil)
-    o_OP3_max_temp,Op3_max_pos,Op3_temp_dic, o_Op3_ipk,OP3_beta,Op3_after=fun_OP_temp_contraints(OP3,i_Turns_Coil)
+    o_Turn_Coil    = fun_Turn_byAmpT(i_AmpT_rms,i_Line_Current_RMS)*p_Parallel_Path   # Number of turns per coil
+    o_OP1_max_temp,Op1_max_pos,Op1_temp_dic, o_Op1_ipk,OP1_beta,Op1_after=fun_OP_temp_contraints(OP1,o_Turn_Coil)
+    o_OP2_max_temp,Op2_max_pos,Op2_temp_dic, o_Op2_ipk,OP2_beta,Op2_after=fun_OP_temp_contraints(OP2,o_Turn_Coil)
+    o_OP3_max_temp,Op3_max_pos,Op3_temp_dic, o_Op3_ipk,OP3_beta,Op3_after=fun_OP_temp_contraints(OP3,o_Turn_Coil)
 
   # Raise exception if negative value    
-    if (o_OP1_max_temp or o_OP2_max_temp or o_OP3_max_temp or i_Turns_Coil) < 0:
+    if (o_OP1_max_temp or o_OP2_max_temp or o_OP3_max_temp or o_Turn_Coil) < 0:
         mcApp.SaveToFile(mot_file_new_path)  # Save design   
         mcApp.Quit()                         # Close Motor-CAD
         mcApp = 0                            # Reset mcApp variable  
@@ -584,7 +577,7 @@ if run_mode.endswith('run'):
         raise Exception('[ERROR] {}:  Duty Cycle calculation failed'.format(OSL_DESIGN_NAME))
 ### ---------------------------------------------------      SCREENSHOTS   -----------------------------------------------------
 
-    ex, i_Tooth_Width                   = mcApp.GetVariable("Tooth_Width")        # Absolute Tooth_Width
+    # ex, i_Tooth_Width                   = mcApp.GetVariable("Tooth_Width")        # Absolute Tooth_Width
 
 ## Close Motor-CAD (necessary when running designs in parallel)
     mcApp.SaveToFile(mot_file_new_path)  # Save model
@@ -598,10 +591,8 @@ if run_mode.endswith('run'):
 else:
     
   # Scalars
-    o_Cont_Torque_1700rpm  = 0.
-    o_Cont_Torque_4krpm  = 0.
-    o_Peak_Power_1700rpm   = 0.
-    o_Peak_Torque_1700rpm = 0.
+    o_Turn_Coil=0
+
     
     # Temp rise test 
     o_Op1_ipk               =0
