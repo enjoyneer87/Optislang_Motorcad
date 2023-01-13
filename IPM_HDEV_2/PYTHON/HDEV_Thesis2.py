@@ -68,45 +68,47 @@ else:                                                          # Working in IDE 
 #-------------------------------------------------       Functions        ------------------------------------------------------
 
 ## Post Work flow
-def fun_find_current_for_required_torque65C(Oppoint,i_Turns_Coil):
+    # Lab fun_find_current & remake DutyCycle on OSL_Device
+def fun_Find_Ipk_4Trq65C_mk_dat(ext_Duty_Cycle,i_Turns_Coil):
     mcApp.SetVariable('TurnsCalc_MotorLAB', i_Turns_Coil)            # Turns per coil
     mcApp.SetVariable("LabThermalCoupling", 0)                         # Coupling with Thermal
     mcApp.SetVariable("OpPointSpec_MotorLAB", 0)                       # 0- Torque 4-Max temperature definition
-    mcApp.SetVariable("SpeedDemand_MotorLAB", Oppoint[0])                       # 0- Torque 4-Max temperature definition
-    mcApp.SetVariable("TorqueDemand_MotorLAB", Oppoint[1])                       # 0- Torque 4-Max temperature definition  
+    mcApp.SetVariable("SpeedDemand_MotorLAB", ext_Duty_Cycle[1])                       # 0- Torque 4-Max temperature definition
+    mcApp.SetVariable("TorqueDemand_MotorLAB", ext_Duty_Cycle[2])                       # 0- Torque 4-Max temperature definition  
     mcApp.CalculateOperatingPoint_Lab()                             # Operating point calculation
     ex, ipk = mcApp.GetVariable("LabOpPoint_StatorCurrent_Line_Peak")    # Get shaft torque value
     ex, beta = mcApp.GetVariable("LabOpPoint_PhaseAdvance")    # Get shaft torque value
-    return ipk, beta
+    before,after =fun_Save_Duty_Cycle_Change_I(ext_Duty_Cycle[0],ipk)
+    return ipk, beta, after
 
-def fun_save_Duty_Cycle_change_I(path,ext_Duty_Cycle,Ipk):
+def fun_Save_Duty_Cycle_Change_I(ext_Duty_Cycle,Ipk):
+    ## Load reference Duty Cycle with ext_Duty_Cycle_name
+    ref_Duty_Cycle=join(dirname(dirname(OSL_PROJECT_DIR)), 'DutyCycleData',ext_Duty_Cycle[0])+'.dat'
+    mcApp.loadDutyCycle(ref_Duty_Cycle)
+
     ## change current
     ex, Duty_Cycle_Num=mcApp.GetVariable('Duty_Cycle_Num_Periods')
     ex, Duty_Cycle_Current_before=mcApp.GetVariable('Duty_Cycle_Current_Start')
     for i in range(0,Duty_Cycle_Num):   
         mcApp.SetArrayVariable('Duty_Cycle_Current_Start',i,Ipk/sqrt(2))
     ex, Duty_Cycle_Current_After=mcApp.GetVariable('Duty_Cycle_Current_Start')
+    
     ## Save Duty Cycle current    
-    ext_Duty_Cycle_full=join(path,ext_Duty_Cycle)+'_new.dat'
-    mcApp.SaveDutyCycle(ext_Duty_Cycle_full)
+    ext_Duty_Cycle_new=join(mot_file_dir,'DutyCycleData',ext_Duty_Cycle[0])+'_new.dat'
+    mcApp.SaveDutyCycle(ext_Duty_Cycle_new)
     return Duty_Cycle_Current_before,Duty_Cycle_Current_After
 
+# Calculate Temp Rise with duty cycle
 
-def fun_load_temp_rise_2csvfile(lab_transient_fullpath_w_filename):
-    Temp_filename=lab_transient_fullpath_w_filename+'_temp.csv'
-    power_filename=lab_transient_fullpath_w_filename+'_power.csv'
-    mcApp.ExportResults('Transient', power_filename)
-    mcApp.ExportResults('Transient', Temp_filename)
-    
-
-def fun_calc_temp_rise_external_dutycyle(path,ext_Duty_Cycle):
-    ext_Duty_Cycle_full=join(path,ext_Duty_Cycle,'.dat')
-    mcApp.LoadDutyCycle(ext_Duty_Cycle_full)
+def fun_Calc_Temp_ext_duty_rename(ext_Duty_Cycle):
+    ext_Duty_Cycle_new=join(mot_file_dir,'DutyCycleData',ext_Duty_Cycle[0])+'_new.dat'
+    mcApp.LoadDutyCycle(ext_Duty_Cycle_new)
     mcApp.SetVariable('InitialTransientTemperatureOption',3)
     mcApp.CalculateDutyCycle_Lab()
-
-
-def fun_rename_matfile_lab_duty(ext_Duty_Cycle):
+    fun_Rename_Matfile_Lab_Duty(ext_Duty_Cycle)
+    
+    
+def fun_Rename_Matfile_Lab_Duty(ext_Duty_Cycle):
     ex, motpath=mcApp.GetVariable("CurrentMotFilePath_MotorLAB")
     motpath=re.sub(".mot","",motpath)
     Lab_path=motpath+'/Lab/'
@@ -115,24 +117,33 @@ def fun_rename_matfile_lab_duty(ext_Duty_Cycle):
     if os.path.exists('MotorLAB_drivecycledata.mat'):
         os.rename('MotorLAB_drivecycledata.mat',rename_matfile)
         
+
+# def fun_Load_Temp_Rise_2csvfile(lab_transient_fullpath_w_filename):
+#     Temp_filename=lab_transient_fullpath_w_filename+'_temp.csv'
+#     power_filename=lab_transient_fullpath_w_filename+'_power.csv'
+#     mcApp.ExportResults('Transient', power_filename)
+#     mcApp.ExportResults('Transient', Temp_filename)
     
-def fun_load_matfile(ext_Duty_Cycle):
-    ## This mat file consisted of Ndarray when we are using loadmat function
+# Check Temp Rise with duty cycle
+def fun_load_matfile_by_OP(ext_Duty_Cycle):
+        ## This mat file consisted of Ndarray when we are using loadmat function
     ex, motpath=mcApp.GetVariable("CurrentMotFilePath_MotorLAB")
     motpath=re.sub(".mot","",motpath)
     Lab_path=motpath+'/Lab/'
     os.chdir(Lab_path)
-    rename_matfile=ext_Duty_Cycle+'_lab_result.mat'
-    Mat_File_Data=loadmat(rename_matfile)
+    name_matfile=ext_Duty_Cycle[0]+'_lab_result.mat'
+    Mat_File_Data=loadmat(name_matfile)
     return Mat_File_Data
 
-def fun_check_temp_rise_allcomponent(ext_Duty_Cycle):
+
+## last function for Duty Cycle check
+def fun_Check_Temp_Rise_allComponent(ext_Duty_Cycle):
     ## init
     init_final_temp=[]
-    ## change name of mat file
-    fun_rename_matfile_lab_duty(ext_Duty_Cycle)
+    # ## change name of mat file
+    # fun_rename_matfile_lab_duty(ext_Duty_Cycle[0])
     ## load mat file
-    list_from_mat=fun_load_matfile(ext_Duty_Cycle)
+    list_from_mat=fun_load_matfile(ext_Duty_Cycle[0])
     
     ## 
     mat_temp=[list_from_mat.get(key) for key in list_from_mat.keys() if 'Temp' in key]
@@ -148,15 +159,19 @@ def fun_check_temp_rise_allcomponent(ext_Duty_Cycle):
     max_temp_key=[key for key in mat_temp_key if max(list_from_mat.get(key))==check_temp]
     dic_init_final_temp=dict(zip(mat_temp_key,init_final_temp))
     
-    return dic_init_final_temp, max_temp_key, check_temp
+    return check_temp,max_temp_key, dic_init_final_temp
+
+# set value for contrainsts
+
+def fun_OP_temp_contraints(ext_Duty_Cycle,i_Turns_Coil):
+    Op_i,OP_beta,Op_after=fun_Find_Ipk_4Trq65C_mk_dat(ext_Duty_Cycle,i_Turns_Coil)
+    fun_Calc_Temp_ext_duty_rename(ext_Duty_Cycle)
+    o_max_temp,max_pos,temp_dic=fun_Check_Temp_Rise_allComponent(ext_Duty_Cycle)
+    return o_max_temp,max_pos,temp_dic, Op_i,OP_beta,Op_after
 
 
 
-
-
-## Simple Calc
-
-
+## Simple Calculation
 def fun_Turn_byAmpT(i_AmpT,i_Line_Current_RMS):
     res = i_AmpT/i_Line_Current_RMS
     return res
@@ -204,7 +219,7 @@ def fun_Stress_Safety(Rotor_Yield, Stress_Max):
 #-------------------------------------------------        Inputs        --------------------------------------------------------
 
 ### Motor-CAD options
-Design_Name     = "HDEV_Thesis2"   # Reference Motor-CAD design
+Design_Name     = "HDEV_Model2"   # Reference Motor-CAD design
 Visible_Opt     = 1.           # Set Motor-CAD visible
 Message_Display = 2.           # Display all pop-up messages 
 Save_Prompt     = 1.           # Never prompt to save file
@@ -452,28 +467,28 @@ if run_mode.endswith('run'):
     success = mcApp.CheckIfGeometryIsValid(0)
     if success == 0:
         # If not valid, generate zero outputs instead of getting an error message in optiSLang
-        o_Cont_Torque_1700rpm  = 0.  
+         # Scalars
+        o_Cont_Torque_1700rpm  = 0.
         o_Cont_Torque_4krpm  = 0.
-
+        o_Peak_Power_1700rpm   = 0.
         o_Peak_Torque_1700rpm = 0.
-        o_Peak_Power_1700rpm   = 0
-        o_Wh_Loss           =0
-        o_Wh_Shaft          =0
-        o_Wh_input          =0
-        o_Current_Density    = 0.
+        
+        # Temp rise test 
+        o_Op1_ipk               =0
+        o_Op2_ipk               =0
+        o_Op3_ipk               =0
+        o_OP1_max_temp          =0
+        o_OP2_max_temp          =0
+        o_OP3_max_temp          =0
+        
+        # Torque density 
         o_Torque_Density     = 0.
-        o_LabPeak_IPeak     =0.
-        #o_Torque_Ripples     = 0.
         o_Weight_Act         = 0.
         o_Weight_Mag         = 0.
         o_Weight_Rot_Core    = 0.
         o_Weight_Stat_Core   = 0.
         o_Weight_Wdg         = 0.
-        #o_Stress_Safety      = 0.
-        if run_mode in ['OSL_run']:
-            o_Sig_Peak_Torque    = list_list_2_variant_signal([[0]*Speed_Lab_Len], Speed_Lab) 
-            o_Sig_Peak_Power     = list_list_2_variant_signal([[0]*Speed_Lab_Len], Speed_Lab) 
-            # o_Sig_Torque_Ripples = list_list_2_variant_signal([[0]*(p_Torque_Pts+1)], [0]*(p_Torque_Pts+1)) 
+
         mcApp.SaveToFile(mot_file_new_path)  # Save design   
         mcApp.Quit()                         # Close Motor-CAD
         mcApp = 0                            # Reset mcApp variable  
@@ -545,149 +560,30 @@ if run_mode.endswith('run'):
     mcApp.SetVariable("MaxModelCurrent_MotorLAB", i_Line_Current_RMS*np.sqrt(2))   # Max line current (peak)
     mcApp.SetVariable('ModelBuildSpeed_MotorLAB', p_Speed_Max)                  # Maximum operating speed
     Active_Volume  = fun_Active_Volume(i_Stator_OD, i_Active_Length)     # In [m3]
-
+    
+    OP1=['OP1_temp_rise',1700,1300]
+    OP2=['OP2_temp_rise',1700,900]
+    OP3=['OP3_temp_rise',4000,380]
+    
+    o_Torque_Density = fun_Torque_Density(OP1[2], Active_Volume)   # In [Nm/m3]
     mcApp.BuildModel_Lab()                                                      # Build activated models
               
-### Lab: peak performance
+### Lab: peak performance by duty cycle 
     i_Turns_Coil    = fun_Turn_byAmpT(i_AmpT_rms,i_Line_Current_RMS)*p_Parallel_Path   # Number of turns per coil
-    mcApp.SetVariable('TurnsCalc_MotorLAB', i_Turns_Coil)            # Turns per coil
-    mcApp.SetVariable("LabThermalCoupling", 0)                         # Coupling with Thermal
-    mcApp.SetVariable("OpPointSpec_MotorLAB", 0)                       # 0- Torque 4-Max temperature definition
-    mcApp.SetVariable("SpeedDemand_MotorLAB", p_Speed_Peak_Array[0])                       # 0- Torque 4-Max temperature definition
-    mcApp.SetVariable("TorqueDemand_MotorLAB", 1300)                       # 0- Torque 4-Max temperature definition  
-    mcApp.CalculateOperatingPoint_Lab()                             # Operating point calculation
-    
-    # ex, LabOpPoint_ShaftTorque = mcApp.GetVariable("LabOpPoint_ShaftTorque")    # Get shaft torque value
     o_LabPeak_IPeak, OLabPeak_beta=fun_Ipk_beta_by_Trq()
-    
-  # Settings
-    mcApp.SetVariable("OperatingMode_Lab", 0)                      # Motoring mode
-    mcApp.SetVariable("EmagneticCalcType_Lab", 0)                  # 0- Peak performance 1- Effi_map
-    mcApp.SetVariable('SpeedMax_MotorLAB', p_Speed_Max)            # Maximum speed
-    mcApp.SetVariable('Speedinc_MotorLAB', p_Speed_Lab_Step)       # Speed step
-    mcApp.SetVariable('Imax_RMS_MotorLAB', o_LabPeak_IPeak)     # Max line current (rms)
-    mcApp.SetVariable('Imax_MotorLAB', o_LabPeak_IPeak*sqrt(2)) # Max line current (peak) 
-    
-  # Calculation & Data management
-    mcApp.CalculateMagnetic_Lab()                                 # Run calculation
-    Mat_File_Name     = 'MotorLAB_elecdata.mat'                   # *.mat file automatically generated by Motor-CAD
-    Mat_File_Path     = join(mot_file_dir, 'Lab', Mat_File_Name)  # Point to the *.mat file
-    Mat_File_Data     = loadmat(Mat_File_Path)                    # Load data from the *.mat file
-    Mat_File_Speed    = Mat_File_Data['Speed']                    # Load speed data
-    Mat_File_Torque   = Mat_File_Data['Shaft_Torque']             # Load shaft torque data    
-    Mat_File_Power    = Mat_File_Data['Shaft_Power']              # Load shaft power data
-    Mat_File_Torque   = Mat_File_Torque.flatten()                 # Necessary to be read by list_2_list_variant()
-    Mat_File_Power    = Mat_File_Power.flatten()  
-    Mat_File_Speed    = Mat_File_Speed.flatten()
-  
-  # Extract specific values
-    Peak_Power_Array = np.zeros(len(p_Speed_Peak_Array))   # Peak power array initialisation
-    Peak_Torque_Array = np.zeros(len(p_Speed_Peak_Array))  # Peak Torque array initialisation
-    for i in range(len(p_Speed_Peak_Array)):
-        Ind_Speed = (np.abs(Mat_File_Speed - p_Speed_Peak_Array[i])).argmin()   # Index corresponding to the required speed
-        Peak_Power_Array[i]  = Mat_File_Power[Ind_Speed]                        # Peak power at the required speed 
-        Peak_Torque_Array[i] = Mat_File_Torque[Ind_Speed]                       # Peak torque at the required speed 
-    o_Peak_Torque_1700rpm    = Peak_Torque_Array[0]      # In [Nm] 
-    o_Peak_Power_1700krpm      = Peak_Power_Array[0]       # In [kW]    
-  
-  # Raise exception if wrong performance data
-    if (o_Peak_Torque_1700rpm or o_Peak_Power_1700krpm) < 0:
+    o_OP1_max_temp,Op1_max_pos,Op1_temp_dic, o_Op1_ipk,OP1_beta,Op1_after=fun_OP_temp_contraints(OP1,i_Turns_Coil)
+    o_OP2_max_temp,Op2_max_pos,Op2_temp_dic, o_Op2_ipk,OP2_beta,Op2_after=fun_OP_temp_contraints(OP2,i_Turns_Coil)
+    o_OP3_max_temp,Op3_max_pos,Op3_temp_dic, o_Op3_ipk,OP3_beta,Op3_after=fun_OP_temp_contraints(OP3,i_Turns_Coil)
+
+  # Raise exception if negative value    
+    if (o_OP1_max_temp or o_OP2_max_temp or o_OP3_max_temp or i_Turns_Coil) < 0:
         mcApp.SaveToFile(mot_file_new_path)  # Save design   
         mcApp.Quit()                         # Close Motor-CAD
         mcApp = 0                            # Reset mcApp variable  
         time.sleep(0.5)                      # Frozen for 0.5s
-        raise Exception('[ERROR] {}: peak performance calculation failed'.format(OSL_DESIGN_NAME))
-
-  # Key performance indicators
-    o_Torque_Density = fun_Torque_Density(o_Peak_Torque_1700rpm, Active_Volume)  # Torque density [Nm/L]
-
-  # Signals to be read in OSL 
-    if run_mode in ['OSL_run']:
-        Active_Volume  = fun_Active_Volume(i_Stator_OD, i_Active_Length)     # In [m3]
-        List_Speed        = Mat_File_Speed.tolist()     # Convert to list 
-        List_Peak_Torque  = Mat_File_Torque.tolist()
-        List_Peak_Power   = Mat_File_Power.tolist()
-        o_Sig_Peak_Torque = list_list_2_variant_signal([List_Peak_Torque], List_Speed)
-        o_Sig_Peak_Power  = list_list_2_variant_signal([List_Peak_Power], List_Speed)
-    
-    
-    mcApp.SetVariable("LabThermalCoupling", 0)                         # Coupling with Thermal
-    mcApp.SetVariable("OpPointSpec_MotorLAB", 0)                       # 0- Torque 4-Max temperature definition
-    mcApp.SetVariable("SpeedDemand_MotorLAB", p_Speed_Peak_Array[0])                       # 0- Torque 4-Max temperature definition
-    mcApp.SetVariable("TorqueDemand_MotorLAB", 900)                       # 0- Torque 4-Max temperature definition  
-    mcApp.CalculateOperatingPoint_Lab()                             # Operating point calculation
-    
-    # ex, LabOpPoint_ShaftTorque = mcApp.GetVariable("LabOpPoint_ShaftTorque")    # Get shaft torque value
-    o_900NmLabPeak_IPeak=fun_Ipk_by_Trq()
-    o_900NmLab_Beta=fun_beta_by_Trq()
-
-
-### Lab: Energy Consumption over drive cycle
-
-  # Settings
-    # mcApp.SetVariable('N_d_MotorLAB', i_Gear_Ratio)                     # Gear Ratio
-
-    mcApp.SetVariable("DutyCycleType_Lab", 0)                 # Automotive drive cycle
-    # mcApp.SetVariable("DrivCycle_MotorLAB", "WLTP Class 3")   # WLTP3 drive cycle
-    mcApp.SetVariable("LabThermalCoupling_DutyCycle", 0)      # No coupling with Thermal
-    
-  # Calculation & Post processing
-    mcApp.CalculateDutyCycle_Lab()                                                # Run calculation
-    #ex, o_WLTP3_Eff = mcApp.GetVariable("DutyCycleAverageEfficiency_EnergyUse")   # Get efficiency value 
-    ex, o_Wh_Loss = mcApp.GetVariable("DutyCycleTotalLoss")   # Get efficiency value 
-    ex, o_Wh_Shaft = mcApp.GetVariable("DutyCycleTotalEnergy_Shaft_Output")   # Get efficiency value 
-    ex, o_Wh_input = mcApp.GetVariable("DutyCycleTotalEnergy_Electrical_Input")   # Get efficiency value 
-      
-  # Raise exception if wrong performance data
-    if o_Wh_Loss < 0:
-        mcApp.SaveToFile(mot_file_new_path)  # Save design   
-        mcApp.Quit()                         # Close Motor-CAD
-        mcApp = 0                            # Reset mcApp variable  
-        time.sleep(0.5)                      # Frozen for 0.5s
-        raise Exception('[ERROR] {}: drive cycle performance calculation failed'.format(OSL_DESIGN_NAME))
-
-### Lab: continuous performance Thermal
-
-  # Settings Thermal
-    # mcApp.SetVariable("LabThermalCoupling", 1)                         # Coupling with Thermal
-    # mcApp.SetVariable("OpPointSpec_MotorLAB", 2)                       # Max temperature definition
-    # mcApp.SetVariable("StatorTempDemand_Lab", p_Temp_Wdg_Max)          # Max winding temperature
-    # mcApp.SetVariable("RotorTempDemand_Lab", p_Temp_Mag_Max)           # Max magnet temperature
-    # mcApp.SetVariable("ThermMaxCurrentLim_MotorLAB", 0)                # Useful?
-    # mcApp.SetVariable("Iest_MotorLAB", i_Line_Current_RMS*sqrt(2)*0.3) # Initial line current (rms)
-    # mcApp.SetVariable("Iest_RMS_MotorLAB", i_Line_Current_RMS*0.3)     # Initial line current (peak)        
-    
-  # Calculation & Post processing
-    # Cont_Torque_Array  = np.zeros(len(p_Speed_Cont_Array))              # Contiuous torque array initialisation
-    # for i in range(len(p_Speed_Cont_Array)):                            # Calculation between Lab and Thermal
-    #     mcApp.SetVariable("SpeedDemand_MotorLAB", p_Speed_Cont_Array[i])# Set operating speed
-    #     mcApp.CalculateOperatingPoint_Lab()                             # Operating point calculation          
-    #     ex, ContTorque = mcApp.GetVariable("LabOpPoint_ShaftTorque")    # Get shaft torque value
-    #     Cont_Torque_Array[i] = ContTorque
-    # o_Cont_Torque_1700rpm = Cont_Torque_Array[0]                          # Assigning array variables
-    # o_Cont_Torque_4krpm = Cont_Torque_Array[1]
-
-#   # Raise exception if negative value    
-#     if (o_Cont_Torque_1700rpm or o_Cont_Torque_4krpm) < 0:
-#         mcApp.SaveToFile(mot_file_new_path)  # Save design   
-#         mcApp.Quit()                         # Close Motor-CAD
-#         mcApp = 0                            # Reset mcApp variable  
-#         time.sleep(0.5)                      # Frozen for 0.5s
-#         raise Exception('[ERROR] {}: continuous performance calculation failed'.format(OSL_DESIGN_NAME))
+        raise Exception('[ERROR] {}:  Duty Cycle calculation failed'.format(OSL_DESIGN_NAME))
 ### ---------------------------------------------------      SCREENSHOTS   -----------------------------------------------------
 
-### Extract operating point for torque ripple calculation in EMag
-    #mcApp.SetVariable("OpPointSpec_MotorLAB", 1)                             # Max Current definition    
-    #mcApp.SetVariable("StatorCurrentDemand_Lab", i_Line_Current_RMS*sqrt(2)) # Line current (rms)
-    #mcApp.SetVariable("StatorCurrentDemand_RMS_Lab", i_Line_Current_RMS)     # Line current (peak)
-    #mcApp.SetVariable("SpeedDemand_MotorLAB", 500)                           # Operating speed        
-    #mcApp.SetVariable("LabThermalCoupling", 0)                               # No coupling with Thermal
-    #mcApp.SetVariable("LabMagneticCoupling", 1)                              # Coupling with EMag
-    #mcApp.CalculateOperatingPoint_Lab()                                      # Export to EMag
-  
-### Current density
-    o_Current_Density = mcApp.GetVariable('ArmatureConductorCurrentDensity')
-    o_Current_Density = o_Current_Density[1]
     ex, i_Tooth_Width                   = mcApp.GetVariable("Tooth_Width")        # Absolute Tooth_Width
 
 ## Close Motor-CAD (necessary when running designs in parallel)
@@ -706,21 +602,20 @@ else:
     o_Cont_Torque_4krpm  = 0.
     o_Peak_Power_1700rpm   = 0.
     o_Peak_Torque_1700rpm = 0.
-    #o_WLTP3_Eff          = 0.
-    o_Current_Density    = 0.
+    
+    # Temp rise test 
+    o_Op1_ipk               =0
+    o_Op2_ipk               =0
+    o_Op3_ipk               =0
+    o_OP1_max_temp          =0
+    o_OP2_max_temp          =0
+    o_OP3_max_temp          =0
+    
+    # Torque density 
     o_Torque_Density     = 0.
-    # o_Torque_Ripples     = 0.
     o_Weight_Act         = 0.
     o_Weight_Mag         = 0.
     o_Weight_Rot_Core    = 0.
     o_Weight_Stat_Core   = 0.
     o_Weight_Wdg         = 0.
-    # o_Stress_Safety      = 0.
-    o_Wh_Loss           =0
-    o_Wh_Shaft          =0
-    o_Wh_input          =0
-    o_LabPeak_IPeak = 0
-  # Signals
-    o_Sig_Peak_Torque    = list_list_2_variant_signal([[0]*Speed_Lab_Len], Speed_Lab) 
-    o_Sig_Peak_Power     = list_list_2_variant_signal([[0]*Speed_Lab_Len], Speed_Lab) 
-    # o_Sig_Torque_Ripples = list_list_2_variant_signal([[0]*(p_Torque_Pts+1)], [0]*(p_Torque_Pts+1))
+
