@@ -198,8 +198,8 @@ def fun_Driving_Duty(ext_Duty_Cycle,o_Turn_Coil):
     ex, o_Wh_Loss = mcApp.GetVariable("DutyCycleTotalLoss")   # Get efficiency value 
     ex, o_Wh_Shaft = mcApp.GetVariable("DutyCycleTotalEnergy_Shaft_Output")   # Get efficiency value 
     ex, o_Wh_input = mcApp.GetVariable("DutyCycleTotalEnergy_Electrical_Input")   # Get efficiency value 
-    o_max_temp,max_pos,temp_dic=fun_Check_Temp_Rise_allComponent(ext_Duty_Cycle)
-    return o_Wh_Loss,o_Wh_Shaft,o_Wh_input,o_max_temp
+    # o_max_temp,max_pos,temp_dic=fun_Check_Temp_Rise_allComponent(ext_Duty_Cycle)
+    return o_Wh_Loss,o_Wh_Shaft,o_Wh_input
 
 
 ## Simple Calculation
@@ -614,15 +614,16 @@ if run_mode.endswith('run'):
         raise Exception('[ERROR] {}:  Duty Cycle calculation failed'.format(OSL_DESIGN_NAME))
     
 ### Lab: Driving Duty Cycle
-    o_Wh_Loss,o_Wh_Shaft,o_Wh_input,o_max_temp=fun_Driving_Duty(M2,o_Turn_Coil)
+    M1=['M1_Nosync','M1']
+    o_Wh_Loss,o_Wh_Shaft,o_Wh_input=fun_Driving_Duty(M1,o_Turn_Coil)
 
-      # Raise exception if negative value    
-    if (o_Wh_Loss or o_max_temp  ) < 0:
-        mcApp.SaveToFile(mot_file_new_path)  # Save design   
-        mcApp.Quit()                         # Close Motor-CAD
-        mcApp = 0                            # Reset mcApp variable  
-        time.sleep(0.5)                      # Frozen for 0.5s
-        raise Exception('[ERROR] {}: Driving Duty Cycle calculation failed'.format(OSL_DESIGN_NAME))
+    #   # Raise exception if negative value    
+    # if (o_Wh_Loss or o_max_temp  ) < 0:
+    #     mcApp.SaveToFile(mot_file_new_path)  # Save design   
+    #     mcApp.Quit()                         # Close Motor-CAD
+    #     mcApp = 0                            # Reset mcApp variable  
+    #     time.sleep(0.5)                      # Frozen for 0.5s
+    #     raise Exception('[ERROR] {}: Driving Duty Cycle calculation failed'.format(OSL_DESIGN_NAME))
 ### ---------------------------------------------------      SCREENSHOTS   -----------------------------------------------------
 
     # ex, i_Tooth_Width                   = mcApp.GetVariable("Tooth_Width")        # Absolute Tooth_Width
