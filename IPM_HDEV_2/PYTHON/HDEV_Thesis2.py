@@ -110,6 +110,7 @@ def fun_Calc_Temp_ext_duty_rename(ext_Duty_Cycle,o_Turn_Coil,Thermal_CouplingTyp
     ext_Duty_Cycle_new=join(mot_file_dir,'DutyCycleData',ext_Duty_Cycle[0])+'_new.dat'
     mcApp.LoadDutyCycle(ext_Duty_Cycle_new)
     mcApp.SetVariable('TurnsCalc_MotorLAB', o_Turn_Coil)            # Turns per coil
+    mcApp.SetVariable("LabThermalCoupling_DutyCycle", Thermal_CouplingType)                         # Coupling with Thermal
     mcApp.SetVariable("LabThermalCoupling", Thermal_CouplingType)                         # Coupling with Thermal
     mcApp.SetVariable('InitialTransientTemperatureOption',3)
     mcApp.CalculateDutyCycle_Lab()
@@ -124,7 +125,8 @@ def fun_Rename_Matfile_Lab_Duty(ext_Duty_Cycle):
     rename_matfile=ext_Duty_Cycle[0]+'_lab_result.mat'
     if os.path.exists('MotorLAB_drivecycledata.mat'):
         os.rename('MotorLAB_drivecycledata.mat',rename_matfile)
-        
+ 
+       
 
 # def fun_Load_Temp_Rise_2csvfile(lab_transient_fullpath_w_filename):
 #     Temp_filename=lab_transient_fullpath_w_filename+'_temp.csv'
@@ -178,7 +180,19 @@ def fun_OP_temp_contraints(ext_Duty_Cycle,o_Turn_Coil):
     return o_max_temp,max_pos,temp_dic, Op_i,OP_beta,Op_after,Op_LabOpPoint_ShaftTorque
 
 def fun_Driving_Duty(ext_Duty_Cycle,o_Turn_Coil):
-    fun_Calc_Temp_ext_duty_rename(ext_Duty_Cycle,o_Turn_Coil,0)
+    ref_Duty_Cycle=join(dirname(dirname(OSL_PROJECT_DIR)), 'DutyCycleData',ext_Duty_Cycle[0])+'.dat'
+    mcApp.LoadDutyCycle(ref_Duty_Cycle)
+    mcApp.SetVariable('TurnsCalc_MotorLAB', o_Turn_Coil)            # Turns per coil
+    mcApp.SetVariable("LabThermalCoupling_DutyCycle", 0)                         # Coupling with Thermal Duty Cycle
+    mcApp.SetVariable("LabThermalCoupling", 0)                         # Coupling with Thermal
+    mcApp.SetVariable('InitialTransientTemperatureOption',5)
+    mcApp.SetVariable('InitialHousingTemperature',65)
+    mcApp.SetVariable('InitialHousingTemperature',65)
+    mcApp.SetVariable('InitialStatorTemperature',140)
+    mcApp.SetVariable('InitialWindingTemperature',160)
+    mcApp.SetVariable('InitialRotorTemperature',100)
+    mcApp.SetVariable('InitialMagnetTemperature',130)
+    mcApp.CalculateDutyCycle_Lab()
     # Calculation & Post processing
     #ex, o_WLTP3_Eff = mcApp.GetVariable("DutyCycleAverageEfficiency_EnergyUse")   # Get efficiency value 
     ex, o_Wh_Loss = mcApp.GetVariable("DutyCycleTotalLoss")   # Get efficiency value 
