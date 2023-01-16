@@ -92,13 +92,14 @@ def fun_Find_Ipk_4Trq65C_mk_dat(ext_Duty_Cycle,o_Turn_Coil):
     before,after =fun_Save_Duty_Cycle_Change_I(ext_Duty_Cycle,ipk)
 
     # Get peak Current check value
-    mcApp.SetVariable("CurrentDefinition", 0)
+    mcApp.ShowMagneticContext()          
     mcApp.SetVariable('PeakCurrent',ipk)
     ex, ipk_check = mcApp.GetVariable("PeakCurrent")    
-     # Get rms current density of OP1 value
-    mcApp.SetVariable("CurrentDefinition", 1)                       
-    if ipk_check == ipk:
-        ex, o_current_density = mcApp.GetVariable("RMSCurrentDensity")   
+    #  # Get rms current density of OP1 value
+    # if ipk_check == ipk:
+    #     ex, o_current_density = mcApp.GetVariable("RMSCurrentDensity")
+    ex, o_slot_area = mcApp.GetVariable('Copper_Area')    
+    o_current_density = fun_current_density_cal(ipk_check,o_Turn_Coil,p_Parallel_Path,o_slot_area)
     
     return ipk, beta, LabOpPoint_ShaftTorque, after, o_current_density
 
@@ -260,6 +261,11 @@ def fun_output_define():
 
 
 ## Simple Calculation
+
+def fun_current_density_cal(ipk,o_Turn_Coil,p_Parallel_Path,o_slot_area):
+    o_current_density = (ipk_check/sqrt(2))* o_Turn_Coil / p_Parallel_Path /o_slot_area
+    return  o_current_density
+
 def fun_Turn_byAmpT(i_AmpT,i_Line_Current_RMS):
     res = i_AmpT/i_Line_Current_RMS
     return res
