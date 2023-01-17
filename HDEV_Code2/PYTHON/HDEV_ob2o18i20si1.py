@@ -98,10 +98,10 @@ def fun_Find_Ipk_4Trq65C_mk_dat(ext_Duty_Cycle,o_Turn_Coil):
     #  # Get rms current density of OP1 value
     # if ipk_check == ipk:
     #     ex, o_current_density = mcApp.GetVariable("RMSCurrentDensity")
-    ex, o_slot_area = mcApp.GetVariable('Copper_Area')    
-    o_current_density = fun_current_density_cal(ipk_check,o_Turn_Coil,p_Parallel_Path,o_slot_area)
+    ex, o_copper_area = mcApp.GetVariable('Copper_Area')    
+    o_current_density = fun_current_density_cal(ipk_check,o_Turn_Coil,p_Parallel_Path,o_copper_area)
     
-    return ipk, beta, LabOpPoint_ShaftTorque, after, o_current_density
+    return ipk, beta, LabOpPoint_ShaftTorque, after, o_current_density,o_copper_area
 
 def fun_Save_Duty_Cycle_Change_I(ext_Duty_Cycle,Ipk):
     ## Load reference Duty Cycle with ext_Duty_Cycle_name
@@ -193,10 +193,10 @@ def fun_Check_Temp_Rise_allComponent(ext_Duty_Cycle):
 # set value for contrainsts
 
 def fun_OP_temp_contraints(ext_Duty_Cycle,o_Turn_Coil):
-    Op_i,OP_beta,Op_LabOpPoint_ShaftTorque,Op_after,current_density =fun_Find_Ipk_4Trq65C_mk_dat(ext_Duty_Cycle,o_Turn_Coil)
+    Op_i,OP_beta,Op_LabOpPoint_ShaftTorque,Op_after,current_density,o_copper_area =fun_Find_Ipk_4Trq65C_mk_dat(ext_Duty_Cycle,o_Turn_Coil)
     fun_Calc_Temp_ext_duty_rename(ext_Duty_Cycle,o_Turn_Coil,2)
     o_OP_max_temp,max_pos,temp_dic=fun_Check_Temp_Rise_allComponent(ext_Duty_Cycle)
-    return o_OP_max_temp,max_pos,temp_dic, Op_i,OP_beta,Op_after,Op_LabOpPoint_ShaftTorque,current_density
+    return o_OP_max_temp,max_pos,temp_dic, Op_i,OP_beta,Op_after,Op_LabOpPoint_ShaftTorque,current_density,o_copper_area
 
 def fun_Driving_Duty(ext_Duty_Cycle,o_Turn_Coil):
     ref_Duty_Cycle=join(dirname(dirname(OSL_PROJECT_DIR)), 'DutyCycleData',ext_Duty_Cycle[0])+'.dat'
@@ -249,6 +249,8 @@ def fun_output_define():
         # Torque density 
         o_Torque_Density     = 0.
         o_Active_Volume      = 0.
+        o_Op2_copper_area   =0
+        o_Op1_copper_area   =0
         
         # Weight
         o_Weight_Act         = 0.
@@ -257,13 +259,13 @@ def fun_output_define():
         o_Weight_Stat_Core   = 0.
         o_Weight_Wdg         = 0.
         
-        return o_Turn_Coil,o_Op1_Jrms,o_Op2_Jrms,o_Op1_ipk,o_Op2_ipk,o_Op1_ShaftToruqe,o_Op2_ShaftToruqe,o_Wh_Loss,o_Wh_Shaft,o_Wh_input,o_Op2_max_temp,o_Torque_Density,o_Weight_Act,o_Weight_Mag,o_Weight_Rot_Core,o_Weight_Stat_Core,o_Weight_Wdg,o_Active_Volume
+        return o_Turn_Coil,o_Op1_Jrms,o_Op2_Jrms,o_Op1_ipk,o_Op2_ipk,o_Op1_ShaftToruqe,o_Op2_ShaftToruqe,o_Wh_Loss,o_Wh_Shaft,o_Wh_input,o_Op2_max_temp,o_Torque_Density,o_Weight_Act,o_Weight_Mag,o_Weight_Rot_Core,o_Weight_Stat_Core,o_Weight_Wdg,o_Active_Volume,o_Op1_copper_area,o_Op2_copper_area
 
 
 ## Simple Calculation
 
-def fun_current_density_cal(ipk,o_Turn_Coil,p_Parallel_Path,o_slot_area):
-    o_current_density = (ipk_check/sqrt(2))* o_Turn_Coil / p_Parallel_Path /o_slot_area
+def fun_current_density_cal(ipk_check,o_Turn_Coil,p_Parallel_Path,copper_area):
+    o_current_density = (ipk_check/sqrt(2))* o_Turn_Coil / p_Parallel_Path /copper_area
     return  o_current_density
 
 def fun_Turn_byAmpT(i_AmpT,i_Line_Current_RMS):
@@ -563,7 +565,7 @@ if run_mode.endswith('run'):
         # If not valid, generate zero outputs instead of getting an error message in optiSLang
         # output initial values
          # Scalars
-        o_Turn_Coil,o_Op1_Jrms,o_Op2_Jrms,o_Op1_ipk,o_Op2_ipk,o_Op1_ShaftToruqe,o_Op2_ShaftToruqe,o_Wh_Loss,o_Wh_Shaft,o_Wh_input,o_Op2_max_temp,o_Torque_Density,o_Weight_Act,o_Weight_Mag,o_Weight_Rot_Core,o_Weight_Stat_Core,o_Weight_Wdg,o_Active_Volume=fun_output_define()
+        o_Turn_Coil,o_Op1_Jrms,o_Op2_Jrms,o_Op1_ipk,o_Op2_ipk,o_Op1_ShaftToruqe,o_Op2_ShaftToruqe,o_Wh_Loss,o_Wh_Shaft,o_Wh_input,o_Op2_max_temp,o_Torque_Density,o_Weight_Act,o_Weight_Mag,o_Weight_Rot_Core,o_Weight_Stat_Core,o_Weight_Wdg,o_Active_Volume,o_Op1_copper_area,o_Op2_copper_area=fun_output_define()
         mcApp.SaveToFile(mot_file_new_path)  # Save design   
         mcApp.Quit()                         # Close Motor-CAD
         mcApp = 0                            # Reset mcApp variable  
@@ -646,11 +648,11 @@ if run_mode.endswith('run'):
     o_Turn_Coil    = fun_Turn_byAmpT(i_AmpT_rms,i_Line_Current_RMS)*p_Parallel_Path   # Number of turns per coil
     
     ## Torque check
-    o_Op1_ipk,OP1_beta,o_Op1_ShaftToruqe,Op1_after,Op1_current_density =fun_Find_Ipk_4Trq65C_mk_dat(OP1,o_Turn_Coil)
+    o_Op1_ipk,OP1_beta,o_Op1_ShaftToruqe,Op1_after,Op1_current_density,o_Op1_copper_area =fun_Find_Ipk_4Trq65C_mk_dat(OP1,o_Turn_Coil)
     o_Op1_Jrms=fun_scail_J_by_Turn(Op1_current_density,i_init_Turns_Coil,o_Turn_Coil)
 
     # Temperature rise check
-    o_Op2_max_temp,Op2_max_pos,Op2_temp_dic, o_Op2_ipk,Op2_beta,Op2_after,o_Op2_ShaftToruqe, Op2_current_density=fun_OP_temp_contraints(OP2,o_Turn_Coil)
+    o_Op2_max_temp,Op2_max_pos,Op2_temp_dic, o_Op2_ipk,Op2_beta,Op2_after,o_Op2_ShaftToruqe, Op2_current_density,o_Op2_copper_area=fun_OP_temp_contraints(OP2,o_Turn_Coil)
 
     o_Torque_Density = fun_Torque_Density(o_Op1_ShaftToruqe, o_Active_Volume)   # In [Nm/m3]
     
@@ -692,7 +694,7 @@ if run_mode.endswith('run'):
 ### Responses to be drag and drop during 'OSL_setup' mode 
 else:
   # output initialisation  
-    o_Turn_Coil,o_Op1_Jrms,o_Op2_Jrms,o_Op1_ipk,o_Op2_ipk,o_Op1_ShaftToruqe,o_Op2_ShaftToruqe,o_Wh_Loss,o_Wh_Shaft,o_Wh_input,o_Op2_max_temp,o_Torque_Density,o_Weight_Act,o_Weight_Mag,o_Weight_Rot_Core,o_Weight_Stat_Core,o_Weight_Wdg,o_Active_Volume=fun_output_define()
+    o_Turn_Coil,o_Op1_Jrms,o_Op2_Jrms,o_Op1_ipk,o_Op2_ipk,o_Op1_ShaftToruqe,o_Op2_ShaftToruqe,o_Wh_Loss,o_Wh_Shaft,o_Wh_input,o_Op2_max_temp,o_Torque_Density,o_Weight_Act,o_Weight_Mag,o_Weight_Rot_Core,o_Weight_Stat_Core,o_Weight_Wdg,o_Active_Volume,o_Op1_copper_area,o_Op2_copper_area=fun_output_define()
 
 
 
