@@ -258,6 +258,16 @@ def fun_output_define():
         o_Weight_Rot_Core    = 0.
         o_Weight_Stat_Core   = 0.
         o_Weight_Wdg         = 0.
+        if run_mode in ['OSL_run']:
+            o_Sig_Peak_Torque    = list_list_2_variant_signal([[0]*Speed_Lab_Len], Speed_Lab) 
+            o_Sig_Peak_Power     = list_list_2_variant_signal([[0]*Speed_Lab_Len], Speed_Lab) 
+        mcApp.SaveToFile(mot_file_new_path)  # Save design   
+        mcApp.Quit()                         # Close Motor-CAD
+        mcApp = 0                            # Reset mcApp variable  
+        time.sleep(0.5)                      # Frozen for 0.5s
+        raise Exception('[ERROR] {}: geometry not valid'.format(OSL_DESIGN_NAME))
+    
+        
         
         return o_Turn_Coil,o_Op1_Jrms,o_Op2_Jrms,o_Op3_Jrms,o_Op1_ipk,o_Op2_ipk,o_Op3_ipk,o_Op1_ShaftToruqe,o_Op2_ShaftToruqe,o_Op3_ShaftToruqe,o_Wh_Loss,o_Wh_Shaft,o_Wh_input,o_Op2_max_temp,o_Torque_Density,o_Weight_Act,o_Weight_Mag,o_Weight_Rot_Core,o_Weight_Stat_Core,o_Weight_Wdg,o_Active_Volume,o_Op1_copper_area,o_Op2_copper_area,o_Op3_copper_area
 ## Simple Calculation
