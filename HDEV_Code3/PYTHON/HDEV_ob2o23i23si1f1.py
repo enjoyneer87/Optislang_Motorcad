@@ -1,16 +1,53 @@
 """
 # ----------------------------
-# IPM Inverted V_web Templete
+# IPM Inverted RDelta Templete
 # ----------------------------
 # MOTOR-CAD : v15.1.7         
-# OPTISLANG : v2022 R1 
-# PYTHON    : v3.
+# OPTISLANG : v2022 R2 
+# PYTHON    : v3.8
 # ----------------------------
 """
 ## comments
-# op2 duty-cycle
-# op1 torque check
+# add input i_turns 
+# 
+# add output
+# o_Maxtorque,o_TorqueVolumeDensity,o_TorqueWeightDensity
+# o_Torque_Density is null
 
+# no performance scaling
+# op2 duty-cycle
+# op1 torque check & Temperature check
+# op3 torque check & Temperature check
+
+#  HDEV_code3
+
+# 1. Lab build                       : 해석시간 
+# 2. single duty cycle (temp rise)  : 해석 시간 op1, op2, op3 전체 (1. 130도기준, 2. closed coupled)
+# 3. driving duty cycle (driving loss) : 해석 시간 (1. 130도기준, 2. closed coupled)
+
+# 1.  op들의 torque는 output으로 사용 x ,  전류밀도 or 온도추출(온도 제한조건)
+#  -> Optislang에서 output제거 
+# -> i_TurnLab도 output에서 제거  i_TurnLab=i_TurnLabs
+# o_Op1_ShaftToruqe
+# o_Op2_ShaftToruqe
+# o_Op3_ShaftToruqe
+
+# 2.  전류턴에 따른 최대토크, 최대 출력(온도일단은 온도 해석 제거 , 온도해석 포함)
+# unfeasible로 걸러내기만...
+# 둘다 
+#####
+# code3 case, lf
+# i_turn가변
+# Ampere Lab 외부에서 dependent하게 변경, AmpT_rms 외부에서 고정, calc Lab에서 바꿈)
+## code 4  lf
+# 최대전류를 바꿀지 
+# Ampered Lab을 바꿈-> i_AmpT_rms이 바뀜 optislang 입력으로 사용x -> Build Lab에서 바꿀지 Calc Lab에서 바꿀지
+# output ->온도 연동 안된 최대토크, 최대출력, 
+# 최대토크, 최대출력(온도) 제약조건불가  (because 시간을 얼마로 할지 못정함)
+# Op1,Op2,Op3만 제약조건 가능-> 듀티사이클 손실,사이즈 최소화
+
+## high fidel
+# duty cycle에서 온도 빼는것도 추가필요 fun_Driving_Duty
 
 #-----------------------------------------------------      Packages        ----------------------------------------------------
 
@@ -71,25 +108,49 @@ else:                                                          # Working in IDE 
 # ------------------------------------------------------------------------------------------------------------------------------
 # --------------------------------------------------    USER-DEFINED   ---------------------------------------------------------
 # ------------------------------------------------------------------------------------------------------------------------------
-
 #-------------------------------------------------       Functions        ------------------------------------------------------
-
-
 ## Post Work flow
-    # Lab fun_find_current & remake DutyCycle on OSL_Device
-        #check function variable should be list
-       #inside function variable should be str or int
-def fun_Find_Ipk_4Trq65C_mk_dat(ext_Duty_Cycle,o_Turn_Coil):
-    mcApp.SetVariable('TurnsCalc_MotorLAB', o_Turn_Coil)            # Turns per coil
+  #check function variable should be list
+  #inside function variable should be str or int
+  # in case of performance scaling, use below function
+
+def fun_MaxTorque(motdata,p_Speed_Peak_Array,i_lineCurrentLabpk,i_TurnLab):
+    mot_file_dir=motdata.mot_file_dir
+    Mat_File_Name=motdata.Mat_File_Name
+   
+        
+
+    mcApp.CalculateMagnetic_Lab()                                 # Run calculation
+    mcApp.SetVariable("LabThermalCoupling", 0)                    # Coupling with Thermal
+    Mat_File_Path     = join(mot_file_dir, 'Lab', Mat_File_Name)  # Point to the *.mat file
+    Mat_File_Data     = loadmat(Mat_File_Path)                    # Load data from the *.mat file
+    Mat_File_Torque   = Mat_File_Data['Shaft_Torque']             # Load shaft torque data    
+    Mat_File_Power    = Mat_File_Data['Shaft_Power']              # Load shaft power data
+    Mat_File_Torque   = Mat_File_Torque.flatten()                 # Necessary to be read by list_2_list_variant()
+    Mat_File_Power    = Mat_File_Power.flatten()  
+    Mat_File_Speed    = Mat_File_Speed.flatten()
+  # Extract specific values
+    Peak_Power_Array = np.zeros(len(p_Speed_Peak_Array))   # Peak power array initialisation
+    Peak_Torque_Array = np.zeros(len(p_Speed_Peak_Array))  # Peak power array initialisation
+    for i in range(len(p_Speed_Peak_Array)):
+        Ind_Speed = (np.abs(Mat_File_Speed - p_Speed_Peak_Array[i])).argmin()   # Index corresponding to the required speed
+        Peak_Power_Array[i]  = Mat_File_Power[Ind_Speed]                        # Peak power at the required speed 
+        Peak_Torque_Array[i] = Mat_File_Torque[Ind_Speed]                       # Peak torque at the required speed 
+    o_Peak_Torque_1700rpm    = Peak_Torque_Array[0]      # In [Nm] 
+    # o_Peak_Power_4krpm      = Peak_Power_Array[1]       # In [kW]    
+    return o_Peak_Torque_1700rpm
+  
+def fun_Find_Ipk_4Trq65C_mk_dat(ext_Duty_Cycle,i_TurnLab):
+    mcApp.SetVariable('TurnsCalc_MotorLAB', i_TurnLab)                 # Turns per coil
     mcApp.SetVariable("LabThermalCoupling", 0)                         # Coupling with Thermal
     mcApp.SetVariable("OpPointSpec_MotorLAB", 0)                       # 0- Torque 4-Max temperature definition
     mcApp.SetVariable("SpeedDemand_MotorLAB", ext_Duty_Cycle[1])                       # 0- Torque 4-Max temperature definition
     mcApp.SetVariable("TorqueDemand_MotorLAB", ext_Duty_Cycle[2])                       # 0- Torque 4-Max temperature definition  
     mcApp.CalculateOperatingPoint_Lab()                             # Operating point calculation
     ex, LabOpPoint_ShaftTorque = mcApp.GetVariable("LabOpPoint_ShaftTorque")    # Get shaft torque value
-    ex, ipk = mcApp.GetVariable("LabOpPoint_StatorCurrent_Line_Peak")    # Get shaft torque value
-    ex, beta = mcApp.GetVariable("LabOpPoint_PhaseAdvance")    # Get shaft torque value
-    before,after =fun_Save_Duty_Cycle_Change_I(ext_Duty_Cycle,ipk)
+    ex, ipk = mcApp.GetVariable("LabOpPoint_StatorCurrent_Line_Peak")    # Get ipk
+    ex, beta = mcApp.GetVariable("LabOpPoint_PhaseAdvance")    # Get beta
+    before,after =fun_Save_Duty_Cycle_Change_I(ext_Duty_Cycle,ipk)     
 
     # Get peak Current check value
     mcApp.ShowMagneticContext()          
@@ -97,12 +158,10 @@ def fun_Find_Ipk_4Trq65C_mk_dat(ext_Duty_Cycle,o_Turn_Coil):
     ex, ipk_check = mcApp.GetVariable("PeakCurrent")    
     #  # Get rms current density of OP1 value
     # if ipk_check == ipk:
-    #     ex, o_current_density = mcApp.GetVariable("RMSCurrentDensity")
-    ex, o_copper_area = mcApp.GetVariable('Copper_Area')    
-    o_current_density = fun_current_density_cal(ipk_check,o_Turn_Coil,p_Parallel_Path,o_copper_area)
+    #     ex, o_current_densityRMS = mcApp.GetVariable("RMSCurrentDensity")
+    o_current_densityRMS,o_copper_area = fun_current_density_cal(ipk_check,i_TurnLab)
     
-    return ipk, beta, LabOpPoint_ShaftTorque, after, o_current_density,o_copper_area
-
+    return ipk, beta, LabOpPoint_ShaftTorque, after, o_current_densityRMS,o_copper_area
 def fun_Save_Duty_Cycle_Change_I(ext_Duty_Cycle,Ipk):
     ## Load reference Duty Cycle with ext_Duty_Cycle_name
     ref_Duty_Cycle=join(dirname(dirname(OSL_PROJECT_DIR)), 'DutyCycleData',ext_Duty_Cycle[0])+'.dat'
@@ -122,20 +181,16 @@ def fun_Save_Duty_Cycle_Change_I(ext_Duty_Cycle,Ipk):
     mcApp.SaveDutyCycle(ext_Duty_Cycle_new)
     return Duty_Cycle_Current_before,Duty_Cycle_Current_After
 
-
 # Calculate Temp Rise with duty cycle
-
-def fun_Calc_Temp_ext_duty_rename(ext_Duty_Cycle,o_Turn_Coil,Thermal_CouplingType):
+def fun_Calc_Temp_ext_duty_rename(ext_Duty_Cycle,i_TurnLab,Thermal_CouplingType):
     ext_Duty_Cycle_new=join(mot_file_dir,'DutyCycleData',ext_Duty_Cycle[0])+'_new.dat'
     mcApp.LoadDutyCycle(ext_Duty_Cycle_new)
-    mcApp.SetVariable('TurnsCalc_MotorLAB', o_Turn_Coil)            # Turns per coil
+    mcApp.SetVariable('TurnsCalc_MotorLAB', i_TurnLab)            # Turns per coil
     mcApp.SetVariable("LabThermalCoupling_DutyCycle", Thermal_CouplingType)                         # Coupling with Thermal
     mcApp.SetVariable("LabThermalCoupling", Thermal_CouplingType)                         # Coupling with Thermal
     mcApp.SetVariable('InitialTransientTemperatureOption',3)
     mcApp.CalculateDutyCycle_Lab()
-    fun_Rename_Matfile_Lab_Duty(ext_Duty_Cycle)
-    
-    
+    fun_Rename_Matfile_Lab_Duty(ext_Duty_Cycle)      
 def fun_Rename_Matfile_Lab_Duty(ext_Duty_Cycle):
     ex, motpath=mcApp.GetVariable("CurrentMotFilePath_MotorLAB")
     motpath=re.sub(".mot","",motpath)
@@ -144,15 +199,8 @@ def fun_Rename_Matfile_Lab_Duty(ext_Duty_Cycle):
     rename_matfile=ext_Duty_Cycle[0]+'_lab_result.mat'
     if os.path.exists('MotorLAB_drivecycledata.mat'):
         os.rename('MotorLAB_drivecycledata.mat',rename_matfile)
- 
-       
-
-# def fun_Load_Temp_Rise_2csvfile(lab_transient_fullpath_w_filename):
-#     Temp_filename=lab_transient_fullpath_w_filename+'_temp.csv'
-#     power_filename=lab_transient_fullpath_w_filename+'_power.csv'
-#     mcApp.ExportResults('Transient', power_filename)
-#     mcApp.ExportResults('Transient', Temp_filename)
-    
+      
+   
 # Check Temp Rise with duty cycle
 def fun_load_matfile_by_OP(ext_Duty_Cycle):
         ## This mat file consisted of Ndarray when we are using loadmat function
@@ -163,8 +211,6 @@ def fun_load_matfile_by_OP(ext_Duty_Cycle):
     name_matfile=ext_Duty_Cycle[0]+'_lab_result.mat'
     Mat_File_Data=loadmat(name_matfile)
     return Mat_File_Data
-
-
 ## last function for Duty Cycle check
 def fun_Check_Temp_Rise_allComponent(ext_Duty_Cycle):
     ## init
@@ -189,19 +235,16 @@ def fun_Check_Temp_Rise_allComponent(ext_Duty_Cycle):
     dic_init_final_temp=dict(zip(mat_temp_key,init_final_temp))
     
     return check_temp,max_temp_key, dic_init_final_temp
-
 # set value for contrainsts
-
-def fun_OP_temp_contraints(ext_Duty_Cycle,o_Turn_Coil):
-    Op_i,OP_beta,Op_LabOpPoint_ShaftTorque,Op_after,current_density,o_copper_area =fun_Find_Ipk_4Trq65C_mk_dat(ext_Duty_Cycle,o_Turn_Coil)
-    fun_Calc_Temp_ext_duty_rename(ext_Duty_Cycle,o_Turn_Coil,2)
+def fun_OP_temp_contraints(ext_Duty_Cycle,i_TurnLab):
+    Op_i,OP_beta,Op_LabOpPoint_ShaftTorque,Op_after,current_density,o_copper_area =fun_Find_Ipk_4Trq65C_mk_dat(ext_Duty_Cycle,i_turnsLab)
+    fun_Calc_Temp_ext_duty_rename(ext_Duty_Cycle,i_TurnLab,2)
     o_OP_max_temp,max_pos,temp_dic=fun_Check_Temp_Rise_allComponent(ext_Duty_Cycle)
     return o_OP_max_temp,max_pos,temp_dic, Op_i,OP_beta,Op_after,Op_LabOpPoint_ShaftTorque,current_density,o_copper_area
-
-def fun_Driving_Duty(ext_Duty_Cycle,o_Turn_Coil):
+def fun_Driving_Duty(ext_Duty_Cycle,turns):
     ref_Duty_Cycle=join(dirname(dirname(OSL_PROJECT_DIR)), 'DutyCycleData',ext_Duty_Cycle[0])+'.dat'
     mcApp.LoadDutyCycle(ref_Duty_Cycle)
-    mcApp.SetVariable('TurnsCalc_MotorLAB', o_Turn_Coil)            # Turns per coil
+    mcApp.SetVariable('TurnsCalc_MotorLAB', turns)            # Turns per coil
     mcApp.SetVariable("LabThermalCoupling_DutyCycle", 0)                         # Coupling with Thermal Duty Cycle
     mcApp.SetVariable("LabThermalCoupling", 0)                         # Coupling with Thermal
     mcApp.SetVariable('InitialTransientTemperatureOption',4)
@@ -221,10 +264,9 @@ def fun_Driving_Duty(ext_Duty_Cycle,o_Turn_Coil):
     return o_Wh_Loss,o_Wh_Shaft,o_Wh_input
 
 ## 
-
 def fun_output_define():
+        o_LabCurrentJ=0
         # OP point check
-        o_Turn_Coil=0
         o_Op1_Jrms =0
         o_Op2_Jrms =0
         o_Op3_Jrms =0
@@ -234,13 +276,23 @@ def fun_output_define():
         o_Op1_ShaftToruqe       =0
         o_Op2_ShaftToruqe       =0
         o_Op3_ShaftToruqe       =0
+
+        # Temp rise test (Duty Cycle)
+        # o_OP1_max_temp          =0
         o_Op2_max_temp          =0
+        o_OP3_max_temp          =0
+
+
         # Driving Duty Cycle
         o_Wh_Loss           =0
         o_Wh_Shaft          =0
         o_Wh_input          =0
         # o_max_temp          =0
+        
         # Torque density 
+        o_Maxtorque=0
+        o_TorqueVolumeDensity =0
+        o_TorqueWeightDensity =0
         o_Torque_Density     = 0.
         o_Active_Volume      = 0.
         o_Op2_copper_area   =0
@@ -253,15 +305,16 @@ def fun_output_define():
         o_Weight_Stat_Core   = 0.
         o_Weight_Wdg         = 0.
         
-        return o_Turn_Coil,o_Op1_Jrms,o_Op2_Jrms,o_Op3_Jrms,o_Op1_ipk,o_Op2_ipk,o_Op3_ipk,o_Op1_ShaftToruqe,o_Op2_ShaftToruqe,o_Op3_ShaftToruqe,o_Wh_Loss,o_Wh_Shaft,o_Wh_input,o_Op2_max_temp,o_Torque_Density,o_Weight_Act,o_Weight_Mag,o_Weight_Rot_Core,o_Weight_Stat_Core,o_Weight_Wdg,o_Active_Volume,o_Op1_copper_area,o_Op2_copper_area,o_Op3_copper_area
+        return o_Maxtorque,o_TorqueVolumeDensity,o_TorqueWeightDensity,o_OP3_max_temp,i_TurnLab,o_Op1_Jrms,o_Op2_Jrms,o_Op3_Jrms,o_Op1_ipk,o_Op2_ipk,o_Op3_ipk,o_Op1_ShaftToruqe,o_Op2_ShaftToruqe,o_Op3_ShaftToruqe,o_Wh_Loss,o_Wh_Shaft,o_Wh_input,o_Op2_max_temp,o_Torque_Density,o_Weight_Act,o_Weight_Mag,o_Weight_Rot_Core,o_Weight_Stat_Core,o_Weight_Wdg,o_Active_Volume,o_Op1_copper_area,o_Op2_copper_area,o_Op3_copper_area
 ## Simple Calculation
+def fun_current_density_cal(ipk_check,turns):
+    ex, o_copper_area = mcApp.GetVariable('Copper_Area')    
+    ex,p_Parallel_Path=mcApp.GetVariable('ParallelPaths')
+    o_current_densityRMS = (ipk_check/sqrt(2))* turns / p_Parallel_Path /o_copper_area
+    return  o_current_densityRMS,o_copper_area
 
-def fun_current_density_cal(ipk_check,o_Turn_Coil,p_Parallel_Path,copper_area):
-    o_current_density = (ipk_check/sqrt(2))* o_Turn_Coil / p_Parallel_Path /copper_area
-    return  o_current_density
-
-def fun_Turn_byAmpT(i_AmpT,i_Line_Current_RMS):
-    res = i_AmpT/i_Line_Current_RMS
+def fun_Turn_byAmpT(i_AmpT,i_BuildLineCurrentRMS):
+    res = i_AmpT/i_BuildLineCurrentRMS
     return res
 
 def fun_Ipk_beta_by_Trq():
@@ -269,14 +322,12 @@ def fun_Ipk_beta_by_Trq():
     ex, beta = mcApp.GetVariable("LabOpPoint_PhaseAdvance")    # Get shaft torque value
     return ipk, beta
 
-def fun_scail_J_by_Turn(op_current_density,i_init_Turns_Coil,o_Turn_Coil):
-    #o_op_J = op_current_density*o_Turn_Coil/i_init_Turns_Coil #false
-    o_op_J = op_current_density*o_Turn_Coil/i_init_Turns_Coil #false
-    
+def fun_scail_J_by_Turn(op_current_densityRMS,p_init_Turns_Coil,turns):
+    # o_op_J = op_current_density*turns/p_init_Turns_Coil #false
+    o_op_J = op_current_densityRMS
     return o_op_J
 
 ### Geometry
-
 
 def fun_YtoT(u_YtoT, i_Tooth_Width):
     res = i_Tooth_Width*u_YtoT
@@ -292,19 +343,16 @@ def fun_Active_Volume(Stator_OD, Active_Length):
     res = pi*Stator_OD**2/4*Active_Length*1e-9
     return res
 
-# Air pocket
-# def fun_Air_Pocket(Mag_Thick, Mag_Clear):
-#     res = (Mag_Thick + Mag_Clear)/2 
-#     return res
-
 ### Performances
-
 # Torque density
-def fun_Torque_Density(Torque, Volume):           
+def fun_TorqueVolumeDensity(Torque, Volume):           
     res = Torque/Volume*1e-3
     return res
- 
-# Stress safety factor
+def fun_TorqueWeightDensity(Torque, weight):           
+    res = Torque/weight*1e-3
+    return res
+
+ # Stress safety factor
 def fun_Stress_Safety(Rotor_Yield, Stress_Max):            
     res = Rotor_Yield/Stress_Max
     return res
@@ -324,17 +372,12 @@ p_Stator_Slots         = 72.   # Number of stator slots
 # Predefine Variable
 
 ### Stator
-
 #### Absoulute Input (left table)
 i_Slot_Corner_Radius    = 1.4     
 #i_Tooth_Width  = 6     
 p_Tooth_Tip_Depth       = 1    # Tooth tip depth 
 p_Tooth_Tip_Angle       = 20   # Tooth tip angle 
-#i_Stator_OD             = 400  # Stator outer diameter
-
-
 #### Ratio(Stator w Hierachy)
-
 p_Slot_Depth_Ratio      =   1   
 # ### Rotor 
 # #### Absoulute Input (left table)
@@ -347,7 +390,6 @@ p_Airgap_Mecha         = 1.    # Mechanical airgap
 # p_Mag_Clear            = 0   # Magnet clearance
 
 ### other
-
 p_EndSpace_Height      = 24.5   # Space between winding ends and caps
 p_Wdg_Overhang_F         = 56.   # Winding overhang height
 p_Wdg_Overhang_R        = 65.   # Winding overhang height
@@ -369,7 +411,6 @@ p_Speed_Lab_Step    = 100.                              # Speed step used in Lab
 p_Speed_Peak_Array  = np.array([1700.])    # Speeds for peak performance calculation 
 p_Speed_Cont_Array  = np.array([1700., 4000.])          # Speeds for continuous performance calculation
 p_Torque_Pts        = 90                                # Timesteps per cycle for torque calculation                                              
-
 ### Post-processing
 Pic_Export = 1      # Export geometry snapshots (0: No  1: Yes)
 
@@ -381,19 +422,21 @@ Speed_Lab_Len = len(Speed_Lab)                                                  
                     
 ### Input parameters for testing in IDE or initialisation in OSL Python node
 if run_mode in ['OSL_setup', 'IDE_run']:
-    
-    #### Absoulute Input (left table)
-    # i_Slot_Corner_Radius    = 1.4     
-    # p_Tooth_Tip_Depth       = 1    # Tooth tip depth 
-    # p_Tooth_Tip_Angle       = 20   # Tooth tip angle 
+  
     i_Active_Length     = 130.   # Active length
     ### Performance
-    i_Line_Current_RMS = 636.3961030678927     # Maximum RMS line current  1000Apk
-    i_AmpT_rms=1750                  # Maximum Ampere turn current 2.75T*1000Apk 
+    i_BuildLineCurrentRMS =  742.4621 # 1050   # Maximum RMS line current  900Apk 636.3961030678927A rms but 1050Apk 742.4621A rms
+    # i_AmpT_rms=                 # Maximum Ampere turn current 2.75T*900ApkA  1750 rms 1050Apk 2.75T 742.4621A rms
+    # p_AmpT_rms= 1555.6
     ### Winding
-    i_init_Turns_Coil =11 # for model build
+    i_lineCurrentLabpk = 0
+    p_init_Turns_Coil =11          # for model build use fixed values for initialisation change by i_turnsLab
     i_Tooth_Width           = 6
     i_Stator_OD             = 400  # Stator outer diameter
+
+    ## Lab settings
+    i_turnsLab = 11
+    
     #### Ratio(Stator w Hierachy)
     i_Tooth_Width_Ratio                 =0.6
     i_Split_Ratio                       =0.70  
@@ -472,8 +515,11 @@ if run_mode.endswith('run'):
     print("[INFO] Design file saved as: ", mot_file_new_path)                                    
     mcApp.SaveToFile(mot_file_new_path)                                          # Save in new location
     mot_file_dir = join(wdir, Design_Name + '_' + OSL_DESIGN_NAME)
+    Mat_File_Name     = 'MotorLAB_elecdata.mat'                   # *.mat file automatically generated by Motor-CAD
+    motdata={"mot_file_dir":mot_file_dir,"Mat_File_Name":Mat_File_Name}
     
 ### EMag context
+
     mcApp.ShowMagneticContext()          
     mcApp.DisplayScreen('Scripting')     # Switch to a tab where no parameter is adjusted 
     
@@ -482,7 +528,6 @@ if run_mode.endswith('run'):
 
 ### Assign geometry parameters
     mcApp.SetVariable('Slot_Number', p_Stator_Slots)                           # Stator slots
-
     ### Stator
     #### Absoulute Input (left table)
     mcApp.SetVariable('Stator_Lam_Dia'      , i_Stator_OD)                        # Stator OD 
@@ -490,24 +535,21 @@ if run_mode.endswith('run'):
     mcApp.SetVariable('Tooth_Tip_Depth'     , p_Tooth_Tip_Depth)                  # Tooth tip depth
     mcApp.SetVariable('Tooth_Tip_Angle'     , p_Tooth_Tip_Angle)                  # Tooth tip angle
     o_Active_Volume  = fun_Active_Volume(i_Stator_OD, i_Active_Length)     # In [m3]
-
-
     #### Ratio
     #u_YtoT                              =2.5                                         #ratio user defined YtoT 
     ex, i_Tooth_Width                   = mcApp.GetVariable("Tooth_Width")           # Absolute Tooth_Width
     # i_Tooth_Width  = 6                                                                     #get absolute value from ratio
     i_MinBackIronThickness              = fun_YtoT(u_YtoT,i_Tooth_Width) 
-
     mcApp.SetVariable("Ratio_SlotDepth_ParallelTooth"           , p_Slot_Depth_Ratio     )        #Ratio_SlotDepth_ParallelTooth" )   %% Fixed     
     mcApp.SetVariable('MinBackIronThickness'                    , i_MinBackIronThickness )        #Abosolute be user-defined with Y to T ratio     
     mcApp.SetVariable("Ratio_ToothWidth"                        , i_Tooth_Width_Ratio    )        #Ratio_ToothWidth" )      
     mcApp.SetVariable("Ratio_SlotOpening_ParallelTooth"         , i_Slot_Op_Ratio        )        #Ratio_SlotOpening_ParallelTooth" )      
-    
+  
     ### Rotor 
     #### Absoulute Input (left table)
     mcApp.SetArrayVariable("MagnetThickness_Array"                , 0, L1_Magnet_Thickness)            # Layer 1 Magnet thickness
     mcApp.SetArrayVariable("MagnetThickness_Array"                , 1, L2_Magnet_Thickness)            # Layer 2 Magnet thickness
-                    
+                
     mcApp.SetArrayVariable('BridgeThickness_Array'                , 0, L1_Bridge_Thickness)            # Layer 1 Bridge thickness 
     mcApp.SetArrayVariable('BridgeThickness_Array'                , 1, L2_Bridge_Thickness)            # Layer 2 Bridge thickness 
         
@@ -540,7 +582,7 @@ if run_mode.endswith('run'):
     #### etc
     mcApp.SetVariable('Pole_Number', 2*p_Pole_Pair)                            # Rotor poles
     mcApp.SetVariable('Airgap', p_Airgap_Mecha)                                # Mechanical airgap
-       
+     
     # mcApp.SetVariable('MinVMagnetAspectRatio', p_Mag_AspectRatio_Min)          # Minimum magnet aspect ratio
     # mcApp.SetVariable('MinMagnetSeparation', p_Mag_Separation_Min)             # Minimum separation between magnet poles  
     # mcApp.SetVariable('MinShaftSeparation', p_Shaft_Separation_Min)            # Minimum separation between shaft and magnets
@@ -559,7 +601,7 @@ if run_mode.endswith('run'):
         # If not valid, generate zero outputs instead of getting an error message in optiSLang
         # output initial values
          # Scalars
-        o_Turn_Coil,o_Op1_Jrms,o_Op2_Jrms,o_Op3_Jrms,o_Op1_ipk,o_Op2_ipk,o_Op3_ipk,o_Op1_ShaftToruqe,o_Op2_ShaftToruqe,o_Op3_ShaftToruqe,o_Wh_Loss,o_Wh_Shaft,o_Wh_input,o_Op2_max_temp,o_Torque_Density,o_Weight_Act,o_Weight_Mag,o_Weight_Rot_Core,o_Weight_Stat_Core,o_Weight_Wdg,o_Active_Volume,o_Op1_copper_area,o_Op2_copper_area,o_Op3_copper_area=fun_output_define()
+        o_Maxtorque,o_TorqueVolumeDensity,o_TorqueWeightDensity,o_OP3_max_temp,i_TurnLab,o_Op1_Jrms,o_Op2_Jrms,o_Op3_Jrms,o_Op1_ipk,o_Op2_ipk,o_Op3_ipk,o_Op1_ShaftToruqe,o_Op2_ShaftToruqe,o_Op3_ShaftToruqe,o_Wh_Loss,o_Wh_Shaft,o_Wh_input,o_Op2_max_temp,o_Torque_Density,o_Weight_Act,o_Weight_Mag,o_Weight_Rot_Core,o_Weight_Stat_Core,o_Weight_Wdg,o_Active_Volume,o_Op1_copper_area,o_Op2_copper_area,o_Op3_copper_area=fun_output_define()
         mcApp.SaveToFile(mot_file_new_path)  # Save design   
         mcApp.Quit()                         # Close Motor-CAD
         mcApp = 0                            # Reset mcApp variable  
@@ -568,7 +610,7 @@ if run_mode.endswith('run'):
     
 ### Assign winding parameters
     mcApp.SetVariable('WindingLayers', p_Coils_Slot)                # Coils passing through a slot
-    mcApp.SetVariable('MagTurnsConductor', i_init_Turns_Coil)            # Turns per coil
+    mcApp.SetVariable('MagTurnsConductor', p_init_Turns_Coil)       # Turns per coil
     mcApp.SetVariable('ParallelPaths', p_Parallel_Path)             # Parallel paths per phase
     mcApp.SetVariable('RequestedGrossSlotFillFactor', p_Slot_Fill)  # Slot fill factor
         
@@ -604,10 +646,10 @@ if run_mode.endswith('run'):
 ### Save design
     mcApp.SaveToFile(mot_file_new_path)
     
-### Lab module
+### Lab module ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### 
 ### Shows automatically after assigning options for the saturation & loss models)
 
-### Lab: model Build tab 
+### Lab: model Build tab### 
     #mcApp.ClearModelBuild_Lab()  # Clear existing models
     if run_mode in ['IDE_run']:
         mcApp.SetVariable("ModelType_MotorLAB", 2)       # Saturation model type: 1- sigle 2-Full Cycle
@@ -627,8 +669,8 @@ if run_mode.endswith('run'):
         mcApp.SetVariable("IronLossCalc_Lab", 3)          # 0 Neglect 1 OC+SC(User) 2 OC+SC (FEA single Point) 3 (FEA Map)
         mcApp.SetVariable("LabModel_MagnetLoss_Method", 3) #0 Neglect 1 User Defined 2 OC+SC (FEA single Point) 3 (FEA Map)
 
-    # mcApp.SetVariable("MaxModelCurrent_RMS_MotorLAB", i_Line_Current_RMS)       # Max line current (rms)
-    mcApp.SetVariable("MaxModelCurrent_MotorLAB", i_Line_Current_RMS*np.sqrt(2))   # Max line current (peak)
+    # mcApp.SetVariable("MaxModelCurrent_RMS_MotorLAB", i_BuildLineCurrentRMS)       # Max line current (rms)
+    mcApp.SetVariable("MaxModelCurrent_MotorLAB", i_BuildLineCurrentRMS*np.sqrt(2))   # Max line current (peak)
     mcApp.SetVariable('ModelBuildSpeed_MotorLAB', p_Speed_Max)                  # Maximum operating speed
     o_Active_Volume  = fun_Active_Volume(i_Stator_OD, i_Active_Length)     # In [m3]
     
@@ -637,20 +679,28 @@ if run_mode.endswith('run'):
     OP3=['OP3_temp_rise',4000,380]
     M2=['M2','varius']
     mcApp.BuildModel_Lab()                                                      # Build activated models
-              
-### Lab: peak performance by duty cycle 
-    o_Turn_Coil    = fun_Turn_byAmpT(i_AmpT_rms,i_Line_Current_RMS)*p_Parallel_Path   # Number of turns per coil
-    
-    ## Torque check
-    o_Op1_ipk,OP1_beta,o_Op1_ShaftToruqe,Op1_after,Op1_current_density,o_Op1_copper_area =fun_Find_Ipk_4Trq65C_mk_dat(OP1,o_Turn_Coil)
-    o_Op1_Jrms=fun_scail_J_by_Turn(Op1_current_density,i_init_Turns_Coil,o_Turn_Coil)
-    o_Op3_ipk,OP3_beta,o_Op3_ShaftToruqe,Op3_after,Op3_current_density,o_Op3_copper_area =fun_Find_Ipk_4Trq65C_mk_dat(OP3,o_Turn_Coil)
-    o_Op3_Jrms=fun_scail_J_by_Turn(Op3_current_density,i_init_Turns_Coil,o_Turn_Coil)
-    # Temperature rise check
-    o_Op2_max_temp,Op2_max_pos,Op2_temp_dic, o_Op2_ipk,Op2_beta,Op2_after,o_Op2_ShaftToruqe, Op2_current_density,o_Op2_copper_area=fun_OP_temp_contraints(OP2,o_Turn_Coil)
 
-    o_Torque_Density = fun_Torque_Density(o_Op1_ShaftToruqe, o_Active_Volume)   # In [Nm/m3]
-    
+################################################ Lab: end of Build tab ############################################################### 
+
+
+################################################ Lab : start of Analysis tab #########################################################              
+### Lab : Electromagnetic tab### 
+    o_Maxtorque=fun_MaxTorque(motdata,p_Speed_Peak_Array,i_lineCurrentLabpk,i_TurnLab)   # In [Nm]
+    o_LabCurrentJ = fun_current_density_cal(i_lineCurrentLabpk,i_TurnLab)
+
+### Lab: Duty cycle tab###  -  peak performance  
+    ## Torque check
+    o_Op1_ipk,OP1_beta,o_Op1_ShaftToruqe,Op1_after,Op1_current_density,o_Op1_copper_area =fun_Find_Ipk_4Trq65C_mk_dat(OP1,i_TurnLab)
+    o_Op1_Jrms=fun_scail_J_by_Turn(Op1_current_density,p_init_Turns_Coil,i_TurnLab)
+    o_Op3_ipk,OP3_beta,o_Op3_ShaftToruqe,Op3_after,Op3_current_density,o_Op3_copper_area =fun_Find_Ipk_4Trq65C_mk_dat(OP3,i_TurnLab)
+    o_Op3_Jrms=fun_scail_J_by_Turn(Op3_current_density,p_init_Turns_Coil,i_TurnLab)
+    # Temperature rise check
+    o_Op2_max_temp,Op2_max_pos,Op2_temp_dic, o_Op2_ipk,Op2_beta,Op2_after,o_Op2_ShaftToruqe, Op2_current_density,o_Op2_copper_area=fun_OP_temp_contraints(OP2,i_TurnLab)
+
+
+    o_TorqueVolumeDensity = fun_TorqueVolumeDensity(o_Maxtorque, o_Active_Volume)   # In [Nm/m3]
+    o_TorqueWeightDensity = fun_TorqueWeightDensity(o_Maxtorque,o_Weight_Act)   # In [Nm/kg]
+
 
   # Raise exception if negative value    
     if (o_Op2_max_temp ) < 0:
@@ -660,12 +710,12 @@ if run_mode.endswith('run'):
         time.sleep(0.5)                      # Frozen for 0.5s
         raise Exception('[ERROR] {}:  Duty Cycle calculation failed'.format(OSL_DESIGN_NAME))
     
-### Lab: Driving Duty Cycle
+### Lab: Duty Cycle tab### Driving Duty Cycle
     M1=['M1_Nosync','M1']
-    o_Wh_Loss,o_Wh_Shaft,o_Wh_input=fun_Driving_Duty(M1,o_Turn_Coil)
+    o_Wh_Loss,o_Wh_Shaft,o_Wh_input=fun_Driving_Duty(M1,i_turnsLab)
 
         # J(rms) need to be scailed by the scailed number of turns
-    o_Op2_Jrms=fun_scail_J_by_Turn(Op2_current_density,i_init_Turns_Coil,o_Turn_Coil)
+    o_Op2_Jrms=fun_scail_J_by_Turn(Op2_current_density,p_init_Turns_Coil,i_TurnLab)
 
     #   # Raise exception if negative value    
     # if (o_Wh_Loss or o_max_temp  ) < 0:
@@ -689,8 +739,7 @@ if run_mode.endswith('run'):
 ### Responses to be drag and drop during 'OSL_setup' mode 
 else:
   # output initialisation  
-    o_Turn_Coil,o_Op1_Jrms,o_Op2_Jrms,o_Op3_Jrms,o_Op1_ipk,o_Op2_ipk,o_Op3_ipk,o_Op1_ShaftToruqe,o_Op2_ShaftToruqe,o_Op3_ShaftToruqe,o_Wh_Loss,o_Wh_Shaft,o_Wh_input,o_Op2_max_temp,o_Torque_Density,o_Weight_Act,o_Weight_Mag,o_Weight_Rot_Core,o_Weight_Stat_Core,o_Weight_Wdg,o_Active_Volume,o_Op1_copper_area,o_Op2_copper_area,o_Op3_copper_area=fun_output_define()
+    o_LabCurrentJ,o_Op1_Jrms,o_Op2_Jrms,o_Op3_Jrms,o_Op1_ipk,o_Op2_ipk,o_Op3_ipk,o_Op1_ShaftToruqe,o_Op2_ShaftToruqe,o_Op3_ShaftToruqe,o_Wh_Loss,o_Wh_Shaft,o_Wh_input,o_Op2_max_temp,o_Torque_Density,o_Weight_Act,o_Weight_Mag,o_Weight_Rot_Core,o_Weight_Stat_Core,o_Weight_Wdg,o_Active_Volume,o_Op1_copper_area,o_Op2_copper_area,o_Op3_copper_area=fun_output_define()
         
-
 
 
