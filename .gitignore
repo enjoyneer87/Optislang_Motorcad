@@ -1,17 +1,24 @@
 IPM_HDEV_2/MCAD/
 IPM_HDEV_2/OPD/
-**/OPD/
+**/Motor
 **/MCAD/
 *.zip
 *.bak
 **/backup/
 **/MessageLogs/
 **/Matlab
+*.dat
 *.mot
 *.zip
 **/IPM using Integrated Export/
+
+%% Resulst
 **/MCAD/
-**/OPD/
+**/MotorLAB_drivecycledata/
+**/MotorLAB_elecdata/
+**/FEResultsData/
+**/DutyCycleData/**
+
 /MotorCAD_code2
 /transientResults/
 /Rotem_HDEV/
@@ -19,6 +26,11 @@ IPM_HDEV_2/OPD/
 /HDEV_Thesis1/
 **/backup/
 **/Matlab/
-
+*LabTemp_ExternalCircuit*
 optislang_wks.code-workspace
 HDEV_Code3/PYTHON/HDEV_ob2o22i20si1f1.py
+**/Lab/LabTemp_ExternalCircuit
+*.opf_utosave
+*.opx
+
+*.png
