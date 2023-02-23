@@ -1,0 +1,162 @@
+---------------------------------------------------------------------------------------
+Number of samples:   512
+---------------------------------------------------------------------------------------
+Parameter name      Parameter range                 Sampling bounds
+i_Stator_OD
+                    [360 / 440]                     [360.067 / 439.933] 
+i_Tooth_Width_Ratio
+                    [0.54 / 0.66]                   [0.5401 / 0.6599] 
+i_Split_Ratio
+                    [0.63 / 0.77]                   [0.630117 / 0.769883] 
+i_Slot_Op_Ratio
+                    [0.72 / 0.88]                   [0.720133 / 0.879867] 
+i_Active_Length
+                    [117 / 143]                     [117.022 / 142.978] 
+L2_Web_Thickness
+                    [0.621 / 0.759]                 [0.621345 / 0.758885] 
+L2_Web_Length
+                    [0.0576 / 0.0704]               [0.0576107 / 0.070368] 
+L2_Pole_Arc
+                    [0.225 / 0.275]                 [0.225042 / 0.274958] 
+L2_Magnet_Thickness
+                    [4.86 / 5.94]                   [4.8609 / 5.9373] 
+L2_Magnet_Separation
+                    [-1 / 1]                        [-0.998333 / 0.998333] 
+L2_Magnet_Segments
+                    [0.9 / 1.1]                     [0.900167 / 1.09983] 
+L2_Magnet_Post
+                    [-1 / 1]                        [-0.998333 / 0.998333] 
+L2_Magnet_Bar_Width
+                    [0.72 / 0.88]                   [0.7204 / 0.879867] 
+L2_Bridge_Thickness
+                    [1.35 / 1.65]                   [1.35025 / 1.64975] 
+L1_Web_Thickness
+                    [0.135 / 0.165]                 [0.135075 / 0.164975] 
+L1_Web_Length
+                    [0.0936 / 0.1144]               [0.0936173 / 0.114383] 
+L1_Pole_V_angle
+                    [100.8 / 123.2]                 [100.819 / 123.181] 
+L1_Pole_Arc
+                    [0.81 / 0.99]                   [0.81015 / 0.98985] 
+L1_Magnet_Thickness
+                    [4.68 / 5.72]                   [4.68087 / 5.71913] 
+L1_Magnet_Separation
+                    [5.58 / 6.82]                   [5.58103 / 6.81897] 
+L1_Magnet_Segments
+                    [0.9 / 1.1]                     [0.900167 / 1.09983] 
+L1_Magnet_Post
+                    [1.35 / 1.65]                   [1.35025 / 1.64975] 
+L1_Magnet_Bar_Width
+                    [0.828 / 1.012]                 [0.828153 / 0.999887] 
+L1_Bridge_Thickness
+                    [1.62 / 1.98]                   [1.6203 / 1.9797] 
+i_YtoT
+                    [2.25 / 2.75]                   [2.25125 / 2.74958] 
+i_TurnLab
+                    [9.9 / 12.1]                    [9.90183 / 12.0982] 
+---------------------------------------------------------------------------------------
+ 
+Response                Model                                                 No. parameter No. coefficients          CoD adjusted           CoP
+o_Maxtorque         Linear Regression of order 1 (no mixed terms)                6               7                 0.960         0.959
+o_LabCurrentJ       Linear Regression of order 1 (no mixed terms)                3               4                 0.990         0.989
+o_LabCurrentJ       Linear Regression of order 1 (with mixed terms, BoxCox)      3               7                 0.999         0.999
+o_LabCurrentJ       Linear Regression of order 2 (with mixed terms)              3              10                 1.000         1.000
+o_Op1_Jrms          Linear Regression of order 1 (no mixed terms)                4               5                 0.965         0.964
+o_Op2_max_temp      Linear Regression of order 1 (no mixed terms)                5               6                 0.916         0.913
+o_Op1_Jrms          Linear Regression of order 1 (no mixed terms, BoxCox)        4               5                 0.979         0.979
+o_Op2_max_temp      Linear Regression of order 1 (no mixed terms, BoxCox)        6               7                 0.974         0.974
+o_TorqueVolumeDensity Linear Regression of order 1 (no mixed terms)                9              10                 0.963         0.962
+o_TorqueVolumeDensity Linear Regression of order 1 (with mixed terms)              9              46                 0.974         0.971
+o_Op1_Jrms          Linear Regression of order 2 (no mixed terms, BoxCox)        4               9                 0.979         0.979
+o_TorqueVolumeDensity Linear Regression of order 2 (with mixed terms)              9              55                 0.980         0.977
+o_Op2_max_temp      Linear Regression of order 2 (no mixed terms, BoxCox)        6              13                 0.980         0.979
+o_Maxtorque         Linear Regression of order 1 (with mixed terms)              6              22                 0.965         0.962
+o_Maxtorque         Linear Regression of order 2 (no mixed terms)                6              13                 0.961         0.960
+o_TorqueVolumeDensity Moving Least Squares of order 1 (exponential weight)         9              10                 0.975         0.970
+o_Op1_Jrms          Moving Least Squares of order 1 (exponential weight)         4               5                 0.978         0.976
+o_Maxtorque         Moving Least Squares of order 1 (exponential weight)         6               7                 0.965         0.962
+o_Op2_max_temp      Moving Least Squares of order 1 (exponential weight, BoxCox) 6               7                 0.975         0.973
+o_Op1_Jrms          Moving Least Squares of order 2 (exponential weight)         4               9                 0.981         0.979
+o_Op1_Jrms          Kriging (isotropic kernel)                                   4               1                 0.981         0.980
+o_Weight_Act        Linear Regression of order 1 (no mixed terms)                2               3                 0.996         0.996
+o_Weight_Act        Linear Regression of order 1 (with mixed terms)              2               4                 0.999         0.998
+o_Weight_Act        Linear Regression of order 2 (with mixed terms)              2               6                 0.999         0.999
+o_Wh_Loss           Linear Regression of order 1 (no mixed terms)                5               6                 0.911         0.909
+o_Wh_Loss           Linear Regression of order 1 (no mixed terms, BoxCox)        5               6                 0.936         0.935
+o_Wh_Loss           Linear Regression of order 2 (no mixed terms, BoxCox)        5              11                 0.945         0.943
+o_TorqueVolumeDensity Moving Least Squares of order 2 (exponential weight)         9              19                 0.978         0.973
+o_Maxtorque         Moving Least Squares of order 2 (exponential weight)         6              13                 0.966         0.963
+o_Op2_max_temp      Moving Least Squares of order 2 (exponential weight, BoxCox) 6              13                 0.980         0.978
+o_TorqueVolumeDensity Kriging (isotropic kernel)                                   9               1                 0.982         0.977
+o_Wh_Loss           Moving Least Squares of order 1 (exponential weight)         4               5                 0.931         0.924
+o_Maxtorque         Kriging (isotropic kernel)                                   6               1                 0.968         0.964
+o_Op2_max_temp      Kriging (isotropic kernel, BoxCox)                           6               1                 0.982         0.979
+o_Wh_Loss           Moving Least Squares of order 2 (exponential weight)         5              11                 0.947         0.941
+o_Wh_Loss           Kriging (isotropic kernel)                                   6               1                 0.960         0.954
+ 
+----------------------------------- Best Metamodels ----------------------------------- 
+ 
+Response                Model                                                 No. parameter No. coefficients          CoD adjusted           CoP
+o_LabCurrentJ         Linear Regression of order 1 (with mixed terms, BoxCox)      3               7                 0.999         0.999
+o_Maxtorque           Linear Regression of order 1 (no mixed terms)                6               7                 0.960         0.959
+o_Op1_Jrms            Linear Regression of order 1 (no mixed terms, BoxCox)        4               5                 0.979         0.979
+o_Op2_max_temp        Linear Regression of order 1 (no mixed terms, BoxCox)        6               7                 0.974         0.974
+o_TorqueVolumeDensity Linear Regression of order 1 (with mixed terms)              9              46                 0.974         0.971
+o_Weight_Act          Linear Regression of order 1 (no mixed terms)                2               3                 0.996         0.996
+o_Wh_Loss             Kriging (isotropic kernel)                                   6               1                 0.960         0.954
+ 
+---------------------------- Info String for Polynomials ---------------------------------- 
+ 
+Response: o_LabCurrentJ
+Model           | Order | Coefficients and transformation parameter                                                                                                                                            | Mainterm selection         | Interaction selection                                                                                                                                                                                                                                                                                                                 | CoP
+Linear Regression | 1 | ( 2.36737 -3.35446 1.36439 0.749988 0.636508 0.397248 -0.206351 ) | coordinate transformation : MinMax ( 0, 1 ) | value transformation : BoxCox (0.5, 1.124 , -9.36523 , 8.33208 )none | 01000000000000000000000011 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000100000000000000000000001 | 0.99869342390673566
+
+Response: o_Maxtorque
+Model           | Order | Coefficients and transformation parameter                                                                                                  | Mainterm selection         | Interaction selection | CoP
+Linear Regression | 1 | ( 822.259 298.339 67.1079 239.537 -63.9345 81.1669 67.7669 ) | coordinate transformation : MinMax ( 0, 1 ) | value transformation : nonenone | 01010000100000000000010011 |                       | 0.95900493453772362
+
+Response: o_Op1_Jrms
+Model           | Order | Coefficients and transformation parameter                                                                                                                          | Mainterm selection         | Interaction selection | CoP
+Linear Regression | 1 | ( 3.34779 -3.14302 1.01849 -0.826433 0.412706 ) | coordinate transformation : MinMax ( 0, 1 ) | value transformation : BoxCox (0.5, 0.8563 , -6.2762 , 7.32944 )none | 01000000000000000000010011 |                       | 0.97868186153885028
+
+Response: o_Op2_max_temp
+Model           | Order | Coefficients and transformation parameter                                                                                                                                                      | Mainterm selection         | Interaction selection | CoP
+Linear Regression | 1 | ( 2.52179 -2.34501 0.373399 -1.11339 0.790132 -0.345192 0.300165 ) | coordinate transformation : MinMax ( 0, 1 ) | value transformation : BoxCox (0.333333, 0.0868017 , -7.65541 , 88.1943 )none | 01010000100000000000010011 |                       | 0.97385804182788538
+
+Response: o_TorqueVolumeDensity
+Model           | Order | Coefficients and transformation parameter                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | Mainterm selection         | Interaction selection                                                                                                                                                                                                                                                                                                                 | CoP
+Linear Regression | 1 | ( 5.46144 4.36032 -1.27002 -0.757417 -1.08139 -0.914406 2.09211 -1.13209 -2.51907 -1.43978 0.346451 0.277983 0.0632619 -0.0383153 -0.302767 -0.482784 0.20132 0.52641 -0.00593251 0.0193383 0.308718 -0.112985 0.095611 -0.259591 -1.66694 0.111199 -0.25639 -0.701376 0.0967118 0.135423 -0.0715212 0.280246 -0.436281 0.157574 0.387821 -0.0696007 -0.358514 0.000402653 -0.0405662 0.0400841 0.897435 0.144283 0.415323 -0.0559453 0.000210047 -0.00932644 ) | coordinate transformation : MinMax ( 0, 1 ) | value transformation : BoxCox (1, -0.450613 , 37.2753 , 82.7214 )none | 01010001100001000110000011 | 0000100000000000000000101000010100010000000000000000000000000000000000000000000101000110000000000000000000000000000000000000000000000000010100011000010000101000110000100010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000101000110000100011000000101000110000100011000001 | 0.97063997806850066
+
+Response: o_Weight_Act
+Model           | Order | Coefficients and transformation parameter                                                                 | Mainterm selection         | Interaction selection | CoP
+Linear Regression | 1 | ( 79.8935 52.2271 20.2334 ) | coordinate transformation : MinMax ( 0, 1 ) | value transformation : nonenone | 00000000000000000000010001 |                       | 0.99590471060495478
+
+ 
+---------------------------- Relative frequency of importance ----------------------------- 
+ 
+i_Stator_OD:          100 %
+i_Tooth_Width_Ratio:  86 %
+i_Split_Ratio:        0 %
+i_Slot_Op_Ratio:      0 %
+i_Active_Length:      71 %
+L2_Web_Thickness:     0 %
+L2_Web_Length:        0 %
+L2_Pole_Arc:          14 %
+L2_Magnet_Thickness:  14 %
+L2_Magnet_Separation: 0 %
+L2_Magnet_Segments:   0 %
+L2_Magnet_Post:       0 %
+L2_Magnet_Bar_Width:  14 %
+L2_Bridge_Thickness:  0 %
+L1_Web_Thickness:     0 %
+L1_Web_Length:        0 %
+L1_Pole_V_angle:      14 %
+L1_Pole_Arc:          57 %
+L1_Magnet_Thickness:  14 %
+L1_Magnet_Separation: 0 %
+L1_Magnet_Segments:   0 %
+L1_Magnet_Post:       0 %
+L1_Magnet_Bar_Width:  57 %
+L1_Bridge_Thickness:  0 %
+i_YtoT:               71 %
+i_TurnLab:            0 %

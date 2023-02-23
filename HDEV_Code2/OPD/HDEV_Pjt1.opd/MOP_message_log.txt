@@ -1,0 +1,1196 @@
+2023-Feb-07 14:10:14.637560: DEBUG: ===================== Build Subspaces =====================
+2023-Feb-07 14:10:14.638596: DEBUG: Importance info 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+2023-Feb-07 14:10:14.639555: DEBUG: Maximum input correlation 0.0272588
+2023-Feb-07 14:10:14.640568: DEBUG: Number of active inputs 21
+2023-Feb-07 14:10:14.640568: DEBUG: ===================== Evaluate Metamodels =====================
+2023-Feb-07 14:10:14.641497: DEBUG:  Ranges Input 0 117.032 142.968
+2023-Feb-07 14:10:14.641497: DEBUG:  Ranges Input 1 0.500375 0.799625
+2023-Feb-07 14:10:14.641497: DEBUG: ===================== Build Subspaces =====================
+2023-Feb-07 14:10:14.641497: DEBUG:  Ranges Input 2 0.660138 0.769863
+2023-Feb-07 14:10:14.642546: DEBUG: Importance info 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+2023-Feb-07 14:10:14.642546: DEBUG:  Ranges Input 3 360.1 439.9
+2023-Feb-07 14:10:14.642546: DEBUG:  Ranges Input 4 0.500562 0.649813
+2023-Feb-07 14:10:14.643491: DEBUG:  Ranges Input 5 1.50062 1.99938
+2023-Feb-07 14:10:14.643491: DEBUG:  Ranges Input 6 0.800125 0.899875
+2023-Feb-07 14:10:14.643491: DEBUG:  Ranges Input 7 1.50062 1.99938
+2023-Feb-07 14:10:14.643491: DEBUG: Maximum input correlation 0.0272588
+2023-Feb-07 14:10:14.644489: DEBUG:  Ranges Input 8 1.00875 7.99125
+2023-Feb-07 14:10:14.644489: DEBUG: Number of active inputs 21
+2023-Feb-07 14:10:14.644489: DEBUG:  Ranges Input 9 4.00375 6.99625
+2023-Feb-07 14:10:14.644489: DEBUG:  Ranges Input 10 0.5005 0.8995
+2023-Feb-07 14:10:14.644489: DEBUG: ===================== Evaluate Metamodels =====================
+2023-Feb-07 14:10:14.645578: DEBUG:  Ranges Input 11 90.05 129.95
+2023-Feb-07 14:10:14.645578: DEBUG:  Ranges Input 0 117.032 142.968
+2023-Feb-07 14:10:14.646568: DEBUG: ===================== Build Subspaces =====================
+2023-Feb-07 14:10:14.646568: DEBUG:  Ranges Input 12 0.10075 0.69925
+2023-Feb-07 14:10:14.646568: DEBUG: Importance info 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+2023-Feb-07 14:10:14.646568: DEBUG:  Ranges Input 1 0.500375 0.799625
+2023-Feb-07 14:10:14.647481: DEBUG:  Ranges Input 13 0.200875 0.899125
+2023-Feb-07 14:10:14.647481: DEBUG:  Ranges Input 2 0.660138 0.769863
+2023-Feb-07 14:10:14.647481: DEBUG:  Ranges Input 14 1.50062 1.99938
+2023-Feb-07 14:10:14.647481: DEBUG:  Ranges Input 3 360.1 439.9
+2023-Feb-07 14:10:14.647481: DEBUG:  Ranges Input 15 0.2407 0.7993
+2023-Feb-07 14:10:14.648478: DEBUG:  Ranges Input 4 0.500562 0.649813
+2023-Feb-07 14:10:14.648478: DEBUG:  Ranges Input 16 4.00375 6.99625
+2023-Feb-07 14:10:14.648478: DEBUG: Maximum input correlation 0.0272588
+2023-Feb-07 14:10:14.648478: DEBUG:  Ranges Input 5 1.50062 1.99938
+2023-Feb-07 14:10:14.649477: DEBUG: ===================== Build Subspaces =====================
+2023-Feb-07 14:10:14.649477: DEBUG: Number of active inputs 21
+2023-Feb-07 14:10:14.649477: DEBUG:  Ranges Input 6 0.800125 0.899875
+2023-Feb-07 14:10:14.649477: DEBUG:  Ranges Input 17 0.350562 0.798312
+2023-Feb-07 14:10:14.650474: DEBUG: Importance info 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+2023-Feb-07 14:10:14.650474: DEBUG:  Ranges Input 7 1.50062 1.99938
+2023-Feb-07 14:10:14.650474: DEBUG:  Ranges Input 18 0.10225 0.69925
+2023-Feb-07 14:10:14.651471: DEBUG: ===================== Evaluate Metamodels =====================
+2023-Feb-07 14:10:14.651471: DEBUG:  Ranges Input 8 1.00875 7.99125
+2023-Feb-07 14:10:14.651471: DEBUG:  Ranges Input 19 2.25062 2.74938
+2023-Feb-07 14:10:14.652472: DEBUG:  Ranges Input 0 117.032 142.968
+2023-Feb-07 14:10:14.652472: DEBUG:  Ranges Input 9 4.00375 6.99625
+2023-Feb-07 14:10:14.652472: DEBUG: Maximum input correlation 0.0272588
+2023-Feb-07 14:10:14.652472: DEBUG:  Ranges Input 20 1575.44 1924.56
+2023-Feb-07 14:10:14.653466: DEBUG:  Ranges Input 1 0.500375 0.799625
+2023-Feb-07 14:10:14.653466: DEBUG:  Ranges Input 10 0.5005 0.8995
+2023-Feb-07 14:10:14.653466: DEBUG: Number of active inputs 21
+2023-Feb-07 14:10:14.654463: DEBUG: Supports per subset 39 39 39 39 39 39 39 39 38 38
+2023-Feb-07 14:10:14.654463: DEBUG: number CV subsets 10 maximum point number 39
+2023-Feb-07 14:10:14.654463: DEBUG:  Ranges Input 11 90.05 129.95
+2023-Feb-07 14:10:14.655461: DEBUG:  Ranges Input 2 0.660138 0.769863
+2023-Feb-07 14:10:14.655461: DEBUG:  Ranges Input 3 360.1 439.9
+2023-Feb-07 14:10:14.655461: DEBUG: Maximum basis terms 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387
+2023-Feb-07 14:10:14.656578: DEBUG: ===================== Evaluate Metamodels =====================
+2023-Feb-07 14:10:14.656578: DEBUG:  Ranges Input 12 0.10075 0.69925
+2023-Feb-07 14:10:14.656578: DEBUG:  Ranges Input 4 0.500562 0.649813
+2023-Feb-07 14:10:14.657551: DEBUG:  
+2023-Feb-07 14:10:14.657551: DEBUG:  Ranges Input 0 117.032 142.968
+2023-Feb-07 14:10:14.657551: DEBUG:  Ranges Input 13 0.200875 0.899125
+2023-Feb-07 14:10:14.657551: DEBUG:  Ranges Input 5 1.50062 1.99938
+2023-Feb-07 14:10:14.658452: DEBUG:  ********** Testing polynomials *************** 
+2023-Feb-07 14:10:14.658452: DEBUG:  Ranges Input 1 0.500375 0.799625
+2023-Feb-07 14:10:14.658452: DEBUG:  Ranges Input 14 1.50062 1.99938
+2023-Feb-07 14:10:14.659449: DEBUG:  Ranges Input 6 0.800125 0.899875
+2023-Feb-07 14:10:14.659449: DEBUG:  
+2023-Feb-07 14:10:14.659449: DEBUG:  Ranges Input 2 0.660138 0.769863
+2023-Feb-07 14:10:14.659449: DEBUG:  Ranges Input 15 0.2407 0.7993
+2023-Feb-07 14:10:14.659449: DEBUG:  Ranges Input 7 1.50062 1.99938
+2023-Feb-07 14:10:14.660546: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:14.660546: DEBUG:  Ranges Input 3 360.1 439.9
+2023-Feb-07 14:10:14.660546: DEBUG:  Ranges Input 16 4.00375 6.99625
+2023-Feb-07 14:10:14.661444: DEBUG:  Ranges Input 8 1.00875 7.99125
+2023-Feb-07 14:10:14.661444: DEBUG:  Ranges Input 4 0.500562 0.649813
+2023-Feb-07 14:10:14.661444: DEBUG:  Ranges Input 17 0.350562 0.798312
+2023-Feb-07 14:10:14.661444: DEBUG:  Ranges Input 9 4.00375 6.99625
+2023-Feb-07 14:10:14.661444: DEBUG:  Ranges Input 5 1.50062 1.99938
+2023-Feb-07 14:10:14.662442: DEBUG:  Ranges Input 18 0.10225 0.69925
+2023-Feb-07 14:10:14.662442: DEBUG:  Ranges Input 10 0.5005 0.8995
+2023-Feb-07 14:10:14.662442: DEBUG: Polynomial: Order 1 Complexity 0 R2adj 0.885341 R2CV 0.870771 error 0.136644 numCoeff 22 boxcox 0 lambda 1 subspace 0
+2023-Feb-07 14:10:14.662442: DEBUG:  Ranges Input 11 90.05 129.95
+2023-Feb-07 14:10:14.662442: DEBUG:  Ranges Input 19 2.25062 2.74938
+2023-Feb-07 14:10:14.663439: DEBUG:  Ranges Input 6 0.800125 0.899875
+2023-Feb-07 14:10:14.663439: DEBUG:  Ranges Input 12 0.10075 0.69925
+2023-Feb-07 14:10:14.663439: DEBUG:  Ranges Input 7 1.50062 1.99938
+2023-Feb-07 14:10:14.663439: DEBUG:  Ranges Input 20 1575.44 1924.56
+2023-Feb-07 14:10:14.664436: DEBUG:  Ranges Input 13 0.200875 0.899125
+2023-Feb-07 14:10:14.664436: DEBUG:  Ranges Input 8 1.00875 7.99125
+2023-Feb-07 14:10:14.664436: DEBUG: Supports per subset 39 39 39 39 39 39 39 39 38 38
+2023-Feb-07 14:10:14.665434: DEBUG:  Ranges Input 14 1.50062 1.99938
+2023-Feb-07 14:10:14.665434: DEBUG:  Ranges Input 9 4.00375 6.99625
+2023-Feb-07 14:10:14.666433: DEBUG: number CV subsets 10 maximum point number 39
+2023-Feb-07 14:10:14.666433: DEBUG:  Ranges Input 15 0.2407 0.7993
+2023-Feb-07 14:10:14.666433: DEBUG: Polynomial: Order 1 Complexity 1 R2adj 0.896093 R2CV 0.884101 error 0.122884 numCoeff 22 boxcox 1 lambda 0.5 subspace 1
+2023-Feb-07 14:10:14.667429: DEBUG:  Ranges Input 10 0.5005 0.8995
+2023-Feb-07 14:10:14.667429: DEBUG:  Ranges Input 16 4.00375 6.99625
+2023-Feb-07 14:10:14.667429: DEBUG: Maximum basis terms 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387
+2023-Feb-07 14:10:14.668426: DEBUG:  Ranges Input 11 90.05 129.95
+2023-Feb-07 14:10:14.668426: DEBUG:  Ranges Input 17 0.350562 0.798312
+2023-Feb-07 14:10:14.668426: DEBUG:  
+2023-Feb-07 14:10:14.668426: DEBUG:  Ranges Input 12 0.10075 0.69925
+2023-Feb-07 14:10:14.669437: DEBUG:  Ranges Input 18 0.10225 0.69925
+2023-Feb-07 14:10:14.669437: DEBUG:  ********** Testing polynomials *************** 
+2023-Feb-07 14:10:14.669437: DEBUG:  Ranges Input 13 0.200875 0.899125
+2023-Feb-07 14:10:14.669437: DEBUG:  Ranges Input 19 2.25062 2.74938
+2023-Feb-07 14:10:14.670420: DEBUG:  
+2023-Feb-07 14:10:14.670420: DEBUG:  Ranges Input 14 1.50062 1.99938
+2023-Feb-07 14:10:14.670420: DEBUG:  Ranges Input 20 1575.44 1924.56
+2023-Feb-07 14:10:14.670420: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:14.670420: DEBUG: Supports per subset 39 39 39 39 39 39 39 39 38 38
+2023-Feb-07 14:10:14.670420: DEBUG:  Ranges Input 15 0.2407 0.7993
+2023-Feb-07 14:10:14.671418: DEBUG: number CV subsets 10 maximum point number 39
+2023-Feb-07 14:10:14.671418: DEBUG:  Ranges Input 16 4.00375 6.99625
+2023-Feb-07 14:10:14.671418: DEBUG:  Ranges Input 17 0.350562 0.798312
+2023-Feb-07 14:10:14.671418: DEBUG: Maximum basis terms 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387
+2023-Feb-07 14:10:14.672415: DEBUG:  Ranges Input 18 0.10225 0.69925
+2023-Feb-07 14:10:14.672415: DEBUG:  
+2023-Feb-07 14:10:14.672415: DEBUG: Polynomial: Order 1 Complexity 0 R2adj 0.468619 R2CV 0.406642 error 0.627403 numCoeff 22 boxcox 0 lambda 1 subspace 0
+2023-Feb-07 14:10:14.672415: DEBUG:  Ranges Input 19 2.25062 2.74938
+2023-Feb-07 14:10:14.672415: DEBUG:  ********** Testing polynomials *************** 
+2023-Feb-07 14:10:14.673412: DEBUG:  Ranges Input 20 1575.44 1924.56
+2023-Feb-07 14:10:14.673412: DEBUG:  
+2023-Feb-07 14:10:14.673412: DEBUG: Polynomial: Order 2 Complexity 2 R2adj 0.918523 R2CV 0.89367 error 0.119275 numCoeff 43 boxcox 1 lambda 1 subspace 2
+2023-Feb-07 14:10:14.673412: DEBUG: Supports per subset 39 39 39 39 39 39 39 39 38 38
+2023-Feb-07 14:10:14.673412: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:14.674409: DEBUG: Not enough supports 388 for coefficients 232
+2023-Feb-07 14:10:14.674409: DEBUG: number CV subsets 10 maximum point number 39
+2023-Feb-07 14:10:14.674409: DEBUG: Not enough supports 388 for coefficients 253
+2023-Feb-07 14:10:14.674409: DEBUG: Not enough supports 388 for coefficients 253
+2023-Feb-07 14:10:14.674409: DEBUG: Maximum basis terms 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387
+2023-Feb-07 14:10:14.675407: DEBUG:  
+2023-Feb-07 14:10:14.675407: DEBUG:  
+2023-Feb-07 14:10:14.675407: DEBUG:  ********** Extract polynomials *************** 
+2023-Feb-07 14:10:14.675407: DEBUG: Polynomial: Order 1 Complexity 1 R2adj 0.521616 R2CV 0.47585 error 0.555742 numCoeff 22 boxcox 1 lambda 0.5 subspace 1
+2023-Feb-07 14:10:14.676405: DEBUG:  ********** Testing polynomials *************** 
+2023-Feb-07 14:10:14.676405: DEBUG: Polynomial: Order 1 Complexity 0 R2adj 0.867193 R2CV 0.851058 error 0.157488 numCoeff 22 boxcox 0 lambda 1 subspace 0
+2023-Feb-07 14:10:14.676405: DEBUG:  
+2023-Feb-07 14:10:14.676405: DEBUG:  
+2023-Feb-07 14:10:14.676405: DEBUG: InitialSubspace: R2adj 0.878763 R2CVfull 0.870771 numcoeff 22 error 0.136644 selection 111111111111111111111
+2023-Feb-07 14:10:14.677402: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:14.678399: DEBUG: Polynomial: Order 1 Complexity 0 R2adj 0.929892 R2CV 0.921466 error 0.0830396 numCoeff 22 boxcox 0 lambda 1 subspace 0
+2023-Feb-07 14:10:14.679396: DEBUG: Polynomial: Order 1 Complexity 1 R2adj 0.879914 R2CV 0.860506 error 0.147901 numCoeff 22 boxcox 1 lambda 0.5 subspace 1
+2023-Feb-07 14:10:14.680393: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:14.680393: DEBUG:  
+2023-Feb-07 14:10:14.681390: DEBUG: InitialSubspace: R2adj 0.890132 R2CVfull 0.884101 numcoeff 22 error 0.122884 selection 111111111111111111111
+2023-Feb-07 14:10:14.681390: DEBUG: Polynomial: Order 1 Complexity 0 R2adj 0.929892 R2CV 0.921466 error 0.0830396 numCoeff 22 boxcox 1 lambda 1 subspace 1
+2023-Feb-07 14:10:14.682388: DEBUG: Polynomial: Order 2 Complexity 2 R2adj 0.599913 R2CV 0.520814 error 0.539084 numCoeff 43 boxcox 1 lambda 0.5 subspace 2
+2023-Feb-07 14:10:14.682388: DEBUG: Not enough supports 388 for coefficients 232
+2023-Feb-07 14:10:14.682388: DEBUG: Not enough supports 388 for coefficients 253
+2023-Feb-07 14:10:14.683385: DEBUG: Not enough supports 388 for coefficients 253
+2023-Feb-07 14:10:14.683385: DEBUG:  
+2023-Feb-07 14:10:14.683385: DEBUG:  ********** Extract polynomials *************** 
+2023-Feb-07 14:10:14.684382: DEBUG:  
+2023-Feb-07 14:10:14.684382: DEBUG: InitialSubspace: R2adj 0.43813 R2CVfull 0.406642 numcoeff 22 error 0.627403 selection 111111111111111111111
+2023-Feb-07 14:10:14.684382: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:14.685379: DEBUG:  
+2023-Feb-07 14:10:14.685379: DEBUG: Polynomial: Order 2 Complexity 2 R2adj 0.92336 R2CV 0.897097 error 0.115765 numCoeff 43 boxcox 1 lambda 0.5 subspace 2
+2023-Feb-07 14:10:14.686377: DEBUG: InitialSubspace: R2adj 0.908604 R2CVfull 0.89367 numcoeff 43 error 0.119275 selection 111111111111111111111
+2023-Feb-07 14:10:14.686377: DEBUG: Not enough supports 388 for coefficients 232
+2023-Feb-07 14:10:14.686377: DEBUG: Not enough supports 388 for coefficients 253
+2023-Feb-07 14:10:14.686377: DEBUG: Not enough supports 388 for coefficients 253
+2023-Feb-07 14:10:14.687374: DEBUG:  
+2023-Feb-07 14:10:14.687374: DEBUG:  ********** Extract polynomials *************** 
+2023-Feb-07 14:10:14.687374: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:14.687374: DEBUG:  
+2023-Feb-07 14:10:14.688372: DEBUG: Polynomial: Order 2 Complexity 2 R2adj 0.937129 R2CV 0.921183 error 0.0884126 numCoeff 43 boxcox 1 lambda 1 subspace 2
+2023-Feb-07 14:10:14.688372: DEBUG: InitialSubspace: R2adj 0.859573 R2CVfull 0.851058 numcoeff 22 error 0.157488 selection 111111111111111111111
+2023-Feb-07 14:10:14.688372: DEBUG:  
+2023-Feb-07 14:10:14.688372: DEBUG: Not enough supports 388 for coefficients 232
+2023-Feb-07 14:10:14.688372: DEBUG: InitialSubspace: R2adj 0.494168 R2CVfull 0.47585 numcoeff 22 error 0.555742 selection 111111111111111111111
+2023-Feb-07 14:10:14.689370: DEBUG: Not enough supports 388 for coefficients 253
+2023-Feb-07 14:10:14.689370: DEBUG: Not enough supports 388 for coefficients 253
+2023-Feb-07 14:10:14.689370: DEBUG:  
+2023-Feb-07 14:10:14.689370: DEBUG:  ********** Extract polynomials *************** 
+2023-Feb-07 14:10:14.690368: DEBUG:  
+2023-Feb-07 14:10:14.690368: DEBUG: InitialSubspace: R2adj 0.925869 R2CVfull 0.921466 numcoeff 22 error 0.0830396 selection 111111111111111111111
+2023-Feb-07 14:10:14.691364: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:14.692361: DEBUG:  
+2023-Feb-07 14:10:14.692361: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:14.692361: DEBUG: InitialSubspace: R2adj 0.873023 R2CVfull 0.860506 numcoeff 22 error 0.147901 selection 111111111111111111111
+2023-Feb-07 14:10:14.693358: DEBUG:  
+2023-Feb-07 14:10:14.694356: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:14.694356: DEBUG: InitialSubspace: R2adj 0.551207 R2CVfull 0.520814 numcoeff 43 error 0.539084 selection 111111111111111111111
+2023-Feb-07 14:10:14.695354: DEBUG:  
+2023-Feb-07 14:10:14.695354: DEBUG: InitialSubspace: R2adj 0.929475 R2CVfull 0.921183 numcoeff 43 error 0.0884126 selection 111111111111111111111
+2023-Feb-07 14:10:14.696351: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:14.697348: DEBUG:  
+2023-Feb-07 14:10:14.697348: DEBUG: InitialSubspace: R2adj 0.91403 R2CVfull 0.897097 numcoeff 43 error 0.115765 selection 111111111111111111111
+2023-Feb-07 14:10:14.698345: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:14.699343: DEBUG:  
+2023-Feb-07 14:10:14.699343: DEBUG: Best CoP 0.89367 best error 0.119275 complexity 2 position 2
+2023-Feb-07 14:10:14.699343: DEBUG: Search for simpler model with minimum CoP 0.870725
+2023-Feb-07 14:10:14.700340: DEBUG: Best reduced CoP 0.884101 complexity 1
+2023-Feb-07 14:10:14.700340: DEBUG:  
+2023-Feb-07 14:10:14.700340: DEBUG:  ********** Testing MLS *************** 
+2023-Feb-07 14:10:14.701337: DEBUG:  
+2023-Feb-07 14:10:14.701337: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:14.706324: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:14.707321: DEBUG:  
+2023-Feb-07 14:10:14.707321: DEBUG: Best CoP 0.520814 best error 0.539084 complexity 2 position 2
+2023-Feb-07 14:10:14.707321: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:14.708319: DEBUG: Search for simpler model with minimum CoP 0.450916
+2023-Feb-07 14:10:14.708319: DEBUG:  
+2023-Feb-07 14:10:14.708319: DEBUG: Best reduced CoP 0.520814 complexity 2
+2023-Feb-07 14:10:14.708319: DEBUG: Best CoP 0.921466 best error 0.0830396 complexity 0 position 0
+2023-Feb-07 14:10:14.708319: DEBUG:  
+2023-Feb-07 14:10:14.708319: DEBUG: Search for simpler model with minimum CoP 0.90696
+2023-Feb-07 14:10:14.709316: DEBUG:  ********** Testing MLS *************** 
+2023-Feb-07 14:10:14.709316: DEBUG: Best reduced CoP 0.921466 complexity 0
+2023-Feb-07 14:10:14.709316: DEBUG:  
+2023-Feb-07 14:10:14.709316: DEBUG:  
+2023-Feb-07 14:10:14.709316: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:14.709316: DEBUG:  ********** Testing MLS *************** 
+2023-Feb-07 14:10:14.710314: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:14.710314: DEBUG:  
+2023-Feb-07 14:10:14.710314: DEBUG:  
+2023-Feb-07 14:10:14.710314: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:14.711311: DEBUG: Best CoP 0.897097 best error 0.115765 complexity 2 position 2
+2023-Feb-07 14:10:14.711311: DEBUG: Search for simpler model with minimum CoP 0.874235
+2023-Feb-07 14:10:14.711311: DEBUG: Best reduced CoP 0.897097 complexity 2
+2023-Feb-07 14:10:14.711311: DEBUG:  
+2023-Feb-07 14:10:14.712309: DEBUG:  ********** Testing MLS *************** 
+2023-Feb-07 14:10:14.712309: DEBUG:  
+2023-Feb-07 14:10:14.712309: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:16.864569: DEBUG: MLS: Order 1 Complexity 11 R2adj 0.898867 R2CV 0.885367 error 0.121876 numCoeff 22 boxcox 1 lambda 0.5 subspace 0
+2023-Feb-07 14:10:16.867561: DEBUG: MLS: Order 1 Complexity 11 R2adj 0.81257 R2CV 0.787449 error 0.225981 numCoeff 22 boxcox 1 lambda 0.5 subspace 0
+2023-Feb-07 14:10:16.869556: DEBUG: MLS: Order 1 Complexity 11 R2adj 0.915497 R2CV 0.903279 error 0.102832 numCoeff 22 boxcox 1 lambda 0.5 subspace 0
+2023-Feb-07 14:10:16.872548: DEBUG: MLS: Order 1 Complexity 11 R2adj 0.531731 R2CV 0.480471 error 0.552356 numCoeff 22 boxcox 1 lambda 0.5 subspace 0
+2023-Feb-07 14:10:19.021052: DEBUG: MLS: Order 1 Complexity 11 R2adj 0.870414 R2CV 0.852431 error 0.156464 numCoeff 22 boxcox 0 lambda 1 subspace 1
+2023-Feb-07 14:10:19.026984: DEBUG: MLS: Order 1 Complexity 11 R2adj 0.888429 R2CV 0.872296 error 0.135401 numCoeff 22 boxcox 0 lambda 1 subspace 1
+2023-Feb-07 14:10:19.046931: DEBUG: MLS: Order 1 Complexity 11 R2adj 0.48166 R2CV 0.412355 error 0.623065 numCoeff 22 boxcox 0 lambda 1 subspace 1
+2023-Feb-07 14:10:19.208499: DEBUG: MLS: Order 1 Complexity 11 R2adj 0.931657 R2CV 0.922226 error 0.0824621 numCoeff 22 boxcox 0 lambda 1 subspace 1
+2023-Feb-07 14:10:24.525282: DEBUG: MLS: Order 2 Complexity 12 R2adj 0.917587 R2CV 0.890752 error 0.123262 numCoeff 43 boxcox 1 lambda 0.5 subspace 2
+2023-Feb-07 14:10:24.525282: DEBUG:  
+2023-Feb-07 14:10:24.526280: DEBUG:  ********** Extract MLS *************** 
+2023-Feb-07 14:10:24.526280: DEBUG:  
+2023-Feb-07 14:10:24.526280: DEBUG: InitialSubspace: R2adj 0.893065 R2CVfull 0.885367 numcoeff 22 error 0.121876 selection 111111111111111111111
+2023-Feb-07 14:10:24.579139: DEBUG: MLS: Order 2 Complexity 12 R2adj 0.901733 R2CV 0.870355 error 0.145851 numCoeff 43 boxcox 0 lambda 1 subspace 2
+2023-Feb-07 14:10:24.579139: DEBUG:  
+2023-Feb-07 14:10:24.579139: DEBUG:  ********** Extract MLS *************** 
+2023-Feb-07 14:10:24.580136: DEBUG:  
+2023-Feb-07 14:10:24.580136: DEBUG: InitialSubspace: R2adj 0.862979 R2CVfull 0.852431 numcoeff 22 error 0.156464 selection 111111111111111111111
+2023-Feb-07 14:10:24.660919: DEBUG: MLS: Order 2 Complexity 12 R2adj 0.613153 R2CV 0.525039 error 0.535889 numCoeff 43 boxcox 1 lambda 0.5 subspace 2
+2023-Feb-07 14:10:24.661925: DEBUG:  
+2023-Feb-07 14:10:24.661925: DEBUG:  ********** Extract MLS *************** 
+2023-Feb-07 14:10:24.661925: DEBUG:  
+2023-Feb-07 14:10:24.662914: DEBUG: InitialSubspace: R2adj 0.504863 R2CVfull 0.480471 numcoeff 22 error 0.552356 selection 111111111111111111111
+2023-Feb-07 14:10:24.674882: DEBUG: MLS: Order 2 Complexity 12 R2adj 0.939572 R2CV 0.92199 error 0.0877607 numCoeff 43 boxcox 0 lambda 1 subspace 2
+2023-Feb-07 14:10:24.675880: DEBUG:  
+2023-Feb-07 14:10:24.675880: DEBUG:  ********** Extract MLS *************** 
+2023-Feb-07 14:10:24.675880: DEBUG:  
+2023-Feb-07 14:10:24.676878: DEBUG: InitialSubspace: R2adj 0.927735 R2CVfull 0.922226 numcoeff 22 error 0.0824621 selection 111111111111111111111
+2023-Feb-07 14:10:25.325150: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:25.326147: DEBUG:  
+2023-Feb-07 14:10:25.326147: DEBUG: InitialSubspace: R2adj 0.907554 R2CVfull 0.890752 numcoeff 43 error 0.123262 selection 111111111111111111111
+2023-Feb-07 14:10:25.379006: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:25.380003: DEBUG:  
+2023-Feb-07 14:10:25.380003: DEBUG: InitialSubspace: R2adj 0.88977 R2CVfull 0.870355 numcoeff 43 error 0.145851 selection 111111111111111111111
+2023-Feb-07 14:10:25.468766: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:25.468766: DEBUG:  
+2023-Feb-07 14:10:25.469763: DEBUG: InitialSubspace: R2adj 0.566059 R2CVfull 0.525039 numcoeff 43 error 0.535889 selection 111111111111111111111
+2023-Feb-07 14:10:25.476745: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:25.476745: DEBUG:  
+2023-Feb-07 14:10:25.477743: DEBUG: InitialSubspace: R2adj 0.932215 R2CVfull 0.92199 numcoeff 43 error 0.0877607 selection 111111111111111111111
+2023-Feb-07 14:10:27.483374: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:27.484372: DEBUG:  
+2023-Feb-07 14:10:27.484372: DEBUG: Best CoP 0.89367 best error 0.119275 complexity 2 position 2
+2023-Feb-07 14:10:27.484372: DEBUG: Search for simpler model with minimum CoP 0.870725
+2023-Feb-07 14:10:27.485369: DEBUG: Best reduced CoP 0.884101 complexity 1
+2023-Feb-07 14:10:27.485369: DEBUG:  
+2023-Feb-07 14:10:27.485369: DEBUG:  ********** Testing Kriging *************** 
+2023-Feb-07 14:10:27.485369: DEBUG:  ********** Isotropic Kriging *************** 
+2023-Feb-07 14:10:27.486366: DEBUG:  
+2023-Feb-07 14:10:27.486366: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:27.528309: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:27.529252: DEBUG:  
+2023-Feb-07 14:10:27.529252: DEBUG: Best CoP 0.897097 best error 0.115765 complexity 2 position 2
+2023-Feb-07 14:10:27.529252: DEBUG: Search for simpler model with minimum CoP 0.874235
+2023-Feb-07 14:10:27.529252: DEBUG: Best reduced CoP 0.897097 complexity 2
+2023-Feb-07 14:10:27.530249: DEBUG:  
+2023-Feb-07 14:10:27.530249: DEBUG:  ********** Testing Kriging *************** 
+2023-Feb-07 14:10:27.530249: DEBUG:  ********** Isotropic Kriging *************** 
+2023-Feb-07 14:10:27.530249: DEBUG:  
+2023-Feb-07 14:10:27.531246: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:27.623056: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:27.624114: DEBUG:  
+2023-Feb-07 14:10:27.624114: DEBUG: Best CoP 0.525039 best error 0.535889 complexity 12 position 4
+2023-Feb-07 14:10:27.624996: DEBUG: Search for simpler model with minimum CoP 0.454111
+2023-Feb-07 14:10:27.624996: DEBUG: Best reduced CoP 0.520814 complexity 2
+2023-Feb-07 14:10:27.624996: DEBUG:  
+2023-Feb-07 14:10:27.624996: DEBUG:  ********** Testing Kriging *************** 
+2023-Feb-07 14:10:27.626047: DEBUG:  ********** Isotropic Kriging *************** 
+2023-Feb-07 14:10:27.626047: DEBUG:  
+2023-Feb-07 14:10:27.626047: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:27.645992: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:27.646938: DEBUG:  
+2023-Feb-07 14:10:27.646938: DEBUG: Best CoP 0.922226 best error 0.0824621 complexity 11 position 2
+2023-Feb-07 14:10:27.646938: DEBUG: Search for simpler model with minimum CoP 0.907538
+2023-Feb-07 14:10:27.647935: DEBUG: Best reduced CoP 0.921466 complexity 0
+2023-Feb-07 14:10:27.647935: DEBUG:  
+2023-Feb-07 14:10:27.647935: DEBUG:  ********** Testing Kriging *************** 
+2023-Feb-07 14:10:27.648932: DEBUG:  ********** Isotropic Kriging *************** 
+2023-Feb-07 14:10:27.648932: DEBUG:  
+2023-Feb-07 14:10:27.648932: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:27.824969: DEBUG: Kriging: Complexity 10 R2adj 0.992573 R2CV 0.896837 error 0.109682 boxcox 1 lambda 0.5 selection 111111111111111111111 subspace 0
+2023-Feb-07 14:10:27.847908: DEBUG: Kriging: Complexity 10 R2adj 0.984667 R2CV 0.928603 error 0.0759084 boxcox 1 lambda 0.5 selection 111111111111111111111 subspace 0
+2023-Feb-07 14:10:27.892789: DEBUG: Kriging: Complexity 10 R2adj 0.995516 R2CV 0.949507 error 0.0536837 boxcox 1 lambda 0.5 selection 111111111111111111111 subspace 0
+2023-Feb-07 14:10:27.968586: DEBUG: Kriging: Complexity 10 R2adj 0.963458 R2CV 0.689931 error 0.329661 boxcox 1 lambda 0.5 selection 111111111111111111111 subspace 0
+2023-Feb-07 14:10:28.106229: DEBUG: Kriging: Complexity 10 R2adj 0.978085 R2CV 0.913739 error 0.0914598 boxcox 0 lambda 1 selection 111111111111111111111 subspace 1
+2023-Feb-07 14:10:28.106229: DEBUG:  
+2023-Feb-07 14:10:28.107226: DEBUG:  ********** Extract Kriging *************** 
+2023-Feb-07 14:10:28.127173: DEBUG: Kriging: Complexity 10 R2adj 0.971856 R2CV 0.891512 error 0.115027 boxcox 0 lambda 1 selection 111111111111111111111 subspace 1
+2023-Feb-07 14:10:28.127173: DEBUG:  
+2023-Feb-07 14:10:28.127173: DEBUG:  ********** Extract Kriging *************** 
+2023-Feb-07 14:10:28.135152: DEBUG:  
+2023-Feb-07 14:10:28.135152: DEBUG: InitialSubspace: R2adj 0.984667 R2CVfull 0.928603 error 0.0759084 selection 111111111111111111111
+2023-Feb-07 14:10:28.156097: DEBUG:  
+2023-Feb-07 14:10:28.156097: DEBUG: InitialSubspace: R2adj 0.992573 R2CVfull 0.896837 error 0.109682 selection 111111111111111111111
+2023-Feb-07 14:10:28.217930: DEBUG: Kriging: Complexity 10 R2adj 0.986988 R2CV 0.942746 error 0.0607044 boxcox 0 lambda 1 selection 111111111111111111111 subspace 1
+2023-Feb-07 14:10:28.217930: DEBUG:  
+2023-Feb-07 14:10:28.218942: DEBUG:  ********** Extract Kriging *************** 
+2023-Feb-07 14:10:28.246853: DEBUG:  
+2023-Feb-07 14:10:28.246853: DEBUG: InitialSubspace: R2adj 0.995516 R2CVfull 0.949507 error 0.0536837 selection 111111111111111111111
+2023-Feb-07 14:10:28.257822: DEBUG: Kriging: Complexity 10 R2adj 0.964178 R2CV 0.596907 error 0.427389 boxcox 0 lambda 1 selection 111111111111111111111 subspace 1
+2023-Feb-07 14:10:28.257822: DEBUG:  
+2023-Feb-07 14:10:28.258820: DEBUG:  ********** Extract Kriging *************** 
+2023-Feb-07 14:10:28.286746: DEBUG:  
+2023-Feb-07 14:10:28.287743: DEBUG: InitialSubspace: R2adj 0.963458 R2CVfull 0.689931 error 0.329661 selection 111111111111111111111
+2023-Feb-07 14:10:30.114765: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:30.115762: DEBUG:  
+2023-Feb-07 14:10:30.115762: DEBUG: Best CoP 0.928603 best error 0.0759084 complexity 10 position 5
+2023-Feb-07 14:10:30.115762: DEBUG: Search for simpler model with minimum CoP 0.914092
+2023-Feb-07 14:10:30.115762: DEBUG: Best reduced CoP 0.928603 complexity 10
+2023-Feb-07 14:10:30.116759: DEBUG:  
+2023-Feb-07 14:10:30.116759: DEBUG: Best CoP 0.928603 best error 0.0759084 complexity 10 position 5
+2023-Feb-07 14:10:30.116759: DEBUG: Search for simpler model with minimum CoP 0.914092
+2023-Feb-07 14:10:30.116759: DEBUG: Best reduced CoP 0.928603 complexity 10
+2023-Feb-07 14:10:30.141692: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:30.142690: DEBUG:  
+2023-Feb-07 14:10:30.143687: DEBUG: Best CoP 0.896837 best error 0.109682 complexity 10 position 5
+2023-Feb-07 14:10:30.143687: DEBUG: Search for simpler model with minimum CoP 0.880318
+2023-Feb-07 14:10:30.143687: DEBUG: Best reduced CoP 0.897097 complexity 2
+2023-Feb-07 14:10:30.144684: DEBUG:  
+2023-Feb-07 14:10:30.144684: DEBUG: Best CoP 0.896837 best error 0.109682 complexity 10 position 5
+2023-Feb-07 14:10:30.144684: DEBUG: Search for simpler model with minimum CoP 0.880318
+2023-Feb-07 14:10:30.145681: DEBUG: Best reduced CoP 0.897097 complexity 2
+2023-Feb-07 14:10:30.237436: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:30.238434: DEBUG:  
+2023-Feb-07 14:10:30.238434: DEBUG: Best CoP 0.949507 best error 0.0536837 complexity 10 position 4
+2023-Feb-07 14:10:30.239431: DEBUG: Search for simpler model with minimum CoP 0.936316
+2023-Feb-07 14:10:30.239431: DEBUG: Best reduced CoP 0.949507 complexity 10
+2023-Feb-07 14:10:30.239431: DEBUG:  
+2023-Feb-07 14:10:30.239431: DEBUG: Best CoP 0.949507 best error 0.0536837 complexity 10 position 4
+2023-Feb-07 14:10:30.240428: DEBUG: Search for simpler model with minimum CoP 0.936316
+2023-Feb-07 14:10:30.240428: DEBUG: Best reduced CoP 0.949507 complexity 10
+2023-Feb-07 14:10:30.284309: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:30.284309: DEBUG:  
+2023-Feb-07 14:10:30.285307: DEBUG: Best CoP 0.689931 best error 0.329661 complexity 10 position 5
+2023-Feb-07 14:10:30.285307: DEBUG: Search for simpler model with minimum CoP 0.660339
+2023-Feb-07 14:10:30.285307: DEBUG: Best reduced CoP 0.689931 complexity 10
+2023-Feb-07 14:10:30.286304: DEBUG:  
+2023-Feb-07 14:10:30.286304: DEBUG: Best CoP 0.689931 best error 0.329661 complexity 10 position 5
+2023-Feb-07 14:10:30.286304: DEBUG: Search for simpler model with minimum CoP 0.660339
+2023-Feb-07 14:10:30.286304: DEBUG: Best reduced CoP 0.689931 complexity 10
+2023-Feb-07 14:10:30.385094: DEBUG:  
+2023-Feb-07 14:10:30.385094: DEBUG: Best subspaces 
+2023-Feb-07 14:10:30.385094: DEBUG:  Complexity 0 R2 0.867193 R2adj 0.859573 R2CV 0.851058 predError 0.157488 NumVariables 21 numCoeff 22
+2023-Feb-07 14:10:30.386133: DEBUG:  Complexity 1 R2 0.879914 R2adj 0.873023 R2CV 0.860506 predError 0.147901 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:30.386133: DEBUG:  Complexity 2 R2 0.92336 R2adj 0.91403 R2CV 0.897097 predError 0.115765 NumVariables 21 numCoeff 44
+2023-Feb-07 14:10:30.386133: DEBUG:  Complexity 11 R2 0.870414 R2adj 0.862979 R2CV 0.852431 predError 0.156464 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:30.387137: DEBUG:  Complexity 12 R2 0.901733 R2adj 0.88977 R2CV 0.870355 predError 0.145851 NumVariables 21 numCoeff 44
+2023-Feb-07 14:10:30.387137: DEBUG:  Complexity 10 R2 0.992573 R2adj 0.992573 R2CV 0.896837 predError 0.109682 NumVariables 21 numCoeff 24
+2023-Feb-07 14:10:30.387137: DEBUG:  
+2023-Feb-07 14:10:30.387137: DEBUG: Best reduced subspaces 
+2023-Feb-07 14:10:30.388108: DEBUG:  Complexity 0 R2 0.867193 R2adj 0.859573 R2CV 0.851058 predError 0.157488 NumVariables 21 numCoeff 22
+2023-Feb-07 14:10:30.388108: DEBUG:  Complexity 1 R2 0.879914 R2adj 0.873023 R2CV 0.860506 predError 0.147901 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:30.388108: DEBUG:  Complexity 2 R2 0.92336 R2adj 0.91403 R2CV 0.897097 predError 0.115765 NumVariables 21 numCoeff 44
+2023-Feb-07 14:10:30.389098: DEBUG:  Complexity 11 R2 0.870414 R2adj 0.862979 R2CV 0.852431 predError 0.156464 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:30.389098: DEBUG:  Complexity 12 R2 0.901733 R2adj 0.88977 R2CV 0.870355 predError 0.145851 NumVariables 21 numCoeff 44
+2023-Feb-07 14:10:30.389098: DEBUG:  Complexity 10 R2 0.992573 R2adj 0.992573 R2CV 0.896837 predError 0.109682 NumVariables 21 numCoeff 24
+2023-Feb-07 14:10:30.415012: DEBUG: ===================== Build Subspaces =====================
+2023-Feb-07 14:10:30.415012: DEBUG: Importance info 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+2023-Feb-07 14:10:30.417006: DEBUG: Maximum input correlation 0.0272588
+2023-Feb-07 14:10:30.417006: DEBUG: Number of active inputs 21
+2023-Feb-07 14:10:30.418095: DEBUG: ===================== Evaluate Metamodels =====================
+2023-Feb-07 14:10:30.418095: DEBUG:  Ranges Input 0 117.032 142.968
+2023-Feb-07 14:10:30.418095: DEBUG:  Ranges Input 1 0.500375 0.799625
+2023-Feb-07 14:10:30.418950: DEBUG:  Ranges Input 2 0.660138 0.769863
+2023-Feb-07 14:10:30.418950: DEBUG:  Ranges Input 3 360.1 439.9
+2023-Feb-07 14:10:30.418950: DEBUG:  Ranges Input 4 0.500562 0.649813
+2023-Feb-07 14:10:30.418950: DEBUG:  Ranges Input 5 1.50062 1.99938
+2023-Feb-07 14:10:30.419997: DEBUG:  Ranges Input 6 0.800125 0.899875
+2023-Feb-07 14:10:30.419997: DEBUG:  Ranges Input 7 1.50062 1.99938
+2023-Feb-07 14:10:30.419997: DEBUG:  Ranges Input 8 1.00875 7.99125
+2023-Feb-07 14:10:30.419997: DEBUG:  Ranges Input 9 4.00375 6.99625
+2023-Feb-07 14:10:30.420944: DEBUG:  Ranges Input 10 0.5005 0.8995
+2023-Feb-07 14:10:30.420944: DEBUG:  Ranges Input 11 90.05 129.95
+2023-Feb-07 14:10:30.420944: DEBUG:  Ranges Input 12 0.10075 0.69925
+2023-Feb-07 14:10:30.421947: DEBUG:  Ranges Input 13 0.200875 0.899125
+2023-Feb-07 14:10:30.421947: DEBUG:  Ranges Input 14 1.50062 1.99938
+2023-Feb-07 14:10:30.421947: DEBUG:  Ranges Input 15 0.2407 0.7993
+2023-Feb-07 14:10:30.421947: DEBUG:  Ranges Input 16 4.00375 6.99625
+2023-Feb-07 14:10:30.422939: DEBUG:  Ranges Input 17 0.350562 0.798312
+2023-Feb-07 14:10:30.422939: DEBUG:  Ranges Input 18 0.10225 0.69925
+2023-Feb-07 14:10:30.422939: DEBUG:  Ranges Input 19 2.25062 2.74938
+2023-Feb-07 14:10:30.422939: DEBUG:  Ranges Input 20 1575.44 1924.56
+2023-Feb-07 14:10:30.424013: DEBUG: Supports per subset 39 39 39 39 39 39 39 39 38 38
+2023-Feb-07 14:10:30.424013: DEBUG: number CV subsets 10 maximum point number 39
+2023-Feb-07 14:10:30.424933: DEBUG: Maximum basis terms 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387
+2023-Feb-07 14:10:30.424933: DEBUG:  
+2023-Feb-07 14:10:30.424933: DEBUG:  ********** Testing polynomials *************** 
+2023-Feb-07 14:10:30.425931: DEBUG:  
+2023-Feb-07 14:10:30.425931: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:30.427925: DEBUG: Polynomial: Order 1 Complexity 0 R2adj 1 R2CV 1 error 9.33091e-27 numCoeff 22 boxcox 0 lambda 1 subspace 0
+2023-Feb-07 14:10:30.430972: DEBUG: Polynomial: Order 1 Complexity 0 R2adj 1 R2CV 1 error 2.32754e-28 numCoeff 22 boxcox 1 lambda 1 subspace 1
+2023-Feb-07 14:10:30.436955: DEBUG: Polynomial: Order 2 Complexity 2 R2adj 1 R2CV 1 error 5.05754e-27 numCoeff 43 boxcox 1 lambda 1 subspace 2
+2023-Feb-07 14:10:30.436955: DEBUG: Not enough supports 388 for coefficients 232
+2023-Feb-07 14:10:30.436955: DEBUG: Not enough supports 388 for coefficients 253
+2023-Feb-07 14:10:30.437898: DEBUG: Not enough supports 388 for coefficients 253
+2023-Feb-07 14:10:30.437898: DEBUG:  
+2023-Feb-07 14:10:30.437898: DEBUG:  ********** Extract polynomials *************** 
+2023-Feb-07 14:10:30.438999: DEBUG:  
+2023-Feb-07 14:10:30.438999: DEBUG: InitialSubspace: R2adj 1 R2CVfull 1 numcoeff 22 error 2.32754e-28 selection 111111111111111111111
+2023-Feb-07 14:10:30.441959: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:30.443011: DEBUG:  
+2023-Feb-07 14:10:30.443969: DEBUG: InitialSubspace: R2adj 1 R2CVfull 1 numcoeff 43 error 5.05754e-27 selection 111111111111111111111
+2023-Feb-07 14:10:30.454907: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:30.455933: DEBUG:  
+2023-Feb-07 14:10:30.455933: DEBUG: Best CoP 1 best error 2.32754e-28 complexity 0 position 0
+2023-Feb-07 14:10:30.455933: DEBUG: Search for simpler model with minimum CoP 0.99
+2023-Feb-07 14:10:30.456901: DEBUG: Best reduced CoP 1 complexity 0
+2023-Feb-07 14:10:30.456901: DEBUG: Requested CoP tolerance reached with polynomials 
+2023-Feb-07 14:10:30.456901: DEBUG:  
+2023-Feb-07 14:10:30.457973: DEBUG: Best CoP 1 best error 2.32754e-28 complexity 0 position 0
+2023-Feb-07 14:10:30.457973: DEBUG: Search for simpler model with minimum CoP 0.99
+2023-Feb-07 14:10:30.457973: DEBUG: Best reduced CoP 1 complexity 0
+2023-Feb-07 14:10:30.547605: DEBUG:  
+2023-Feb-07 14:10:30.547605: DEBUG: Best subspaces 
+2023-Feb-07 14:10:30.547605: DEBUG:  Complexity 0 R2 1 R2adj 1 R2CV 1 predError 2.32754e-28 NumVariables 21 numCoeff 22
+2023-Feb-07 14:10:30.548744: DEBUG:  Complexity 2 R2 1 R2adj 1 R2CV 1 predError 5.05754e-27 NumVariables 21 numCoeff 43
+2023-Feb-07 14:10:30.548744: DEBUG:  
+2023-Feb-07 14:10:30.549600: DEBUG: Best reduced subspaces 
+2023-Feb-07 14:10:30.549600: DEBUG:  Complexity 0 R2 1 R2adj 1 R2CV 1 predError 2.32754e-28 NumVariables 21 numCoeff 22
+2023-Feb-07 14:10:30.550597: DEBUG:  Complexity 2 R2 1 R2adj 1 R2CV 1 predError 5.05754e-27 NumVariables 21 numCoeff 43
+2023-Feb-07 14:10:30.573644: DEBUG: ===================== Build Subspaces =====================
+2023-Feb-07 14:10:30.574598: DEBUG: Importance info 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+2023-Feb-07 14:10:30.576528: DEBUG: Maximum input correlation 0.0272588
+2023-Feb-07 14:10:30.576528: DEBUG: Number of active inputs 21
+2023-Feb-07 14:10:30.576528: DEBUG: ===================== Evaluate Metamodels =====================
+2023-Feb-07 14:10:30.577577: DEBUG:  Ranges Input 0 117.032 142.968
+2023-Feb-07 14:10:30.577577: DEBUG:  Ranges Input 1 0.500375 0.799625
+2023-Feb-07 14:10:30.577577: DEBUG:  Ranges Input 2 0.660138 0.769863
+2023-Feb-07 14:10:30.578646: DEBUG:  Ranges Input 3 360.1 439.9
+2023-Feb-07 14:10:30.578646: DEBUG:  Ranges Input 4 0.500562 0.649813
+2023-Feb-07 14:10:30.578646: DEBUG:  Ranges Input 5 1.50062 1.99938
+2023-Feb-07 14:10:30.579528: DEBUG:  Ranges Input 6 0.800125 0.899875
+2023-Feb-07 14:10:30.579528: DEBUG:  Ranges Input 7 1.50062 1.99938
+2023-Feb-07 14:10:30.579528: DEBUG:  Ranges Input 8 1.00875 7.99125
+2023-Feb-07 14:10:30.580517: DEBUG:  Ranges Input 9 4.00375 6.99625
+2023-Feb-07 14:10:30.580517: DEBUG:  Ranges Input 10 0.5005 0.8995
+2023-Feb-07 14:10:30.580517: DEBUG:  Ranges Input 11 90.05 129.95
+2023-Feb-07 14:10:30.580517: DEBUG:  Ranges Input 12 0.10075 0.69925
+2023-Feb-07 14:10:30.581515: DEBUG:  Ranges Input 13 0.200875 0.899125
+2023-Feb-07 14:10:30.581515: DEBUG:  Ranges Input 14 1.50062 1.99938
+2023-Feb-07 14:10:30.581515: DEBUG:  Ranges Input 15 0.2407 0.7993
+2023-Feb-07 14:10:30.581515: DEBUG:  Ranges Input 16 4.00375 6.99625
+2023-Feb-07 14:10:30.582589: DEBUG:  Ranges Input 17 0.350562 0.798312
+2023-Feb-07 14:10:30.582589: DEBUG:  Ranges Input 18 0.10225 0.69925
+2023-Feb-07 14:10:30.582589: DEBUG:  Ranges Input 19 2.25062 2.74938
+2023-Feb-07 14:10:30.582589: DEBUG:  Ranges Input 20 1575.44 1924.56
+2023-Feb-07 14:10:30.583509: DEBUG: Supports per subset 39 39 39 39 39 39 39 39 38 38
+2023-Feb-07 14:10:30.583509: DEBUG: number CV subsets 10 maximum point number 39
+2023-Feb-07 14:10:30.584559: DEBUG: Maximum basis terms 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387
+2023-Feb-07 14:10:30.584559: DEBUG:  
+2023-Feb-07 14:10:30.584559: DEBUG:  ********** Testing polynomials *************** 
+2023-Feb-07 14:10:30.584559: DEBUG:  
+2023-Feb-07 14:10:30.585504: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:30.587498: DEBUG: Polynomial: Order 1 Complexity 0 R2adj 0.997131 R2CV 0.996746 error 0.00344033 numCoeff 22 boxcox 0 lambda 1 subspace 0
+2023-Feb-07 14:10:30.590582: DEBUG: Polynomial: Order 1 Complexity 0 R2adj 0.997131 R2CV 0.996746 error 0.00344033 numCoeff 22 boxcox 1 lambda 1 subspace 1
+2023-Feb-07 14:10:30.596526: DEBUG: Polynomial: Order 2 Complexity 2 R2adj 0.998012 R2CV 0.997396 error 0.00292046 numCoeff 43 boxcox 1 lambda 1 subspace 2
+2023-Feb-07 14:10:30.596526: DEBUG: Not enough supports 388 for coefficients 232
+2023-Feb-07 14:10:30.596526: DEBUG: Not enough supports 388 for coefficients 253
+2023-Feb-07 14:10:30.597472: DEBUG: Not enough supports 388 for coefficients 253
+2023-Feb-07 14:10:30.597472: DEBUG:  
+2023-Feb-07 14:10:30.597472: DEBUG:  ********** Extract polynomials *************** 
+2023-Feb-07 14:10:30.598522: DEBUG:  
+2023-Feb-07 14:10:30.598522: DEBUG: InitialSubspace: R2adj 0.996967 R2CVfull 0.996746 numcoeff 22 error 0.00344033 selection 111111111111111111111
+2023-Feb-07 14:10:30.601512: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:30.602458: DEBUG:  
+2023-Feb-07 14:10:30.602458: DEBUG: InitialSubspace: R2adj 0.99777 R2CVfull 0.997396 numcoeff 43 error 0.00292046 selection 111111111111111111111
+2023-Feb-07 14:10:30.614499: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:30.615529: DEBUG:  
+2023-Feb-07 14:10:30.615529: DEBUG: Best CoP 0.997396 best error 0.00292046 complexity 2 position 1
+2023-Feb-07 14:10:30.615529: DEBUG: Search for simpler model with minimum CoP 0.99
+2023-Feb-07 14:10:30.616472: DEBUG: Best reduced CoP 0.996746 complexity 0
+2023-Feb-07 14:10:30.616472: DEBUG: Requested CoP tolerance reached with polynomials 
+2023-Feb-07 14:10:30.617497: DEBUG:  
+2023-Feb-07 14:10:30.617497: DEBUG: Best CoP 0.997396 best error 0.00292046 complexity 2 position 1
+2023-Feb-07 14:10:30.617497: DEBUG: Search for simpler model with minimum CoP 0.99
+2023-Feb-07 14:10:30.617497: DEBUG: Best reduced CoP 0.996746 complexity 0
+2023-Feb-07 14:10:30.708176: DEBUG:  
+2023-Feb-07 14:10:30.709172: DEBUG: Best subspaces 
+2023-Feb-07 14:10:30.709172: DEBUG:  Complexity 0 R2 0.997131 R2adj 0.996967 R2CV 0.996746 predError 0.00344033 NumVariables 21 numCoeff 22
+2023-Feb-07 14:10:30.709172: DEBUG:  Complexity 2 R2 0.998012 R2adj 0.99777 R2CV 0.997396 predError 0.00292046 NumVariables 21 numCoeff 43
+2023-Feb-07 14:10:30.710169: DEBUG:  
+2023-Feb-07 14:10:30.710169: DEBUG: Best reduced subspaces 
+2023-Feb-07 14:10:30.710169: DEBUG:  Complexity 0 R2 0.997131 R2adj 0.996967 R2CV 0.996746 predError 0.00344033 NumVariables 21 numCoeff 22
+2023-Feb-07 14:10:30.711220: DEBUG:  Complexity 2 R2 0.998012 R2adj 0.99777 R2CV 0.997396 predError 0.00292046 NumVariables 21 numCoeff 43
+2023-Feb-07 14:10:30.734198: DEBUG: ===================== Build Subspaces =====================
+2023-Feb-07 14:10:30.734198: DEBUG: Importance info 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+2023-Feb-07 14:10:30.736153: DEBUG: Maximum input correlation 0.0272588
+2023-Feb-07 14:10:30.736153: DEBUG: Number of active inputs 21
+2023-Feb-07 14:10:30.737168: DEBUG: ===================== Evaluate Metamodels =====================
+2023-Feb-07 14:10:30.737168: DEBUG:  Ranges Input 0 117.032 142.968
+2023-Feb-07 14:10:30.737168: DEBUG:  Ranges Input 1 0.500375 0.799625
+2023-Feb-07 14:10:30.738096: DEBUG:  Ranges Input 2 0.660138 0.769863
+2023-Feb-07 14:10:30.738096: DEBUG:  Ranges Input 3 360.1 439.9
+2023-Feb-07 14:10:30.738096: DEBUG:  Ranges Input 4 0.500562 0.649813
+2023-Feb-07 14:10:30.739093: DEBUG:  Ranges Input 5 1.50062 1.99938
+2023-Feb-07 14:10:30.739093: DEBUG:  Ranges Input 6 0.800125 0.899875
+2023-Feb-07 14:10:30.740090: DEBUG:  Ranges Input 7 1.50062 1.99938
+2023-Feb-07 14:10:30.740090: DEBUG:  Ranges Input 8 1.00875 7.99125
+2023-Feb-07 14:10:30.740090: DEBUG:  Ranges Input 9 4.00375 6.99625
+2023-Feb-07 14:10:30.741155: DEBUG:  Ranges Input 10 0.5005 0.8995
+2023-Feb-07 14:10:30.741155: DEBUG:  Ranges Input 11 90.05 129.95
+2023-Feb-07 14:10:30.742085: DEBUG:  Ranges Input 12 0.10075 0.69925
+2023-Feb-07 14:10:30.742085: DEBUG:  Ranges Input 13 0.200875 0.899125
+2023-Feb-07 14:10:30.742085: DEBUG:  Ranges Input 14 1.50062 1.99938
+2023-Feb-07 14:10:30.742085: DEBUG:  Ranges Input 15 0.2407 0.7993
+2023-Feb-07 14:10:30.743082: DEBUG:  Ranges Input 16 4.00375 6.99625
+2023-Feb-07 14:10:30.743082: DEBUG:  Ranges Input 17 0.350562 0.798312
+2023-Feb-07 14:10:30.743082: DEBUG:  Ranges Input 18 0.10225 0.69925
+2023-Feb-07 14:10:30.743082: DEBUG:  Ranges Input 19 2.25062 2.74938
+2023-Feb-07 14:10:30.744079: DEBUG:  Ranges Input 20 1575.44 1924.56
+2023-Feb-07 14:10:30.744079: DEBUG: Supports per subset 39 39 39 39 39 39 39 39 38 38
+2023-Feb-07 14:10:30.744079: DEBUG: number CV subsets 10 maximum point number 39
+2023-Feb-07 14:10:30.745076: DEBUG: Maximum basis terms 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387
+2023-Feb-07 14:10:30.745076: DEBUG:  
+2023-Feb-07 14:10:30.745076: DEBUG:  ********** Testing polynomials *************** 
+2023-Feb-07 14:10:30.746128: DEBUG:  
+2023-Feb-07 14:10:30.746128: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:30.748086: DEBUG: Polynomial: Order 1 Complexity 0 R2adj 0.975588 R2CV 0.972485 error 0.0290939 numCoeff 22 boxcox 0 lambda 1 subspace 0
+2023-Feb-07 14:10:30.751126: DEBUG: Polynomial: Order 1 Complexity 1 R2adj 0.97694 R2CV 0.973606 error 0.027985 numCoeff 22 boxcox 1 lambda 0.5 subspace 1
+2023-Feb-07 14:10:30.757044: DEBUG: Polynomial: Order 2 Complexity 2 R2adj 0.986415 R2CV 0.983123 error 0.0189867 numCoeff 43 boxcox 1 lambda 0.5 subspace 2
+2023-Feb-07 14:10:30.757044: DEBUG: Not enough supports 388 for coefficients 232
+2023-Feb-07 14:10:30.758042: DEBUG: Not enough supports 388 for coefficients 253
+2023-Feb-07 14:10:30.766021: DEBUG: Not enough supports 388 for coefficients 253
+2023-Feb-07 14:10:30.766021: DEBUG:  
+2023-Feb-07 14:10:30.766021: DEBUG:  ********** Extract polynomials *************** 
+2023-Feb-07 14:10:30.767017: DEBUG:  
+2023-Feb-07 14:10:30.767017: DEBUG: InitialSubspace: R2adj 0.974187 R2CVfull 0.972485 numcoeff 22 error 0.0290939 selection 111111111111111111111
+2023-Feb-07 14:10:30.770010: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:30.771007: DEBUG:  
+2023-Feb-07 14:10:30.771007: DEBUG: InitialSubspace: R2adj 0.975617 R2CVfull 0.973606 numcoeff 22 error 0.027985 selection 111111111111111111111
+2023-Feb-07 14:10:30.774996: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:30.775993: DEBUG:  
+2023-Feb-07 14:10:30.776991: DEBUG: InitialSubspace: R2adj 0.984762 R2CVfull 0.983123 numcoeff 43 error 0.0189867 selection 111111111111111111111
+2023-Feb-07 14:10:30.789013: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:30.789013: DEBUG:  
+2023-Feb-07 14:10:30.789013: DEBUG: Best CoP 0.983123 best error 0.0189867 complexity 2 position 2
+2023-Feb-07 14:10:30.790076: DEBUG: Search for simpler model with minimum CoP 0.971013
+2023-Feb-07 14:10:30.790076: DEBUG: Best reduced CoP 0.973606 complexity 1
+2023-Feb-07 14:10:30.790076: DEBUG:  
+2023-Feb-07 14:10:30.790963: DEBUG:  ********** Testing MLS *************** 
+2023-Feb-07 14:10:30.790963: DEBUG:  
+2023-Feb-07 14:10:30.790963: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:32.957257: DEBUG: MLS: Order 1 Complexity 11 R2adj 0.97673 R2CV 0.973082 error 0.0285405 numCoeff 22 boxcox 1 lambda 1 subspace 0
+2023-Feb-07 14:10:34.046792: DEBUG:  
+2023-Feb-07 14:10:34.047789: DEBUG: Best subspaces 
+2023-Feb-07 14:10:34.047789: DEBUG:  Complexity 0 R2 0.885341 R2adj 0.878763 R2CV 0.870771 predError 0.136644 NumVariables 21 numCoeff 22
+2023-Feb-07 14:10:34.047789: DEBUG:  Complexity 1 R2 0.896093 R2adj 0.890132 R2CV 0.884101 predError 0.122884 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:34.048787: DEBUG:  Complexity 2 R2 0.918523 R2adj 0.908604 R2CV 0.89367 predError 0.119275 NumVariables 21 numCoeff 43
+2023-Feb-07 14:10:34.048787: DEBUG:  Complexity 11 R2 0.898867 R2adj 0.893065 R2CV 0.885367 predError 0.121876 NumVariables 21 numCoeff 24
+2023-Feb-07 14:10:34.048787: DEBUG:  Complexity 12 R2 0.917587 R2adj 0.907554 R2CV 0.890752 predError 0.123262 NumVariables 21 numCoeff 45
+2023-Feb-07 14:10:34.048787: DEBUG:  Complexity 10 R2 0.984667 R2adj 0.984667 R2CV 0.928603 predError 0.0759084 NumVariables 21 numCoeff 24
+2023-Feb-07 14:10:34.049784: DEBUG:  
+2023-Feb-07 14:10:34.049784: DEBUG: Best reduced subspaces 
+2023-Feb-07 14:10:34.049784: DEBUG:  Complexity 0 R2 0.885341 R2adj 0.878763 R2CV 0.870771 predError 0.136644 NumVariables 21 numCoeff 22
+2023-Feb-07 14:10:34.050781: DEBUG:  Complexity 1 R2 0.896093 R2adj 0.890132 R2CV 0.884101 predError 0.122884 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:34.050781: DEBUG:  Complexity 2 R2 0.918523 R2adj 0.908604 R2CV 0.89367 predError 0.119275 NumVariables 21 numCoeff 43
+2023-Feb-07 14:10:34.050781: DEBUG:  Complexity 11 R2 0.898867 R2adj 0.893065 R2CV 0.885367 predError 0.121876 NumVariables 21 numCoeff 24
+2023-Feb-07 14:10:34.050781: DEBUG:  Complexity 12 R2 0.917587 R2adj 0.907554 R2CV 0.890752 predError 0.123262 NumVariables 21 numCoeff 45
+2023-Feb-07 14:10:34.051779: DEBUG:  Complexity 10 R2 0.984667 R2adj 0.984667 R2CV 0.928603 predError 0.0759084 NumVariables 21 numCoeff 24
+2023-Feb-07 14:10:34.164477: DEBUG: ===================== Build Subspaces =====================
+2023-Feb-07 14:10:34.164477: DEBUG: Importance info 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+2023-Feb-07 14:10:34.166471: DEBUG: Maximum input correlation 0.0272588
+2023-Feb-07 14:10:34.167469: DEBUG: Number of active inputs 21
+2023-Feb-07 14:10:34.167469: DEBUG: ===================== Evaluate Metamodels =====================
+2023-Feb-07 14:10:34.167469: DEBUG:  Ranges Input 0 117.032 142.968
+2023-Feb-07 14:10:34.168466: DEBUG:  Ranges Input 1 0.500375 0.799625
+2023-Feb-07 14:10:34.168466: DEBUG:  Ranges Input 2 0.660138 0.769863
+2023-Feb-07 14:10:34.168466: DEBUG:  Ranges Input 3 360.1 439.9
+2023-Feb-07 14:10:34.169464: DEBUG:  Ranges Input 4 0.500562 0.649813
+2023-Feb-07 14:10:34.169464: DEBUG:  Ranges Input 5 1.50062 1.99938
+2023-Feb-07 14:10:34.169464: DEBUG:  Ranges Input 6 0.800125 0.899875
+2023-Feb-07 14:10:34.169464: DEBUG:  Ranges Input 7 1.50062 1.99938
+2023-Feb-07 14:10:34.170461: DEBUG:  Ranges Input 8 1.00875 7.99125
+2023-Feb-07 14:10:34.170461: DEBUG:  Ranges Input 9 4.00375 6.99625
+2023-Feb-07 14:10:34.170461: DEBUG:  Ranges Input 10 0.5005 0.8995
+2023-Feb-07 14:10:34.170461: DEBUG:  Ranges Input 11 90.05 129.95
+2023-Feb-07 14:10:34.171458: DEBUG:  Ranges Input 12 0.10075 0.69925
+2023-Feb-07 14:10:34.171458: DEBUG:  Ranges Input 13 0.200875 0.899125
+2023-Feb-07 14:10:34.171458: DEBUG:  Ranges Input 14 1.50062 1.99938
+2023-Feb-07 14:10:34.172456: DEBUG:  Ranges Input 15 0.2407 0.7993
+2023-Feb-07 14:10:34.172456: DEBUG:  Ranges Input 16 4.00375 6.99625
+2023-Feb-07 14:10:34.172456: DEBUG:  Ranges Input 17 0.350562 0.798312
+2023-Feb-07 14:10:34.172456: DEBUG:  Ranges Input 18 0.10225 0.69925
+2023-Feb-07 14:10:34.173453: DEBUG:  Ranges Input 19 2.25062 2.74938
+2023-Feb-07 14:10:34.173453: DEBUG:  Ranges Input 20 1575.44 1924.56
+2023-Feb-07 14:10:34.173453: DEBUG: Supports per subset 39 39 39 39 39 39 39 39 38 38
+2023-Feb-07 14:10:34.173453: DEBUG:  
+2023-Feb-07 14:10:34.174451: DEBUG: number CV subsets 10 maximum point number 39
+2023-Feb-07 14:10:34.174451: DEBUG: Best subspaces 
+2023-Feb-07 14:10:34.174451: DEBUG:  Complexity 0 R2 0.929892 R2adj 0.925869 R2CV 0.921466 predError 0.0830396 NumVariables 21 numCoeff 22
+2023-Feb-07 14:10:34.175448: DEBUG: Maximum basis terms 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387
+2023-Feb-07 14:10:34.175448: DEBUG:  Complexity 2 R2 0.937129 R2adj 0.929475 R2CV 0.921183 predError 0.0884126 NumVariables 21 numCoeff 43
+2023-Feb-07 14:10:34.175448: DEBUG:  
+2023-Feb-07 14:10:34.175448: DEBUG:  Complexity 11 R2 0.931657 R2adj 0.927735 R2CV 0.922226 predError 0.0824621 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:34.175448: DEBUG:  ********** Testing polynomials *************** 
+2023-Feb-07 14:10:34.175448: DEBUG:  Complexity 12 R2 0.939572 R2adj 0.932215 R2CV 0.92199 predError 0.0877607 NumVariables 21 numCoeff 44
+2023-Feb-07 14:10:34.176446: DEBUG:  
+2023-Feb-07 14:10:34.176446: DEBUG:  Complexity 10 R2 0.995516 R2adj 0.995516 R2CV 0.949507 predError 0.0536837 NumVariables 21 numCoeff 24
+2023-Feb-07 14:10:34.176446: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:34.176446: DEBUG:  
+2023-Feb-07 14:10:34.177444: DEBUG: Best reduced subspaces 
+2023-Feb-07 14:10:34.177444: DEBUG:  Complexity 0 R2 0.929892 R2adj 0.925869 R2CV 0.921466 predError 0.0830396 NumVariables 21 numCoeff 22
+2023-Feb-07 14:10:34.177444: DEBUG:  Complexity 2 R2 0.937129 R2adj 0.929475 R2CV 0.921183 predError 0.0884126 NumVariables 21 numCoeff 43
+2023-Feb-07 14:10:34.178441: DEBUG: Polynomial: Order 1 Complexity 0 R2adj 0.996222 R2CV 0.995679 error 0.00456875 numCoeff 22 boxcox 0 lambda 1 subspace 0
+2023-Feb-07 14:10:34.178441: DEBUG:  Complexity 11 R2 0.931657 R2adj 0.927735 R2CV 0.922226 predError 0.0824621 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:34.179438: DEBUG:  Complexity 12 R2 0.939572 R2adj 0.932215 R2CV 0.92199 predError 0.0877607 NumVariables 21 numCoeff 44
+2023-Feb-07 14:10:34.179438: DEBUG:  Complexity 10 R2 0.995516 R2adj 0.995516 R2CV 0.949507 predError 0.0536837 NumVariables 21 numCoeff 24
+2023-Feb-07 14:10:34.181432: DEBUG: Polynomial: Order 1 Complexity 0 R2adj 0.996222 R2CV 0.995679 error 0.00456875 numCoeff 22 boxcox 1 lambda 1 subspace 1
+2023-Feb-07 14:10:34.187416: DEBUG: Polynomial: Order 2 Complexity 2 R2adj 0.997112 R2CV 0.996133 error 0.0043376 numCoeff 43 boxcox 1 lambda 1 subspace 2
+2023-Feb-07 14:10:34.187416: DEBUG: Not enough supports 388 for coefficients 232
+2023-Feb-07 14:10:34.188413: DEBUG: Not enough supports 388 for coefficients 253
+2023-Feb-07 14:10:34.188413: DEBUG: Not enough supports 388 for coefficients 253
+2023-Feb-07 14:10:34.188413: DEBUG:  
+2023-Feb-07 14:10:34.188413: DEBUG:  ********** Extract polynomials *************** 
+2023-Feb-07 14:10:34.189410: DEBUG:  
+2023-Feb-07 14:10:34.189410: DEBUG: InitialSubspace: R2adj 0.996005 R2CVfull 0.995679 numcoeff 22 error 0.00456875 selection 111111111111111111111
+2023-Feb-07 14:10:34.192403: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:34.193400: DEBUG:  
+2023-Feb-07 14:10:34.193400: DEBUG: InitialSubspace: R2adj 0.996761 R2CVfull 0.996133 numcoeff 43 error 0.0043376 selection 111111111111111111111
+2023-Feb-07 14:10:34.205368: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:34.206366: DEBUG:  
+2023-Feb-07 14:10:34.206366: DEBUG: Best CoP 0.996133 best error 0.0043376 complexity 2 position 1
+2023-Feb-07 14:10:34.206366: DEBUG: Search for simpler model with minimum CoP 0.99
+2023-Feb-07 14:10:34.206366: DEBUG: Best reduced CoP 0.995679 complexity 0
+2023-Feb-07 14:10:34.207362: DEBUG: Requested CoP tolerance reached with polynomials 
+2023-Feb-07 14:10:34.207362: DEBUG:  
+2023-Feb-07 14:10:34.207362: DEBUG: Best CoP 0.996133 best error 0.0043376 complexity 2 position 1
+2023-Feb-07 14:10:34.207362: DEBUG: Search for simpler model with minimum CoP 0.99
+2023-Feb-07 14:10:34.208360: DEBUG: Best reduced CoP 0.995679 complexity 0
+2023-Feb-07 14:10:34.217337: DEBUG:  
+2023-Feb-07 14:10:34.217337: DEBUG: Best subspaces 
+2023-Feb-07 14:10:34.217337: DEBUG:  Complexity 0 R2 0.468619 R2adj 0.43813 R2CV 0.406642 predError 0.627403 NumVariables 21 numCoeff 22
+2023-Feb-07 14:10:34.218333: DEBUG:  Complexity 1 R2 0.521616 R2adj 0.494168 R2CV 0.47585 predError 0.555742 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:34.218333: DEBUG:  Complexity 2 R2 0.599913 R2adj 0.551207 R2CV 0.520814 predError 0.539084 NumVariables 21 numCoeff 44
+2023-Feb-07 14:10:34.218333: DEBUG:  Complexity 11 R2 0.531731 R2adj 0.504863 R2CV 0.480471 predError 0.552356 NumVariables 21 numCoeff 24
+2023-Feb-07 14:10:34.219330: DEBUG:  Complexity 12 R2 0.613153 R2adj 0.566059 R2CV 0.525039 predError 0.535889 NumVariables 21 numCoeff 45
+2023-Feb-07 14:10:34.219330: DEBUG:  Complexity 10 R2 0.963458 R2adj 0.963458 R2CV 0.689931 predError 0.329661 NumVariables 21 numCoeff 24
+2023-Feb-07 14:10:34.219330: DEBUG:  
+2023-Feb-07 14:10:34.219330: DEBUG: Best reduced subspaces 
+2023-Feb-07 14:10:34.220328: DEBUG:  Complexity 0 R2 0.468619 R2adj 0.43813 R2CV 0.406642 predError 0.627403 NumVariables 21 numCoeff 22
+2023-Feb-07 14:10:34.220328: DEBUG:  Complexity 1 R2 0.521616 R2adj 0.494168 R2CV 0.47585 predError 0.555742 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:34.220328: DEBUG:  Complexity 2 R2 0.599913 R2adj 0.551207 R2CV 0.520814 predError 0.539084 NumVariables 21 numCoeff 44
+2023-Feb-07 14:10:34.221325: DEBUG:  Complexity 11 R2 0.531731 R2adj 0.504863 R2CV 0.480471 predError 0.552356 NumVariables 21 numCoeff 24
+2023-Feb-07 14:10:34.221325: DEBUG:  Complexity 12 R2 0.613153 R2adj 0.566059 R2CV 0.525039 predError 0.535889 NumVariables 21 numCoeff 45
+2023-Feb-07 14:10:34.221325: DEBUG:  Complexity 10 R2 0.963458 R2adj 0.963458 R2CV 0.689931 predError 0.329661 NumVariables 21 numCoeff 24
+2023-Feb-07 14:10:34.299117: DEBUG:  
+2023-Feb-07 14:10:34.299117: DEBUG: Best subspaces 
+2023-Feb-07 14:10:34.299117: DEBUG:  Complexity 0 R2 0.996222 R2adj 0.996005 R2CV 0.995679 predError 0.00456875 NumVariables 21 numCoeff 22
+2023-Feb-07 14:10:34.300116: DEBUG: ===================== Build Subspaces =====================
+2023-Feb-07 14:10:34.300116: DEBUG:  Complexity 2 R2 0.997112 R2adj 0.996761 R2CV 0.996133 predError 0.0043376 NumVariables 21 numCoeff 43
+2023-Feb-07 14:10:34.300116: DEBUG: Importance info 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+2023-Feb-07 14:10:34.300116: DEBUG:  
+2023-Feb-07 14:10:34.300116: DEBUG: Best reduced subspaces 
+2023-Feb-07 14:10:34.301112: DEBUG:  Complexity 0 R2 0.996222 R2adj 0.996005 R2CV 0.995679 predError 0.00456875 NumVariables 21 numCoeff 22
+2023-Feb-07 14:10:34.301112: DEBUG:  Complexity 2 R2 0.997112 R2adj 0.996761 R2CV 0.996133 predError 0.0043376 NumVariables 21 numCoeff 43
+2023-Feb-07 14:10:34.302110: DEBUG: Maximum input correlation 0.0272588
+2023-Feb-07 14:10:34.302110: DEBUG: Number of active inputs 21
+2023-Feb-07 14:10:34.302110: DEBUG: ===================== Evaluate Metamodels =====================
+2023-Feb-07 14:10:34.302110: DEBUG:  Ranges Input 0 117.032 142.968
+2023-Feb-07 14:10:34.303107: DEBUG:  Ranges Input 1 0.500375 0.799625
+2023-Feb-07 14:10:34.303107: DEBUG:  Ranges Input 2 0.660138 0.769863
+2023-Feb-07 14:10:34.303107: DEBUG:  Ranges Input 3 360.1 439.9
+2023-Feb-07 14:10:34.303107: DEBUG:  Ranges Input 4 0.500562 0.649813
+2023-Feb-07 14:10:34.304105: DEBUG:  Ranges Input 5 1.50062 1.99938
+2023-Feb-07 14:10:34.304105: DEBUG:  Ranges Input 6 0.800125 0.899875
+2023-Feb-07 14:10:34.304105: DEBUG:  Ranges Input 7 1.50062 1.99938
+2023-Feb-07 14:10:34.305114: DEBUG:  Ranges Input 8 1.00875 7.99125
+2023-Feb-07 14:10:34.305114: DEBUG:  Ranges Input 9 4.00375 6.99625
+2023-Feb-07 14:10:34.305114: DEBUG:  Ranges Input 10 0.5005 0.8995
+2023-Feb-07 14:10:34.305114: DEBUG:  Ranges Input 11 90.05 129.95
+2023-Feb-07 14:10:34.306099: DEBUG:  Ranges Input 12 0.10075 0.69925
+2023-Feb-07 14:10:34.306099: DEBUG:  Ranges Input 13 0.200875 0.899125
+2023-Feb-07 14:10:34.306099: DEBUG:  Ranges Input 14 1.50062 1.99938
+2023-Feb-07 14:10:34.306099: DEBUG:  Ranges Input 15 0.2407 0.7993
+2023-Feb-07 14:10:34.307097: DEBUG:  Ranges Input 16 4.00375 6.99625
+2023-Feb-07 14:10:34.307097: DEBUG:  Ranges Input 17 0.350562 0.798312
+2023-Feb-07 14:10:34.307097: DEBUG:  Ranges Input 18 0.10225 0.69925
+2023-Feb-07 14:10:34.308094: DEBUG:  Ranges Input 19 2.25062 2.74938
+2023-Feb-07 14:10:34.308094: DEBUG:  Ranges Input 20 1575.44 1924.56
+2023-Feb-07 14:10:34.308094: DEBUG: Supports per subset 39 39 39 39 39 39 39 39 38 38
+2023-Feb-07 14:10:34.308094: DEBUG: number CV subsets 10 maximum point number 39
+2023-Feb-07 14:10:34.309091: DEBUG: Maximum basis terms 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387
+2023-Feb-07 14:10:34.309091: DEBUG:  
+2023-Feb-07 14:10:34.310089: DEBUG:  ********** Testing polynomials *************** 
+2023-Feb-07 14:10:34.310089: DEBUG:  
+2023-Feb-07 14:10:34.310089: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:34.312083: DEBUG: Polynomial: Order 1 Complexity 0 R2adj 0.996141 R2CV 0.995538 error 0.00471765 numCoeff 22 boxcox 0 lambda 1 subspace 0
+2023-Feb-07 14:10:34.315075: DEBUG: Polynomial: Order 1 Complexity 0 R2adj 0.996141 R2CV 0.995538 error 0.00471765 numCoeff 22 boxcox 1 lambda 1 subspace 1
+2023-Feb-07 14:10:34.321059: DEBUG: Polynomial: Order 2 Complexity 2 R2adj 0.996629 R2CV 0.99554 error 0.00500321 numCoeff 43 boxcox 1 lambda 1 subspace 2
+2023-Feb-07 14:10:34.321059: DEBUG: Not enough supports 388 for coefficients 232
+2023-Feb-07 14:10:34.321059: DEBUG: Not enough supports 388 for coefficients 253
+2023-Feb-07 14:10:34.322062: DEBUG: Not enough supports 388 for coefficients 253
+2023-Feb-07 14:10:34.322062: DEBUG:  
+2023-Feb-07 14:10:34.322062: DEBUG:  ********** Extract polynomials *************** 
+2023-Feb-07 14:10:34.323054: DEBUG:  
+2023-Feb-07 14:10:34.323054: DEBUG: InitialSubspace: R2adj 0.995919 R2CVfull 0.995538 numcoeff 22 error 0.00471765 selection 111111111111111111111
+2023-Feb-07 14:10:34.325048: DEBUG: ===================== Build Subspaces =====================
+2023-Feb-07 14:10:34.325048: DEBUG: Importance info 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+2023-Feb-07 14:10:34.326045: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:34.327044: DEBUG: Maximum input correlation 0.0272588
+2023-Feb-07 14:10:34.327044: DEBUG: Number of active inputs 21
+2023-Feb-07 14:10:34.327044: DEBUG:  
+2023-Feb-07 14:10:34.328041: DEBUG: ===================== Evaluate Metamodels =====================
+2023-Feb-07 14:10:34.328041: DEBUG: InitialSubspace: R2adj 0.996218 R2CVfull 0.99554 numcoeff 43 error 0.00500321 selection 111111111111111111111
+2023-Feb-07 14:10:34.328041: DEBUG:  Ranges Input 0 117.032 142.968
+2023-Feb-07 14:10:34.328041: DEBUG:  Ranges Input 1 0.500375 0.799625
+2023-Feb-07 14:10:34.329039: DEBUG:  Ranges Input 2 0.660138 0.769863
+2023-Feb-07 14:10:34.329039: DEBUG:  Ranges Input 3 360.1 439.9
+2023-Feb-07 14:10:34.329039: DEBUG:  Ranges Input 4 0.500562 0.649813
+2023-Feb-07 14:10:34.329039: DEBUG:  Ranges Input 5 1.50062 1.99938
+2023-Feb-07 14:10:34.330035: DEBUG:  Ranges Input 6 0.800125 0.899875
+2023-Feb-07 14:10:34.330035: DEBUG:  Ranges Input 7 1.50062 1.99938
+2023-Feb-07 14:10:34.330035: DEBUG:  Ranges Input 8 1.00875 7.99125
+2023-Feb-07 14:10:34.331032: DEBUG:  Ranges Input 9 4.00375 6.99625
+2023-Feb-07 14:10:34.331032: DEBUG:  Ranges Input 10 0.5005 0.8995
+2023-Feb-07 14:10:34.331032: DEBUG:  Ranges Input 11 90.05 129.95
+2023-Feb-07 14:10:34.331032: DEBUG:  Ranges Input 12 0.10075 0.69925
+2023-Feb-07 14:10:34.332029: DEBUG:  Ranges Input 13 0.200875 0.899125
+2023-Feb-07 14:10:34.332029: DEBUG:  Ranges Input 14 1.50062 1.99938
+2023-Feb-07 14:10:34.332029: DEBUG:  Ranges Input 15 0.2407 0.7993
+2023-Feb-07 14:10:34.333027: DEBUG:  Ranges Input 16 4.00375 6.99625
+2023-Feb-07 14:10:34.333027: DEBUG:  Ranges Input 17 0.350562 0.798312
+2023-Feb-07 14:10:34.334027: DEBUG:  Ranges Input 18 0.10225 0.69925
+2023-Feb-07 14:10:34.334027: DEBUG:  Ranges Input 19 2.25062 2.74938
+2023-Feb-07 14:10:34.334027: DEBUG:  Ranges Input 20 1575.44 1924.56
+2023-Feb-07 14:10:34.335021: DEBUG: Supports per subset 39 39 39 39 39 39 39 39 38 38
+2023-Feb-07 14:10:34.335021: DEBUG: number CV subsets 10 maximum point number 39
+2023-Feb-07 14:10:34.336019: DEBUG: Maximum basis terms 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387
+2023-Feb-07 14:10:34.336019: DEBUG:  
+2023-Feb-07 14:10:34.337016: DEBUG:  ********** Testing polynomials *************** 
+2023-Feb-07 14:10:34.337016: DEBUG:  
+2023-Feb-07 14:10:34.337016: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:34.339011: DEBUG: Polynomial: Order 1 Complexity 0 R2adj 0.992381 R2CV 0.991411 error 0.0090815 numCoeff 22 boxcox 0 lambda 1 subspace 0
+2023-Feb-07 14:10:34.340008: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:34.341006: DEBUG:  
+2023-Feb-07 14:10:34.341006: DEBUG: Best CoP 0.995538 best error 0.00471765 complexity 0 position 0
+2023-Feb-07 14:10:34.341006: DEBUG: Search for simpler model with minimum CoP 0.99
+2023-Feb-07 14:10:34.342003: DEBUG: Best reduced CoP 0.995538 complexity 0
+2023-Feb-07 14:10:34.342003: DEBUG: Requested CoP tolerance reached with polynomials 
+2023-Feb-07 14:10:34.342003: DEBUG: ===================== Build Subspaces =====================
+2023-Feb-07 14:10:34.343000: DEBUG: Polynomial: Order 1 Complexity 1 R2adj 0.993258 R2CV 0.992086 error 0.00839105 numCoeff 22 boxcox 1 lambda 0.5 subspace 1
+2023-Feb-07 14:10:34.343000: DEBUG:  
+2023-Feb-07 14:10:34.343000: DEBUG: Importance info 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+2023-Feb-07 14:10:34.343000: DEBUG: Best CoP 0.995538 best error 0.00471765 complexity 0 position 0
+2023-Feb-07 14:10:34.343000: DEBUG: Search for simpler model with minimum CoP 0.99
+2023-Feb-07 14:10:34.343998: DEBUG: Best reduced CoP 0.995538 complexity 0
+2023-Feb-07 14:10:34.344995: DEBUG: Maximum input correlation 0.0272588
+2023-Feb-07 14:10:34.344995: DEBUG: Number of active inputs 21
+2023-Feb-07 14:10:34.344995: DEBUG: ===================== Evaluate Metamodels =====================
+2023-Feb-07 14:10:34.344995: DEBUG:  Ranges Input 0 117.032 142.968
+2023-Feb-07 14:10:34.345992: DEBUG:  Ranges Input 1 0.500375 0.799625
+2023-Feb-07 14:10:34.345992: DEBUG:  Ranges Input 2 0.660138 0.769863
+2023-Feb-07 14:10:34.345992: DEBUG:  Ranges Input 3 360.1 439.9
+2023-Feb-07 14:10:34.346989: DEBUG:  Ranges Input 4 0.500562 0.649813
+2023-Feb-07 14:10:34.346989: DEBUG:  Ranges Input 5 1.50062 1.99938
+2023-Feb-07 14:10:34.346989: DEBUG:  Ranges Input 6 0.800125 0.899875
+2023-Feb-07 14:10:34.346989: DEBUG:  Ranges Input 7 1.50062 1.99938
+2023-Feb-07 14:10:34.347986: DEBUG:  Ranges Input 8 1.00875 7.99125
+2023-Feb-07 14:10:34.347986: DEBUG:  Ranges Input 9 4.00375 6.99625
+2023-Feb-07 14:10:34.347986: DEBUG:  Ranges Input 10 0.5005 0.8995
+2023-Feb-07 14:10:34.347986: DEBUG:  Ranges Input 11 90.05 129.95
+2023-Feb-07 14:10:34.348984: DEBUG:  Ranges Input 12 0.10075 0.69925
+2023-Feb-07 14:10:34.348984: DEBUG: Polynomial: Order 2 Complexity 2 R2adj 0.996837 R2CV 0.995801 error 0.00472417 numCoeff 43 boxcox 1 lambda 0.5 subspace 2
+2023-Feb-07 14:10:34.348984: DEBUG:  Ranges Input 13 0.200875 0.899125
+2023-Feb-07 14:10:34.348984: DEBUG: Not enough supports 388 for coefficients 232
+2023-Feb-07 14:10:34.348984: DEBUG:  Ranges Input 14 1.50062 1.99938
+2023-Feb-07 14:10:34.349981: DEBUG: Not enough supports 388 for coefficients 253
+2023-Feb-07 14:10:34.349981: DEBUG:  Ranges Input 15 0.2407 0.7993
+2023-Feb-07 14:10:34.349981: DEBUG: Not enough supports 388 for coefficients 253
+2023-Feb-07 14:10:34.349981: DEBUG:  Ranges Input 16 4.00375 6.99625
+2023-Feb-07 14:10:34.349981: DEBUG:  
+2023-Feb-07 14:10:34.349981: DEBUG:  Ranges Input 17 0.350562 0.798312
+2023-Feb-07 14:10:34.350978: DEBUG:  ********** Extract polynomials *************** 
+2023-Feb-07 14:10:34.350978: DEBUG:  Ranges Input 18 0.10225 0.69925
+2023-Feb-07 14:10:34.350978: DEBUG:  Ranges Input 19 2.25062 2.74938
+2023-Feb-07 14:10:34.350978: DEBUG:  
+2023-Feb-07 14:10:34.350978: DEBUG:  Ranges Input 20 1575.44 1924.56
+2023-Feb-07 14:10:34.351975: DEBUG: InitialSubspace: R2adj 0.991944 R2CVfull 0.991411 numcoeff 22 error 0.0090815 selection 111111111111111111111
+2023-Feb-07 14:10:34.351975: DEBUG: Supports per subset 39 39 39 39 39 39 39 39 38 38
+2023-Feb-07 14:10:34.351975: DEBUG: number CV subsets 10 maximum point number 39
+2023-Feb-07 14:10:34.352973: DEBUG: Maximum basis terms 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387
+2023-Feb-07 14:10:34.352973: DEBUG:  
+2023-Feb-07 14:10:34.352973: DEBUG:  ********** Testing polynomials *************** 
+2023-Feb-07 14:10:34.353970: DEBUG:  
+2023-Feb-07 14:10:34.353970: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:34.354968: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:34.354968: DEBUG:  
+2023-Feb-07 14:10:34.355965: DEBUG: Polynomial: Order 1 Complexity 0 R2adj 0.824349 R2CV 0.797129 error 0.214511 numCoeff 22 boxcox 0 lambda 1 subspace 0
+2023-Feb-07 14:10:34.355965: DEBUG: InitialSubspace: R2adj 0.992872 R2CVfull 0.992086 numcoeff 22 error 0.00839105 selection 111111111111111111111
+2023-Feb-07 14:10:34.358957: DEBUG: Polynomial: Order 1 Complexity 1 R2adj 0.867461 R2CV 0.848333 error 0.160808 numCoeff 22 boxcox 1 lambda 0.5 subspace 1
+2023-Feb-07 14:10:34.358957: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:34.359954: DEBUG:  
+2023-Feb-07 14:10:34.360951: DEBUG: InitialSubspace: R2adj 0.996452 R2CVfull 0.995801 numcoeff 43 error 0.00472417 selection 111111111111111111111
+2023-Feb-07 14:10:34.364941: DEBUG: Polynomial: Order 2 Complexity 2 R2adj 0.879797 R2CV 0.842376 error 0.177327 numCoeff 43 boxcox 1 lambda 0.5 subspace 2
+2023-Feb-07 14:10:34.364941: DEBUG: Not enough supports 388 for coefficients 232
+2023-Feb-07 14:10:34.364941: DEBUG: Not enough supports 388 for coefficients 253
+2023-Feb-07 14:10:34.365938: DEBUG: Not enough supports 388 for coefficients 253
+2023-Feb-07 14:10:34.365938: DEBUG:  
+2023-Feb-07 14:10:34.366935: DEBUG:  ********** Extract polynomials *************** 
+2023-Feb-07 14:10:34.366935: DEBUG:  
+2023-Feb-07 14:10:34.366935: DEBUG: InitialSubspace: R2adj 0.814271 R2CVfull 0.797129 numcoeff 22 error 0.214511 selection 111111111111111111111
+2023-Feb-07 14:10:34.369927: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:34.370925: DEBUG:  
+2023-Feb-07 14:10:34.370925: DEBUG: InitialSubspace: R2adj 0.859856 R2CVfull 0.848333 numcoeff 22 error 0.160808 selection 111111111111111111111
+2023-Feb-07 14:10:34.372921: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:34.373919: DEBUG:  
+2023-Feb-07 14:10:34.373919: DEBUG: Best CoP 0.995801 best error 0.00472417 complexity 2 position 2
+2023-Feb-07 14:10:34.373919: DEBUG: Search for simpler model with minimum CoP 0.99
+2023-Feb-07 14:10:34.373919: DEBUG: Best reduced CoP 0.991411 complexity 0
+2023-Feb-07 14:10:34.374915: DEBUG: Requested CoP tolerance reached with polynomials 
+2023-Feb-07 14:10:34.374915: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:34.374915: DEBUG:  
+2023-Feb-07 14:10:34.374915: DEBUG: Best CoP 0.995801 best error 0.00472417 complexity 2 position 2
+2023-Feb-07 14:10:34.375920: DEBUG: Search for simpler model with minimum CoP 0.99
+2023-Feb-07 14:10:34.375920: DEBUG:  
+2023-Feb-07 14:10:34.375920: DEBUG: Best reduced CoP 0.991411 complexity 0
+2023-Feb-07 14:10:34.376910: DEBUG: InitialSubspace: R2adj 0.865164 R2CVfull 0.842376 numcoeff 43 error 0.177327 selection 111111111111111111111
+2023-Feb-07 14:10:34.388878: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:34.389875: DEBUG:  
+2023-Feb-07 14:10:34.389875: DEBUG: Best CoP 0.848333 best error 0.160808 complexity 1 position 1
+2023-Feb-07 14:10:34.390872: DEBUG: Search for simpler model with minimum CoP 0.829192
+2023-Feb-07 14:10:34.390872: DEBUG: Best reduced CoP 0.848333 complexity 1
+2023-Feb-07 14:10:34.390872: DEBUG:  
+2023-Feb-07 14:10:34.390872: DEBUG:  ********** Testing MLS *************** 
+2023-Feb-07 14:10:34.390872: DEBUG:  
+2023-Feb-07 14:10:34.391869: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:34.443731: DEBUG:  
+2023-Feb-07 14:10:34.443731: DEBUG: Best subspaces 
+2023-Feb-07 14:10:34.443731: DEBUG:  Complexity 0 R2 0.996141 R2adj 0.995919 R2CV 0.995538 predError 0.00471765 NumVariables 21 numCoeff 22
+2023-Feb-07 14:10:34.444736: DEBUG:  Complexity 2 R2 0.996629 R2adj 0.996218 R2CV 0.99554 predError 0.00500321 NumVariables 21 numCoeff 43
+2023-Feb-07 14:10:34.444736: DEBUG:  
+2023-Feb-07 14:10:34.444736: DEBUG: Best reduced subspaces 
+2023-Feb-07 14:10:34.444736: DEBUG:  Complexity 0 R2 0.996141 R2adj 0.995919 R2CV 0.995538 predError 0.00471765 NumVariables 21 numCoeff 22
+2023-Feb-07 14:10:34.445726: DEBUG:  Complexity 2 R2 0.996629 R2adj 0.996218 R2CV 0.99554 predError 0.00500321 NumVariables 21 numCoeff 43
+2023-Feb-07 14:10:34.468664: DEBUG: ===================== Build Subspaces =====================
+2023-Feb-07 14:10:34.468664: DEBUG: Importance info 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+2023-Feb-07 14:10:34.470658: DEBUG: Maximum input correlation 0.0272588
+2023-Feb-07 14:10:34.470658: DEBUG: Number of active inputs 21
+2023-Feb-07 14:10:34.471656: DEBUG: ===================== Evaluate Metamodels =====================
+2023-Feb-07 14:10:34.471656: DEBUG:  Ranges Input 0 117.032 142.968
+2023-Feb-07 14:10:34.471656: DEBUG:  Ranges Input 1 0.500375 0.799625
+2023-Feb-07 14:10:34.472654: DEBUG:  Ranges Input 2 0.660138 0.769863
+2023-Feb-07 14:10:34.472654: DEBUG:  Ranges Input 3 360.1 439.9
+2023-Feb-07 14:10:34.472654: DEBUG:  Ranges Input 4 0.500562 0.649813
+2023-Feb-07 14:10:34.472654: DEBUG:  Ranges Input 5 1.50062 1.99938
+2023-Feb-07 14:10:34.473651: DEBUG:  Ranges Input 6 0.800125 0.899875
+2023-Feb-07 14:10:34.473651: DEBUG:  Ranges Input 7 1.50062 1.99938
+2023-Feb-07 14:10:34.473651: DEBUG:  Ranges Input 8 1.00875 7.99125
+2023-Feb-07 14:10:34.473651: DEBUG:  Ranges Input 9 4.00375 6.99625
+2023-Feb-07 14:10:34.474648: DEBUG:  Ranges Input 10 0.5005 0.8995
+2023-Feb-07 14:10:34.474648: DEBUG:  Ranges Input 11 90.05 129.95
+2023-Feb-07 14:10:34.474648: DEBUG:  Ranges Input 12 0.10075 0.69925
+2023-Feb-07 14:10:34.474648: DEBUG:  Ranges Input 13 0.200875 0.899125
+2023-Feb-07 14:10:34.475646: DEBUG:  Ranges Input 14 1.50062 1.99938
+2023-Feb-07 14:10:34.475646: DEBUG:  Ranges Input 15 0.2407 0.7993
+2023-Feb-07 14:10:34.475646: DEBUG:  Ranges Input 16 4.00375 6.99625
+2023-Feb-07 14:10:34.475646: DEBUG:  Ranges Input 17 0.350562 0.798312
+2023-Feb-07 14:10:34.476643: DEBUG:  
+2023-Feb-07 14:10:34.476643: DEBUG:  Ranges Input 18 0.10225 0.69925
+2023-Feb-07 14:10:34.476643: DEBUG: Best subspaces 
+2023-Feb-07 14:10:34.476643: DEBUG:  Ranges Input 19 2.25062 2.74938
+2023-Feb-07 14:10:34.476643: DEBUG:  Complexity 0 R2 0.992381 R2adj 0.991944 R2CV 0.991411 predError 0.0090815 NumVariables 21 numCoeff 22
+2023-Feb-07 14:10:34.477640: DEBUG:  Ranges Input 20 1575.44 1924.56
+2023-Feb-07 14:10:34.477640: DEBUG:  Complexity 1 R2 0.993258 R2adj 0.992872 R2CV 0.992086 predError 0.00839105 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:34.477640: DEBUG: Supports per subset 39 39 39 39 39 39 39 39 38 38
+2023-Feb-07 14:10:34.477640: DEBUG:  Complexity 2 R2 0.996837 R2adj 0.996452 R2CV 0.995801 predError 0.00472417 NumVariables 21 numCoeff 44
+2023-Feb-07 14:10:34.477640: DEBUG: number CV subsets 10 maximum point number 39
+2023-Feb-07 14:10:34.478637: DEBUG:  
+2023-Feb-07 14:10:34.478637: DEBUG: Best reduced subspaces 
+2023-Feb-07 14:10:34.478637: DEBUG: Maximum basis terms 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387
+2023-Feb-07 14:10:34.478637: DEBUG:  Complexity 0 R2 0.992381 R2adj 0.991944 R2CV 0.991411 predError 0.0090815 NumVariables 21 numCoeff 22
+2023-Feb-07 14:10:34.478637: DEBUG:  
+2023-Feb-07 14:10:34.479635: DEBUG:  Complexity 1 R2 0.993258 R2adj 0.992872 R2CV 0.992086 predError 0.00839105 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:34.479635: DEBUG:  ********** Testing polynomials *************** 
+2023-Feb-07 14:10:34.479635: DEBUG:  Complexity 2 R2 0.996837 R2adj 0.996452 R2CV 0.995801 predError 0.00472417 NumVariables 21 numCoeff 44
+2023-Feb-07 14:10:34.479635: DEBUG:  
+2023-Feb-07 14:10:34.479635: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:34.481628: DEBUG: Polynomial: Order 1 Complexity 0 R2adj 0.0601881 R2CV 0 error 1.12169 numCoeff 22 boxcox 0 lambda 1 subspace 0
+2023-Feb-07 14:10:34.484620: DEBUG: Polynomial: Order 1 Complexity 0 R2adj 0.0601881 R2CV 0 error 1.12169 numCoeff 22 boxcox 1 lambda 1 subspace 1
+2023-Feb-07 14:10:34.490605: DEBUG: Polynomial: Order 2 Complexity 2 R2adj 0.0997862 R2CV 0 error 1.27423 numCoeff 43 boxcox 1 lambda 1 subspace 2
+2023-Feb-07 14:10:34.490605: DEBUG: Not enough supports 388 for coefficients 232
+2023-Feb-07 14:10:34.490605: DEBUG: Not enough supports 388 for coefficients 253
+2023-Feb-07 14:10:34.491603: DEBUG: Not enough supports 388 for coefficients 253
+2023-Feb-07 14:10:34.491603: DEBUG:  
+2023-Feb-07 14:10:34.491603: DEBUG:  ********** Extract polynomials *************** 
+2023-Feb-07 14:10:34.492600: DEBUG:  
+2023-Feb-07 14:10:34.492600: DEBUG: InitialSubspace: R2adj 0.00626448 R2CVfull 0 numcoeff 22 error 1.12169 selection 111111111111111111111
+2023-Feb-07 14:10:34.495591: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:34.496590: DEBUG:  
+2023-Feb-07 14:10:34.496590: DEBUG: InitialSubspace: R2adj 0 R2CVfull 0 numcoeff 43 error 1.27423 selection 111111111111111111111
+2023-Feb-07 14:10:34.503570: DEBUG: ===================== Build Subspaces =====================
+2023-Feb-07 14:10:34.503570: DEBUG: Importance info 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+2023-Feb-07 14:10:34.505565: DEBUG: Maximum input correlation 0.0272588
+2023-Feb-07 14:10:34.506562: DEBUG: Number of active inputs 21
+2023-Feb-07 14:10:34.506562: DEBUG: ===================== Evaluate Metamodels =====================
+2023-Feb-07 14:10:34.506562: DEBUG:  Ranges Input 0 117.032 142.968
+2023-Feb-07 14:10:34.507560: DEBUG:  Ranges Input 1 0.500375 0.799625
+2023-Feb-07 14:10:34.507560: DEBUG:  Ranges Input 2 0.660138 0.769863
+2023-Feb-07 14:10:34.507560: DEBUG:  Ranges Input 3 360.1 439.9
+2023-Feb-07 14:10:34.507560: DEBUG:  Ranges Input 4 0.500562 0.649813
+2023-Feb-07 14:10:34.508557: DEBUG:  Ranges Input 5 1.50062 1.99938
+2023-Feb-07 14:10:34.508557: DEBUG:  Ranges Input 6 0.800125 0.899875
+2023-Feb-07 14:10:34.508557: DEBUG:  Ranges Input 7 1.50062 1.99938
+2023-Feb-07 14:10:34.508557: DEBUG:  Ranges Input 8 1.00875 7.99125
+2023-Feb-07 14:10:34.509554: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:34.509554: DEBUG:  Ranges Input 9 4.00375 6.99625
+2023-Feb-07 14:10:34.509554: DEBUG:  Ranges Input 10 0.5005 0.8995
+2023-Feb-07 14:10:34.509554: DEBUG:  
+2023-Feb-07 14:10:34.509554: DEBUG:  Ranges Input 11 90.05 129.95
+2023-Feb-07 14:10:34.510552: DEBUG: InitialSubspace: R2adj 0.00626448 R2CVfull 0 numcoeff 22 error 1.12169 selection 111111111111111111111
+2023-Feb-07 14:10:34.510552: DEBUG:  Ranges Input 12 0.10075 0.69925
+2023-Feb-07 14:10:34.510552: DEBUG:  Ranges Input 13 0.200875 0.899125
+2023-Feb-07 14:10:34.510552: DEBUG:  Ranges Input 14 1.50062 1.99938
+2023-Feb-07 14:10:34.511548: DEBUG:  Ranges Input 15 0.2407 0.7993
+2023-Feb-07 14:10:34.511548: DEBUG:  Ranges Input 16 4.00375 6.99625
+2023-Feb-07 14:10:34.511548: DEBUG:  Ranges Input 17 0.350562 0.798312
+2023-Feb-07 14:10:34.511548: DEBUG:  Ranges Input 18 0.10225 0.69925
+2023-Feb-07 14:10:34.512545: DEBUG:  Ranges Input 19 2.25062 2.74938
+2023-Feb-07 14:10:34.512545: DEBUG:  Ranges Input 20 1575.44 1924.56
+2023-Feb-07 14:10:34.512545: DEBUG: Supports per subset 39 39 39 39 39 39 39 39 38 38
+2023-Feb-07 14:10:34.512545: DEBUG: number CV subsets 10 maximum point number 39
+2023-Feb-07 14:10:34.513542: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:34.513542: DEBUG: Maximum basis terms 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387 387
+2023-Feb-07 14:10:34.513542: DEBUG:  
+2023-Feb-07 14:10:34.514540: DEBUG:  ********** Testing polynomials *************** 
+2023-Feb-07 14:10:34.514540: DEBUG:  
+2023-Feb-07 14:10:34.514540: DEBUG:  
+2023-Feb-07 14:10:34.514540: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:34.514540: DEBUG: InitialSubspace: R2adj 0 R2CVfull 0 numcoeff 43 error 1.27423 selection 111111111111111111111
+2023-Feb-07 14:10:34.516536: DEBUG: Polynomial: Order 1 Complexity 0 R2adj 0.850601 R2CV 0.82754 error 0.182355 numCoeff 22 boxcox 0 lambda 1 subspace 0
+2023-Feb-07 14:10:34.519528: DEBUG: Polynomial: Order 1 Complexity 1 R2adj 0.892336 R2CV 0.876881 error 0.13054 numCoeff 22 boxcox 1 lambda 0.5 subspace 1
+2023-Feb-07 14:10:34.525512: DEBUG: Polynomial: Order 2 Complexity 2 R2adj 0.901625 R2CV 0.870918 error 0.145217 numCoeff 43 boxcox 1 lambda 0.5 subspace 2
+2023-Feb-07 14:10:34.526510: DEBUG: Not enough supports 388 for coefficients 232
+2023-Feb-07 14:10:34.526510: DEBUG: Not enough supports 388 for coefficients 253
+2023-Feb-07 14:10:34.526510: DEBUG: Not enough supports 388 for coefficients 253
+2023-Feb-07 14:10:34.527512: DEBUG:  
+2023-Feb-07 14:10:34.527512: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:34.527512: DEBUG:  ********** Extract polynomials *************** 
+2023-Feb-07 14:10:34.527512: DEBUG:  
+2023-Feb-07 14:10:34.527512: DEBUG:  
+2023-Feb-07 14:10:34.528504: DEBUG: Best CoP 0 best error 1.12169 complexity 0 position 0
+2023-Feb-07 14:10:34.528504: DEBUG: InitialSubspace: R2adj 0.842029 R2CVfull 0.82754 numcoeff 22 error 0.182355 selection 111111111111111111111
+2023-Feb-07 14:10:34.528504: DEBUG: Search for simpler model with minimum CoP -0.131689
+2023-Feb-07 14:10:34.528504: DEBUG: Best reduced CoP 0 complexity 0
+2023-Feb-07 14:10:34.528504: DEBUG:  
+2023-Feb-07 14:10:34.529501: DEBUG:  ********** Testing MLS *************** 
+2023-Feb-07 14:10:34.529501: DEBUG:  
+2023-Feb-07 14:10:34.529501: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:34.531496: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:34.532493: DEBUG:  
+2023-Feb-07 14:10:34.532493: DEBUG: InitialSubspace: R2adj 0.886158 R2CVfull 0.876881 numcoeff 22 error 0.13054 selection 111111111111111111111
+2023-Feb-07 14:10:34.536482: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:34.537479: DEBUG:  
+2023-Feb-07 14:10:34.537479: DEBUG: InitialSubspace: R2adj 0.889648 R2CVfull 0.870918 numcoeff 43 error 0.145217 selection 111111111111111111111
+2023-Feb-07 14:10:34.549447: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:34.550444: DEBUG:  
+2023-Feb-07 14:10:34.550444: DEBUG: Best CoP 0.876881 best error 0.13054 complexity 1 position 1
+2023-Feb-07 14:10:34.550444: DEBUG: Search for simpler model with minimum CoP 0.85946
+2023-Feb-07 14:10:34.551442: DEBUG: Best reduced CoP 0.876881 complexity 1
+2023-Feb-07 14:10:34.551442: DEBUG:  
+2023-Feb-07 14:10:34.551442: DEBUG:  ********** Testing MLS *************** 
+2023-Feb-07 14:10:34.552440: DEBUG:  
+2023-Feb-07 14:10:34.552440: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:36.564802: DEBUG: MLS: Order 1 Complexity 11 R2adj 0.82884 R2CV 0.799431 error 0.212658 numCoeff 22 boxcox 1 lambda 1 subspace 0
+2023-Feb-07 14:10:36.695454: DEBUG: MLS: Order 1 Complexity 11 R2adj 0.0275498 R2CV 0 error 1.06818 numCoeff 22 boxcox 1 lambda 0.5 subspace 0
+2023-Feb-07 14:10:36.718391: DEBUG: MLS: Order 1 Complexity 11 R2adj 0.854404 R2CV 0.829477 error 0.180802 numCoeff 22 boxcox 1 lambda 1 subspace 0
+2023-Feb-07 14:10:38.399909: DEBUG: MLS: Order 2 Complexity 12 R2adj 0.981128 R2CV 0.975534 error 0.0275238 numCoeff 43 boxcox 0 lambda 1 subspace 1
+2023-Feb-07 14:10:38.399909: DEBUG:  
+2023-Feb-07 14:10:38.400917: DEBUG:  ********** Extract MLS *************** 
+2023-Feb-07 14:10:38.400917: DEBUG:  
+2023-Feb-07 14:10:38.400917: DEBUG: InitialSubspace: R2adj 0.975395 R2CVfull 0.973082 numcoeff 22 error 0.0285405 selection 111111111111111111111
+2023-Feb-07 14:10:38.853695: DEBUG: MLS: Order 1 Complexity 11 R2adj 0.0739215 R2CV 0 error 1.12476 numCoeff 22 boxcox 0 lambda 1 subspace 1
+2023-Feb-07 14:10:39.205947: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:39.206954: DEBUG:  
+2023-Feb-07 14:10:39.207942: DEBUG: InitialSubspace: R2adj 0.978831 R2CVfull 0.975534 numcoeff 43 error 0.0275238 selection 111111111111111111111
+2023-Feb-07 14:10:41.366619: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:41.367616: DEBUG:  
+2023-Feb-07 14:10:41.367616: DEBUG: Best CoP 0.983123 best error 0.0189867 complexity 2 position 2
+2023-Feb-07 14:10:41.367616: DEBUG: Search for simpler model with minimum CoP 0.971013
+2023-Feb-07 14:10:41.368614: DEBUG: Best reduced CoP 0.973606 complexity 1
+2023-Feb-07 14:10:41.368614: DEBUG:  
+2023-Feb-07 14:10:41.368614: DEBUG:  ********** Testing Kriging *************** 
+2023-Feb-07 14:10:41.368614: DEBUG:  ********** Isotropic Kriging *************** 
+2023-Feb-07 14:10:41.369611: DEBUG:  
+2023-Feb-07 14:10:41.369611: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:41.674804: DEBUG: Kriging: Complexity 10 R2adj 0.998589 R2CV 0.989113 error 0.0115432 boxcox 1 lambda 1 selection 111111111111111111111 subspace 0
+2023-Feb-07 14:10:41.675802: DEBUG:  
+2023-Feb-07 14:10:41.675802: DEBUG:  ********** Extract Kriging *************** 
+2023-Feb-07 14:10:41.704724: DEBUG:  
+2023-Feb-07 14:10:41.704724: DEBUG: InitialSubspace: R2adj 0.998589 R2CVfull 0.989113 error 0.0115432 selection 111111111111111111111
+2023-Feb-07 14:10:42.105651: DEBUG: MLS: Order 2 Complexity 12 R2adj 0.859248 R2CV 0.809376 error 0.214452 numCoeff 43 boxcox 0 lambda 1 subspace 1
+2023-Feb-07 14:10:42.106659: DEBUG:  
+2023-Feb-07 14:10:42.106659: DEBUG:  ********** Extract MLS *************** 
+2023-Feb-07 14:10:42.106659: DEBUG:  
+2023-Feb-07 14:10:42.107646: DEBUG: InitialSubspace: R2adj 0.81902 R2CVfull 0.799431 numcoeff 22 error 0.212658 selection 111111111111111111111
+2023-Feb-07 14:10:42.295161: DEBUG: MLS: Order 2 Complexity 12 R2adj 0.878638 R2CV 0.835716 error 0.18482 numCoeff 43 boxcox 0 lambda 1 subspace 1
+2023-Feb-07 14:10:42.295161: DEBUG:  
+2023-Feb-07 14:10:42.296159: DEBUG:  ********** Extract MLS *************** 
+2023-Feb-07 14:10:42.296159: DEBUG:  
+2023-Feb-07 14:10:42.297156: DEBUG: InitialSubspace: R2adj 0.84605 R2CVfull 0.829477 numcoeff 22 error 0.180802 selection 111111111111111111111
+2023-Feb-07 14:10:42.922043: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:42.923041: DEBUG:  
+2023-Feb-07 14:10:42.923041: DEBUG: InitialSubspace: R2adj 0.842113 R2CVfull 0.809376 numcoeff 43 error 0.214452 selection 111111111111111111111
+2023-Feb-07 14:10:43.111536: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:43.112534: DEBUG:  
+2023-Feb-07 14:10:43.112534: DEBUG: InitialSubspace: R2adj 0.863863 R2CVfull 0.835716 numcoeff 43 error 0.18482 selection 111111111111111111111
+2023-Feb-07 14:10:44.436243: DEBUG: MLS: Order 2 Complexity 12 R2adj 0.0558636 R2CV 0 error 1.14032 numCoeff 43 boxcox 1 lambda 0.5 subspace 2
+2023-Feb-07 14:10:44.437188: DEBUG:  
+2023-Feb-07 14:10:44.437188: DEBUG:  ********** Extract MLS *************** 
+2023-Feb-07 14:10:44.438180: DEBUG:  
+2023-Feb-07 14:10:44.438180: DEBUG: InitialSubspace: R2adj 0.0207859 R2CVfull 0 numcoeff 22 error 1.12476 selection 111111111111111111111
+2023-Feb-07 14:10:44.726407: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:44.727405: DEBUG:  
+2023-Feb-07 14:10:44.727405: DEBUG: Best CoP 0.989113 best error 0.0115432 complexity 10 position 5
+2023-Feb-07 14:10:44.727405: DEBUG: Search for simpler model with minimum CoP 0.978457
+2023-Feb-07 14:10:44.727405: DEBUG: Best reduced CoP 0.983123 complexity 2
+2023-Feb-07 14:10:44.728402: DEBUG:  
+2023-Feb-07 14:10:44.728402: DEBUG: Best CoP 0.989113 best error 0.0115432 complexity 10 position 5
+2023-Feb-07 14:10:44.728402: DEBUG: Search for simpler model with minimum CoP 0.978457
+2023-Feb-07 14:10:44.729399: DEBUG: Best reduced CoP 0.983123 complexity 2
+2023-Feb-07 14:10:44.958786: DEBUG:  
+2023-Feb-07 14:10:44.958786: DEBUG: Best subspaces 
+2023-Feb-07 14:10:44.959847: DEBUG:  Complexity 0 R2 0.975588 R2adj 0.974187 R2CV 0.972485 predError 0.0290939 NumVariables 21 numCoeff 22
+2023-Feb-07 14:10:44.959847: DEBUG:  Complexity 1 R2 0.97694 R2adj 0.975617 R2CV 0.973606 predError 0.027985 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:44.959847: DEBUG:  Complexity 2 R2 0.986415 R2adj 0.984762 R2CV 0.983123 predError 0.0189867 NumVariables 21 numCoeff 44
+2023-Feb-07 14:10:44.960862: DEBUG:  Complexity 11 R2 0.97673 R2adj 0.975395 R2CV 0.973082 predError 0.0285405 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:44.960862: DEBUG:  Complexity 12 R2 0.981128 R2adj 0.978831 R2CV 0.975534 predError 0.0275238 NumVariables 21 numCoeff 44
+2023-Feb-07 14:10:44.960862: DEBUG:  Complexity 10 R2 0.998589 R2adj 0.998589 R2CV 0.989113 predError 0.0115432 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:44.960862: DEBUG:  
+2023-Feb-07 14:10:44.961778: DEBUG: Best reduced subspaces 
+2023-Feb-07 14:10:44.961778: DEBUG:  Complexity 0 R2 0.975588 R2adj 0.974187 R2CV 0.972485 predError 0.0290939 NumVariables 21 numCoeff 22
+2023-Feb-07 14:10:44.961778: DEBUG:  Complexity 1 R2 0.97694 R2adj 0.975617 R2CV 0.973606 predError 0.027985 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:44.962827: DEBUG:  Complexity 2 R2 0.986415 R2adj 0.984762 R2CV 0.983123 predError 0.0189867 NumVariables 21 numCoeff 44
+2023-Feb-07 14:10:44.962827: DEBUG:  Complexity 11 R2 0.97673 R2adj 0.975395 R2CV 0.973082 predError 0.0285405 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:44.962827: DEBUG:  Complexity 12 R2 0.981128 R2adj 0.978831 R2CV 0.975534 predError 0.0275238 NumVariables 21 numCoeff 44
+2023-Feb-07 14:10:44.962827: DEBUG:  Complexity 10 R2 0.998589 R2adj 0.998589 R2CV 0.989113 predError 0.0115432 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:45.172266: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:45.173382: DEBUG:  
+2023-Feb-07 14:10:45.173382: DEBUG: Best CoP 0.848333 best error 0.160808 complexity 1 position 1
+2023-Feb-07 14:10:45.174209: DEBUG: Search for simpler model with minimum CoP 0.829192
+2023-Feb-07 14:10:45.174209: DEBUG: Best reduced CoP 0.848333 complexity 1
+2023-Feb-07 14:10:45.174209: DEBUG:  
+2023-Feb-07 14:10:45.174209: DEBUG:  ********** Testing Kriging *************** 
+2023-Feb-07 14:10:45.175334: DEBUG:  ********** Isotropic Kriging *************** 
+2023-Feb-07 14:10:45.175334: DEBUG:  
+2023-Feb-07 14:10:45.175334: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:45.235129: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:45.235129: DEBUG:  
+2023-Feb-07 14:10:45.236168: DEBUG: InitialSubspace: R2adj 0 R2CVfull 0 numcoeff 43 error 1.14032 selection 111111111111111111111
+2023-Feb-07 14:10:45.267014: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:45.268156: DEBUG:  
+2023-Feb-07 14:10:45.268156: DEBUG: Best CoP 0.876881 best error 0.13054 complexity 1 position 1
+2023-Feb-07 14:10:45.268156: DEBUG: Search for simpler model with minimum CoP 0.85946
+2023-Feb-07 14:10:45.268956: DEBUG: Best reduced CoP 0.876881 complexity 1
+2023-Feb-07 14:10:45.268956: DEBUG:  
+2023-Feb-07 14:10:45.268956: DEBUG:  ********** Testing Kriging *************** 
+2023-Feb-07 14:10:45.268956: DEBUG:  ********** Isotropic Kriging *************** 
+2023-Feb-07 14:10:45.270028: DEBUG:  
+2023-Feb-07 14:10:45.270028: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:45.483381: DEBUG: Kriging: Complexity 10 R2adj 0.996292 R2CV 0.909334 error 0.0961312 boxcox 1 lambda 1 selection 111111111111111111111 subspace 0
+2023-Feb-07 14:10:45.484379: DEBUG:  
+2023-Feb-07 14:10:45.484379: DEBUG:  ********** Extract Kriging *************** 
+2023-Feb-07 14:10:45.512303: DEBUG:  
+2023-Feb-07 14:10:45.513301: DEBUG: InitialSubspace: R2adj 0.996292 R2CVfull 0.909334 error 0.0961312 selection 111111111111111111111
+2023-Feb-07 14:10:45.578130: DEBUG: Kriging: Complexity 10 R2adj 0.995263 R2CV 0.920449 error 0.0843454 boxcox 1 lambda 1 selection 111111111111111111111 subspace 0
+2023-Feb-07 14:10:45.578130: DEBUG:  
+2023-Feb-07 14:10:45.579125: DEBUG:  ********** Extract Kriging *************** 
+2023-Feb-07 14:10:45.607050: DEBUG:  
+2023-Feb-07 14:10:45.607050: DEBUG: InitialSubspace: R2adj 0.995263 R2CVfull 0.920449 error 0.0843454 selection 111111111111111111111
+2023-Feb-07 14:10:47.468907: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:47.469905: DEBUG:  
+2023-Feb-07 14:10:47.469905: DEBUG: InitialSubspace: R2adj 0 R2CVfull 0 numcoeff 22 error 1.06818 selection 111111111111111111111
+2023-Feb-07 14:10:47.520890: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:47.521826: DEBUG:  
+2023-Feb-07 14:10:47.522834: DEBUG: Best CoP 0.909334 best error 0.0961312 complexity 10 position 5
+2023-Feb-07 14:10:47.522834: DEBUG: Search for simpler model with minimum CoP 0.893869
+2023-Feb-07 14:10:47.522834: DEBUG: Best reduced CoP 0.909334 complexity 10
+2023-Feb-07 14:10:47.523831: DEBUG:  
+2023-Feb-07 14:10:47.523831: DEBUG: Best CoP 0.909334 best error 0.0961312 complexity 10 position 5
+2023-Feb-07 14:10:47.523831: DEBUG: Search for simpler model with minimum CoP 0.893869
+2023-Feb-07 14:10:47.524758: DEBUG: Best reduced CoP 0.909334 complexity 10
+2023-Feb-07 14:10:48.267859: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:48.268856: DEBUG:  
+2023-Feb-07 14:10:48.268856: DEBUG: InitialSubspace: R2adj 0 R2CVfull 0 numcoeff 43 error 1.14032 selection 111111111111111111111
+2023-Feb-07 14:10:48.619924: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:48.620921: DEBUG:  
+2023-Feb-07 14:10:48.620921: DEBUG: Best CoP 0.920449 best error 0.0843454 complexity 10 position 5
+2023-Feb-07 14:10:48.621919: DEBUG: Search for simpler model with minimum CoP 0.905655
+2023-Feb-07 14:10:48.621919: DEBUG: Best reduced CoP 0.920449 complexity 10
+2023-Feb-07 14:10:48.621919: DEBUG:  
+2023-Feb-07 14:10:48.621919: DEBUG: Best CoP 0.920449 best error 0.0843454 complexity 10 position 5
+2023-Feb-07 14:10:48.622930: DEBUG: Search for simpler model with minimum CoP 0.905655
+2023-Feb-07 14:10:48.622930: DEBUG: Best reduced CoP 0.920449 complexity 10
+2023-Feb-07 14:10:50.433322: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:50.433322: DEBUG:  
+2023-Feb-07 14:10:50.434270: DEBUG: Best CoP 0 best error 1.06818 complexity 11 position 2
+2023-Feb-07 14:10:50.434270: DEBUG: Search for simpler model with minimum CoP -0.0781801
+2023-Feb-07 14:10:50.434270: DEBUG: Best reduced CoP 0 complexity 11
+2023-Feb-07 14:10:50.435267: DEBUG:  
+2023-Feb-07 14:10:50.435267: DEBUG:  ********** Testing Kriging *************** 
+2023-Feb-07 14:10:50.435267: DEBUG:  ********** Isotropic Kriging *************** 
+2023-Feb-07 14:10:50.435267: DEBUG:  
+2023-Feb-07 14:10:50.436264: DEBUG: curr_subspace 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+2023-Feb-07 14:10:50.682618: DEBUG: Kriging: Complexity 10 R2adj 1 R2CV 0 error 1.06809 boxcox 1 lambda 0.5 selection 111111111111111111111 subspace 0
+2023-Feb-07 14:10:51.158346: DEBUG: Kriging: Complexity 10 R2adj 1 R2CV 0 error 1.06973 boxcox 0 lambda 1 selection 111111111111111111111 subspace 1
+2023-Feb-07 14:10:51.158346: DEBUG:  
+2023-Feb-07 14:10:51.159404: DEBUG:  ********** Extract Kriging *************** 
+2023-Feb-07 14:10:51.192257: DEBUG:  
+2023-Feb-07 14:10:51.192257: DEBUG: InitialSubspace: R2adj 1 R2CVfull 0 error 1.06973 selection 111111111111111111111
+2023-Feb-07 14:10:51.467608: DEBUG:  
+2023-Feb-07 14:10:51.467608: DEBUG: Best subspaces 
+2023-Feb-07 14:10:51.468555: DEBUG:  Complexity 0 R2 0.824349 R2adj 0.814271 R2CV 0.797129 predError 0.214511 NumVariables 21 numCoeff 22
+2023-Feb-07 14:10:51.468555: DEBUG:  Complexity 1 R2 0.867461 R2adj 0.859856 R2CV 0.848333 predError 0.160808 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:51.468555: DEBUG:  Complexity 2 R2 0.879797 R2adj 0.865164 R2CV 0.842376 predError 0.177327 NumVariables 21 numCoeff 44
+2023-Feb-07 14:10:51.469602: DEBUG:  Complexity 11 R2 0.82884 R2adj 0.81902 R2CV 0.799431 predError 0.212658 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:51.469602: DEBUG:  Complexity 12 R2 0.859248 R2adj 0.842113 R2CV 0.809376 predError 0.214452 NumVariables 21 numCoeff 44
+2023-Feb-07 14:10:51.469602: DEBUG:  Complexity 10 R2 0.996292 R2adj 0.996292 R2CV 0.909334 predError 0.0961312 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:51.469602: DEBUG:  
+2023-Feb-07 14:10:51.470613: DEBUG: Best reduced subspaces 
+2023-Feb-07 14:10:51.470613: DEBUG:  Complexity 0 R2 0.824349 R2adj 0.814271 R2CV 0.797129 predError 0.214511 NumVariables 21 numCoeff 22
+2023-Feb-07 14:10:51.470613: DEBUG:  Complexity 1 R2 0.867461 R2adj 0.859856 R2CV 0.848333 predError 0.160808 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:51.471545: DEBUG:  Complexity 2 R2 0.879797 R2adj 0.865164 R2CV 0.842376 predError 0.177327 NumVariables 21 numCoeff 44
+2023-Feb-07 14:10:51.471545: DEBUG:  Complexity 11 R2 0.82884 R2adj 0.81902 R2CV 0.799431 predError 0.212658 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:51.471545: DEBUG:  Complexity 12 R2 0.859248 R2adj 0.842113 R2CV 0.809376 predError 0.214452 NumVariables 21 numCoeff 44
+2023-Feb-07 14:10:51.471545: DEBUG:  Complexity 10 R2 0.996292 R2adj 0.996292 R2CV 0.909334 predError 0.0961312 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:52.536706: DEBUG:  
+2023-Feb-07 14:10:52.536706: DEBUG: Best subspaces 
+2023-Feb-07 14:10:52.537703: DEBUG:  Complexity 0 R2 0.850601 R2adj 0.842029 R2CV 0.82754 predError 0.182355 NumVariables 21 numCoeff 22
+2023-Feb-07 14:10:52.537703: DEBUG:  Complexity 1 R2 0.892336 R2adj 0.886158 R2CV 0.876881 predError 0.13054 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:52.537703: DEBUG:  Complexity 2 R2 0.901625 R2adj 0.889648 R2CV 0.870918 predError 0.145217 NumVariables 21 numCoeff 44
+2023-Feb-07 14:10:52.538701: DEBUG:  Complexity 11 R2 0.854404 R2adj 0.84605 R2CV 0.829477 predError 0.180802 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:52.538701: DEBUG:  Complexity 12 R2 0.878638 R2adj 0.863863 R2CV 0.835716 predError 0.18482 NumVariables 21 numCoeff 44
+2023-Feb-07 14:10:52.538701: DEBUG:  Complexity 10 R2 0.995263 R2adj 0.995263 R2CV 0.920449 predError 0.0843454 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:52.538701: DEBUG:  
+2023-Feb-07 14:10:52.539698: DEBUG: Best reduced subspaces 
+2023-Feb-07 14:10:52.539698: DEBUG:  Complexity 0 R2 0.850601 R2adj 0.842029 R2CV 0.82754 predError 0.182355 NumVariables 21 numCoeff 22
+2023-Feb-07 14:10:52.539698: DEBUG:  Complexity 1 R2 0.892336 R2adj 0.886158 R2CV 0.876881 predError 0.13054 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:52.539698: DEBUG:  Complexity 2 R2 0.901625 R2adj 0.889648 R2CV 0.870918 predError 0.145217 NumVariables 21 numCoeff 44
+2023-Feb-07 14:10:52.540695: DEBUG:  Complexity 11 R2 0.854404 R2adj 0.84605 R2CV 0.829477 predError 0.180802 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:52.540695: DEBUG:  Complexity 12 R2 0.878638 R2adj 0.863863 R2CV 0.835716 predError 0.18482 NumVariables 21 numCoeff 44
+2023-Feb-07 14:10:52.540695: DEBUG:  Complexity 10 R2 0.995263 R2adj 0.995263 R2CV 0.920449 predError 0.0843454 NumVariables 21 numCoeff 23
+2023-Feb-07 14:10:53.172902: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:53.206866: DEBUG:  
+2023-Feb-07 14:10:53.207809: DEBUG: InitialSubspace: R2adj 1 R2CVfull 0 error 1.06809 selection 111111111111111111111
+2023-Feb-07 14:10:55.211869: DEBUG: No reduced subspace found 
+2023-Feb-07 14:10:55.211869: DEBUG:  
+2023-Feb-07 14:10:55.212809: DEBUG: Best CoP 0 best error 1.06809 complexity 10 position 4
+2023-Feb-07 14:10:55.212809: DEBUG: Search for simpler model with minimum CoP -0.0780852
+2023-Feb-07 14:10:55.212809: DEBUG: Best reduced CoP 0 complexity 10
+2023-Feb-07 14:10:55.213806: DEBUG:  
+2023-Feb-07 14:10:55.213806: DEBUG: Best CoP 0 best error 1.06809 complexity 10 position 4
+2023-Feb-07 14:10:55.213806: DEBUG: Search for simpler model with minimum CoP -0.0780852
+2023-Feb-07 14:10:55.213806: DEBUG: Best reduced CoP 0 complexity 10
+2023-Feb-07 14:10:59.207297: DEBUG:  
+2023-Feb-07 14:10:59.208296: DEBUG: Best subspaces 
+2023-Feb-07 14:10:59.208296: DEBUG:  Complexity 0 R2 0.0601881 R2adj 0.00626448 R2CV 0 predError 1.12169 NumVariables 21 numCoeff 22
+2023-Feb-07 14:10:59.208296: DEBUG:  Complexity 2 R2 0.0997862 R2adj 0 R2CV 0 predError 1.27423 NumVariables 21 numCoeff 43
+2023-Feb-07 14:10:59.209293: DEBUG:  Complexity 11 R2 0.0275498 R2adj 0 R2CV 0 predError 1.06818 NumVariables 21 numCoeff 24
+2023-Feb-07 14:10:59.209293: DEBUG:  Complexity 12 R2 0.0558636 R2adj 0 R2CV 0 predError 1.14032 NumVariables 21 numCoeff 45
+2023-Feb-07 14:10:59.209293: DEBUG:  Complexity 10 R2 1 R2adj 1 R2CV 0 predError 1.06809 NumVariables 21 numCoeff 24
+2023-Feb-07 14:10:59.209293: DEBUG:  
+2023-Feb-07 14:10:59.210290: DEBUG: Best reduced subspaces 
+2023-Feb-07 14:10:59.210290: DEBUG:  Complexity 0 R2 0.0601881 R2adj 0.00626448 R2CV 0 predError 1.12169 NumVariables 21 numCoeff 22
+2023-Feb-07 14:10:59.210290: DEBUG:  Complexity 2 R2 0.0997862 R2adj 0 R2CV 0 predError 1.27423 NumVariables 21 numCoeff 43
+2023-Feb-07 14:10:59.210290: DEBUG:  Complexity 11 R2 0.0275498 R2adj 0 R2CV 0 predError 1.06818 NumVariables 21 numCoeff 24
+2023-Feb-07 14:10:59.211288: DEBUG:  Complexity 12 R2 0.0558636 R2adj 0 R2CV 0 predError 1.14032 NumVariables 21 numCoeff 45
+2023-Feb-07 14:10:59.211288: DEBUG:  Complexity 10 R2 1 R2adj 1 R2CV 0 predError 1.06809 NumVariables 21 numCoeff 24

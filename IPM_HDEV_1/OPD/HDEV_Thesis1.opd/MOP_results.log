@@ -1,0 +1,226 @@
+---------------------------------------------------------------------------------------
+Number of samples:   400
+---------------------------------------------------------------------------------------
+Parameter name      Parameter range                 Sampling bounds
+i_Active_Length
+                    [117 / 143]                     [117.032 / 142.968] 
+i_Gear_Ratio
+                    [7 / 9]                         [7.0025 / 8.9975] 
+i_Line_Current_RMS
+                    [450 / 550]                     [450.125 / 549.875] 
+i_Slot_Op_Ratio
+                    [0.5 / 0.8]                     [0.500375 / 0.799625] 
+i_Split_Ratio
+                    [0.66 / 0.77]                   [0.660138 / 0.769863] 
+i_Tooth_Width_Ratio
+                    [0.5 / 0.65]                    [0.500187 / 0.649813] 
+i_Turns_Coil
+                    [9.9 / 12.1]                    [9.90275 / 12.0972] 
+L1_Bridge_Thickness
+                    [1.5 / 2]                       [1.50062 / 1.99938] 
+L1_Magnet_Bar_Width
+                    [0.8 / 0.9]                     [0.800125 / 0.899875] 
+L1_Magnet_Post
+                    [1.5 / 2]                       [1.50062 / 1.99938] 
+L1_Magnet_Separation
+                    [1 / 8]                         [1.00875 / 7.99125] 
+L1_Magnet_Thickness
+                    [4 / 7]                         [4.00375 / 6.99625] 
+L1_Pole_Arc
+                    [0.5 / 0.9]                     [0.5005 / 0.8995] 
+L1_Pole_V_angle
+                    [90 / 130]                      [90.05 / 129.95] 
+L1_Web_Length
+                    [0.1 / 0.7]                     [0.10075 / 0.69925] 
+L1_Web_Thickness
+                    [0.2 / 0.9]                     [0.200875 / 0.899125] 
+L2_Bridge_Thickness
+                    [1.5 / 2]                       [1.50062 / 1.99938] 
+L2_Magnet_Bar_Width
+                    [0.24 / 0.8]                    [0.2407 / 0.7993] 
+L2_Magnet_Thickness
+                    [4 / 7]                         [4.00375 / 6.99625] 
+L2_Pole_Arc
+                    [0.35 / 0.8]                    [0.350562 / 0.799438] 
+L2_Pole_V_angle
+                    [180 / 181]                     [180.001 / 180.999] 
+L2_Web_Thickness
+                    [0.1 / 0.7]                     [0.10075 / 0.69925] 
+u_YtoT
+                    [2.25 / 2.75]                   [2.25188 / 2.74938] 
+---------------------------------------------------------------------------------------
+ 
+Response                Model                                                 No. parameter No. coefficients          CoD adjusted           CoP
+o_Current_Density   Linear Regression of order 1 (no mixed terms)                3               4                 0.941         0.939
+o_Current_Density   Linear Regression of order 1 (with mixed terms)              3               7                 0.941         0.933
+o_Current_Density   Linear Regression of order 2 (no mixed terms)                3               7                 0.945         0.941
+o_Peak_Power_1krpm  Linear Regression of order 1 (no mixed terms)                3               4                 0.275         0.248
+o_Cont_Torque_1krpm Linear Regression of order 1 (no mixed terms)               10              11                 0.685         0.644
+o_Peak_Power_1krpm  Linear Regression of order 1 (no mixed terms, BoxCox)        5               6                 0.310         0.276
+o_Cont_Torque_1krpm Linear Regression of order 1 (with mixed terms)              4              11                 0.636         0.622
+o_Peak_Power_1krpm  Linear Regression of order 2 (no mixed terms, BoxCox)        4               9                 0.574         0.530
+o_Cont_Torque_1krpm Linear Regression of order 2 (no mixed terms)                5               7                 0.631         0.616
+o_Cont_Torque_4krpm Linear Regression of order 1 (no mixed terms)                9              10                 0.655         0.625
+o_Cont_Torque_4krpm Linear Regression of order 1 (no mixed terms, BoxCox)        8               9                 0.616         0.577
+o_Cont_Torque_4krpm Linear Regression of order 2 (no mixed terms)                9              19                 0.669         0.577
+o_Current_Density   Moving Least Squares of order 1 (exponential weight)         3               4                 0.942         0.939
+o_Current_Density   Moving Least Squares of order 2 (exponential weight)         3               7                 0.946         0.941
+o_Current_Density   Kriging (isotropic kernel)                                   3               1                 0.951         0.938
+o_Peak_Power_4krpm  Linear Regression of order 1 (no mixed terms)                3               4                 0.237         0.210
+o_Peak_Power_4krpm  Linear Regression of order 1 (with mixed terms, BoxCox)      3               7                 0.303         0.298
+o_Peak_Power_4krpm  Linear Regression of order 2 (with mixed terms, BoxCox)      4              15                 0.585         0.451
+o_Cont_Torque_4krpm Moving Least Squares of order 1 (exponential weight)         8               9                 0.613         0.587
+o_Cont_Torque_1krpm Moving Least Squares of order 1 (exponential weight)         4               5                 0.657         0.621
+o_Cont_Torque_4krpm Moving Least Squares of order 2 (exponential weight)         8              17                 0.634         0.526
+o_Cont_Torque_1krpm Moving Least Squares of order 2 (exponential weight)         5              11                 0.640         0.607
+o_Peak_Power_1krpm  Moving Least Squares of order 1 (exponential weight)         1               2                 0.904         0.856
+o_Peak_Power_1krpm  Moving Least Squares of order 2 (exponential weight)         1               3                 0.903         0.858
+o_Cont_Torque_4krpm Kriging (isotropic kernel)                                   6               1                 0.709         0.583
+o_Cont_Torque_1krpm Kriging (isotropic kernel)                                   4               1                 0.693         0.637
+o_Peak_Power_1krpm  Kriging (isotropic kernel)                                   1               1                 0.939         0.873
+o_Peak_Torque_1700rpm Linear Regression of order 1 (no mixed terms)                8               9                 0.392         0.328
+o_Peak_Torque_1700rpm Linear Regression of order 1 (no mixed terms, BoxCox)        8               9                 0.395         0.365
+o_Peak_Torque_1700rpm Linear Regression of order 2 (no mixed terms, BoxCox)        4               9                 0.499         0.485
+o_Torque_Density    Linear Regression of order 1 (no mixed terms)                7               8                 0.830         0.801
+o_Torque_Density    Linear Regression of order 1 (with mixed terms)              7              29                 0.877         0.744
+o_Torque_Density    Linear Regression of order 2 (no mixed terms, BoxCox)        7              15                 0.874         0.820
+o_WLTP3_Eff         Linear Regression of order 1 (no mixed terms)               11              12                 0.893         0.876
+o_WLTP3_Eff         Linear Regression of order 1 (with mixed terms)              4              11                 0.826         0.783
+o_WLTP3_Eff         Linear Regression of order 2 (no mixed terms, BoxCox)        6              13                 0.866         0.827
+o_Peak_Power_4krpm  Moving Least Squares of order 1 (exponential weight)         1               2                 0.849         0.782
+o_Peak_Power_4krpm  Moving Least Squares of order 2 (exponential weight, BoxCox) 7              15                 0.989         0.574
+o_Peak_Power_4krpm  Kriging (isotropic kernel)                                   1               1                 0.884         0.796
+o_WLTP3_Eff         Moving Least Squares of order 1 (exponential weight)         9              10                 0.883         0.863
+o_Weight_Act        Linear Regression of order 1 (no mixed terms)                1               2                 0.996         0.996
+o_Weight_Act        Linear Regression of order 1 (with mixed terms)              1               2                 0.996         0.996
+o_Torque_Density    Moving Least Squares of order 1 (exponential weight)         7               8                 0.848         0.810
+o_Weight_Act        Linear Regression of order 2 (no mixed terms)                1               3                 0.996         0.996
+o_WLTP3_Eff         Moving Least Squares of order 2 (exponential weight)         6              13                 0.852         0.812
+o_Torque_Density    Moving Least Squares of order 2 (exponential weight)         7              15                 0.877         0.807
+o_Peak_Torque_1700rpm Moving Least Squares of order 1 (exponential weight)         1               2                 0.796         0.699
+o_Peak_Torque_1700rpm Moving Least Squares of order 2 (exponential weight)         1               3                 0.813         0.705
+o_Weight_Mag        Linear Regression of order 1 (no mixed terms)                6               7                 0.953         0.946
+o_Weight_Mag        Linear Regression of order 1 (with mixed terms)              7              29                 0.980         0.967
+o_Weight_Mag        Linear Regression of order 2 (no mixed terms, BoxCox)        7              15                 0.968         0.960
+o_Torque_Density    Kriging (isotropic kernel)                                   7               1                 0.935         0.846
+o_WLTP3_Eff         Kriging (isotropic kernel, BoxCox)                           6               1                 0.928         0.865
+o_Peak_Torque_1700rpm Kriging (isotropic kernel)                                   1               1                 0.890         0.740
+o_Weight_Rot_Core   Linear Regression of order 1 (no mixed terms)                5               6                 0.994         0.994
+o_Weight_Rot_Core   Linear Regression of order 1 (with mixed terms)              4              11                 0.985         0.983
+o_Weight_Rot_Core   Linear Regression of order 2 (no mixed terms)                5              11                 0.995         0.993
+o_Weight_Stat_Core  Linear Regression of order 1 (no mixed terms)                2               3                 0.999         0.999
+o_Weight_Stat_Core  Linear Regression of order 1 (with mixed terms)              2               4                 0.999         0.999
+o_Weight_Stat_Core  Linear Regression of order 2 (with mixed terms)              2               6                 0.999         0.999
+o_Weight_Wdg        Linear Regression of order 1 (no mixed terms)                2               3                 0.999         0.999
+o_Weight_Wdg        Linear Regression of order 1 (with mixed terms)              2               4                 1.000         1.000
+o_Weight_Wdg        Linear Regression of order 2 (with mixed terms)              2               6                 1.000         1.000
+o_Weight_Mag        Moving Least Squares of order 1 (exponential weight, BoxCox) 7               8                 0.975         0.962
+o_Weight_Mag        Moving Least Squares of order 2 (exponential weight, BoxCox) 7              15                 0.981         0.967
+o_Weight_Mag        Kriging (isotropic kernel, BoxCox)                           7               1                 0.988         0.972
+ 
+----------------------------------- Best Metamodels ----------------------------------- 
+ 
+Response                Model                                                 No. parameter No. coefficients          CoD adjusted           CoP
+o_Cont_Torque_1krpm   Kriging (isotropic kernel)                                   4               1                 0.693         0.637
+o_Cont_Torque_4krpm   Linear Regression of order 1 (no mixed terms)                9              10                 0.655         0.625
+o_Current_Density     Linear Regression of order 1 (no mixed terms)                3               4                 0.941         0.939
+o_Peak_Power_1krpm    Kriging (isotropic kernel)                                   1               1                 0.939         0.873
+o_Peak_Power_4krpm    Kriging (isotropic kernel)                                   1               1                 0.884         0.796
+o_Peak_Torque_1700rpm Kriging (isotropic kernel)                                   1               1                 0.890         0.740
+o_Torque_Density      Kriging (isotropic kernel)                                   7               1                 0.935         0.846
+o_WLTP3_Eff           Linear Regression of order 1 (no mixed terms)               11              12                 0.893         0.876
+o_Weight_Act          Linear Regression of order 1 (with mixed terms)              1               2                 0.996         0.996
+o_Weight_Mag          Linear Regression of order 1 (with mixed terms)              7              29                 0.980         0.967
+o_Weight_Rot_Core     Linear Regression of order 1 (no mixed terms)                5               6                 0.994         0.994
+o_Weight_Stat_Core    Linear Regression of order 1 (no mixed terms)                2               3                 0.999         0.999
+o_Weight_Wdg          Linear Regression of order 1 (no mixed terms)                2               3                 0.999         0.999
+ 
+------------------------- Polynomial regression functions ----------------------------- 
+ 
+o_Cont_Torque_1krpm = No model function available
+
+o_Cont_Torque_4krpm = 1517.65 -2.84224*i_Active_Length -32.8104*i_Turns_Coil -789.505*L1_Magnet_Bar_Width + 8.55134*L1_Magnet_Separation -161.548*L1_Pole_Arc + 2.14118*L1_Pole_V_angle -84.93*L1_Web_Length -281.116*L2_Magnet_Bar_Width + 102.181*L2_Web_Thickness
+
+o_Current_Density = -35.4962 + 0.0327284*i_Line_Current_RMS + 31.7456*i_Tooth_Width_Ratio + 1.48528*i_Turns_Coil
+
+o_Peak_Power_1krpm = No model function available
+
+o_Peak_Power_4krpm = No model function available
+
+o_Peak_Torque_1700rpm = No model function available
+
+o_Torque_Density = No model function available
+
+o_WLTP3_Eff = 222.494 -0.254224*i_Active_Length -9.52957*i_Gear_Ratio + 36.9593*i_Tooth_Width_Ratio -58.1305*L1_Magnet_Bar_Width + 0.68731*L1_Magnet_Separation -3.93693*L1_Magnet_Thickness -33.571*L1_Pole_Arc + 0.191751*L1_Pole_V_angle -5.34641*L1_Web_Thickness + 6.74319*L2_Bridge_Thickness -31.8416*L2_Magnet_Bar_Width
+
+o_Weight_Act = 7.3351 + 0.806824*i_Active_Length
+
+o_Weight_Mag = 3.37977 -0.0182261*i_Active_Length -0.99149*L1_Magnet_Thickness -13.9268*L1_Pole_Arc + 0.0667093*L1_Pole_V_angle -9.55296*L2_Magnet_Bar_Width + 0.30936*L2_Magnet_Thickness + 4.44595*L2_Pole_Arc + 0.00897902*i_Active_Length*L1_Magnet_Thickness + 0.0641496*i_Active_Length*L1_Pole_Arc -0.00048709*i_Active_Length*L1_Pole_V_angle + 0.0347739*i_Active_Length*L2_Magnet_Bar_Width + 0.000574811*i_Active_Length*L2_Magnet_Thickness -0.0079724*i_Active_Length*L2_Pole_Arc + 0.703572*L1_Magnet_Thickness*L1_Pole_Arc -0.000536537*L1_Magnet_Thickness*L1_Pole_V_angle + 0.15431*L1_Magnet_Thickness*L2_Magnet_Bar_Width -0.0048359*L1_Magnet_Thickness*L2_Magnet_Thickness + 0.112571*L1_Magnet_Thickness*L2_Pole_Arc + 0.0051145*L1_Pole_Arc*L1_Pole_V_angle + 3.88562*L1_Pole_Arc*L2_Magnet_Bar_Width + 0.573081*L1_Pole_Arc*L2_Magnet_Thickness + 3.03869*L1_Pole_Arc*L2_Pole_Arc + 0.00839067*L1_Pole_V_angle*L2_Magnet_Bar_Width -0.00181138*L1_Pole_V_angle*L2_Magnet_Thickness -0.0300216*L1_Pole_V_angle*L2_Pole_Arc + 0.191141*L2_Magnet_Bar_Width*L2_Magnet_Thickness + 2.00042*L2_Magnet_Bar_Width*L2_Pole_Arc -0.447023*L2_Magnet_Thickness*L2_Pole_Arc
+
+o_Weight_Rot_Core = 8.47252 + 0.396019*i_Active_Length -0.899193*L1_Magnet_Thickness -5.35406*L1_Pole_Arc + 0.0305295*L1_Pole_V_angle -0.493484*L2_Magnet_Thickness
+
+o_Weight_Stat_Core = -13.8079 + 0.289538*i_Active_Length + 24.0905*i_Tooth_Width_Ratio
+
+o_Weight_Wdg = 24.6494 + 0.0575357*i_Active_Length -29.8414*i_Tooth_Width_Ratio
+
+ 
+---------------------------- Info String for Polynomials ---------------------------------- 
+ 
+Response: o_Cont_Torque_4krpm
+Model           | Order | Coefficients and transformation parameter                                                                                                                             | Mainterm selection      | Interaction selection | CoP
+Linear Regression | 1 | ( 278.442 -72.6049 -71.461 -77.3715 58.6622 -64.296 84.7906 -49.1744 -151.128 61.1553 ) | coordinate transformation : MinMax ( 0, 1 ) | value transformation : nonenone | 01000100111010101000001 |                       | 0.62516187734610618
+
+Response: o_Current_Density
+Model           | Order | Coefficients and transformation parameter                                                                        | Mainterm selection      | Interaction selection | CoP
+Linear Regression | 1 | ( 9.85924 3.25648 4.6666 3.23495 ) | coordinate transformation : MinMax ( 0, 1 ) | value transformation : nonenone | 00000000000000001100100 |                       | 0.93930504628699474
+
+Response: o_WLTP3_Eff
+Model           | Order | Coefficients and transformation parameter                                                                                                                                                                                         | Mainterm selection      | Interaction selection | CoP
+Linear Regression | 1 | ( -1.75563 1.12613 3.26367 -0.942122 0.987861 -0.817604 2.01223 2.31693 -1.31674 0.642483 -0.571503 2.96839 ) | coordinate transformation : MinMax ( 0, 1 ) | value transformation : BoxCox (1, -0.173407 , 13.8539 , 79.8926 )none | 00000111011110100100011 |                       | 0.87583475054396487
+
+Response: o_Weight_Act
+Model           | Order | Coefficients and transformation parameter                                                                                                 | Mainterm selection      | Interaction selection                                                                                                                                                                                                                                         | CoP
+Linear Regression | 1 | ( -0.825522 9.69738 ) | coordinate transformation : MinMax ( 0, 1 ) | value transformation : BoxCox (1, 0.470511 , -47.8526 , 101.704 )none | 00000000000000000000001 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 | 0.99574958390832069
+
+Response: o_Weight_Mag
+Model           | Order | Coefficients and transformation parameter                                                                                                                                                                                                                                                                                                                                                          | Mainterm selection      | Interaction selection                                                                                                                                                                                                                                         | CoP
+Linear Regression | 1 | ( 9.78777 -0.663771 -2.35934 -0.910853 0.449347 0.689174 -2.06716 -1.21147 -1.27343 -1.22848 0.9281 -0.915901 -0.0825582 0.168305 -1.55464 0.11796 -0.468962 0.080142 -0.274209 -0.151833 -1.59453 -1.28241 -0.999474 -0.342595 0.403306 0.982495 -0.588285 -0.904959 1.10275 ) | coordinate transformation : MinMax ( 0, 1 ) | value transformation : BoxCox (1, -1.88358 , 15.8968 , 8.43965 )none | 00011100011100000000001 | 0000000001000110000000000000000000000001110000001110001000111000110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001110001110000000000 | 0.9673538773672401
+
+Response: o_Weight_Rot_Core
+Model           | Order | Coefficients and transformation parameter                                                                                          | Mainterm selection      | Interaction selection | CoP
+Linear Regression | 1 | ( 49.47 10.1163 -2.65037 -2.13092 1.20897 -1.47305 ) | coordinate transformation : MinMax ( 0, 1 ) | value transformation : nonenone | 00001000011100000000001 |                       | 0.99410425239153777
+
+Response: o_Weight_Stat_Core
+Model           | Order | Coefficients and transformation parameter                                                                 | Mainterm selection      | Interaction selection | CoP
+Linear Regression | 1 | ( 32.2492 7.39625 3.54131 ) | coordinate transformation : MinMax ( 0, 1 ) | value transformation : nonenone | 00000000000000000100001 |                       | 0.99875598006948485
+
+Response: o_Weight_Wdg
+Model           | Order | Coefficients and transformation parameter                                                                                                      | Mainterm selection      | Interaction selection | CoP
+Linear Regression | 1 | ( 6.67213 2.60208 -7.7663 ) | coordinate transformation : MinMax ( 0, 1 ) | value transformation : BoxCox (1, 1.77042 , -21.4831 , 12.1344 )none | 00000000000000000100001 |                       | 0.99925445700788618
+
+ 
+---------------------------- Relative frequency of importance ----------------------------- 
+ 
+i_Active_Length:      62 %
+i_Gear_Ratio:         8 %
+i_Line_Current_RMS:   15 %
+i_Slot_Op_Ratio:      0 %
+i_Split_Ratio:        0 %
+i_Tooth_Width_Ratio:  38 %
+i_Turns_Coil:         23 %
+L1_Bridge_Thickness:  0 %
+L1_Magnet_Bar_Width:  15 %
+L1_Magnet_Post:       0 %
+L1_Magnet_Separation: 15 %
+L1_Magnet_Thickness:  31 %
+L1_Pole_Arc:          46 %
+L1_Pole_V_angle:      46 %
+L1_Web_Length:        8 %
+L1_Web_Thickness:     8 %
+L2_Bridge_Thickness:  8 %
+L2_Magnet_Bar_Width:  38 %
+L2_Magnet_Thickness:  15 %
+L2_Pole_Arc:          8 %
+L2_Pole_V_angle:      23 %
+L2_Web_Thickness:     8 %
+u_YtoT:               0 %

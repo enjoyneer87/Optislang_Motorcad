@@ -1,0 +1,60 @@
+{
+    "criteria" : 
+    {
+        "header" : 0,
+        "sequence" : []
+    },
+    "parameter_manager" : 
+    {
+        "correlations" : [],
+        "parameter_container" : []
+    },
+    "placeholders" : 
+    {
+        "placeholder_definitions" : {},
+        "placeholder_values" : {}
+    },
+    "registered_files" : [],
+    "settings" : 
+    {
+        "actors_ignore_predecessor_failure" : true,
+        "autosave_enabled" : true,
+        "custom_location" : "",
+        "edition_feature_consumption_quantity" : 1,
+        "filename_escape_mode" : 
+        {
+            "enum" : [ "full", "reserved_only" ],
+            "value" : "full"
+        },
+        "force_edition_feature_consumption_quantity" : false,
+        "force_preferred_edition" : false,
+        "hide_number_of_message_queue_threads_warning" : false,
+        "license_checkin_after_wf_run" : true,
+        "maximum_auto_relocation_depth" : 3,
+        "number_of_message_queue_threads" : 0,
+        "persistent_heartbeat_listeners" : [],
+        "preferred_edition" : 8,
+        "project_actions" : [],
+        "project_id" : "",
+        "project_manager_id" : "",
+        "purge_filter" : null,
+        "purge_on_save" : false,
+        "reference_files_directory_name" : "reffildir",
+        "remove_empty_directories_on_purge" : true,
+        "short_description" : "",
+        "show_conditional_exec_ui" : "indeterminate",
+        "show_files_ui" : "indeterminate",
+        "show_placeholders_ui" : "indeterminate",
+        "show_variables_ui" : "indeterminate",
+        "working_data_storage" : 
+        {
+            "enum" : [ "embedded", "external" ],
+            "value" : "external"
+        },
+        "working_directory_location" : 
+        {
+            "enum" : [ "alongsideproject", "custom" ],
+            "value" : "alongsideproject"
+        }
+    }
+}
