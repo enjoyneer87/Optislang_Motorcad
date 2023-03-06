@@ -1,0 +1,20 @@
+2023-Mar-03 23:31:33.915250: INFO: Initializing algorithm
+2023-Mar-03 23:31:37.110488: INFO: *** Finalize iteration: 1
+2023-Mar-03 23:31:38.866233: INFO: *** Finalize iteration: 2
+2023-Mar-03 23:31:40.580541: INFO: *** Finalize iteration: 3
+2023-Mar-03 23:31:42.335844: INFO: *** Finalize iteration: 4
+2023-Mar-03 23:31:44.037343: INFO: *** Finalize iteration: 5
+2023-Mar-03 23:31:45.805793: INFO: *** Finalize iteration: 6
+2023-Mar-03 23:31:47.537161: INFO: *** Finalize iteration: 7
+2023-Mar-03 23:31:49.295518: INFO: *** Finalize iteration: 8
+2023-Mar-03 23:31:51.110524: INFO: *** Finalize iteration: 9
+2023-Mar-03 23:31:52.797223: INFO: *** Finalize iteration: 10
+2023-Mar-03 23:31:54.625015: INFO: *** Finalize iteration: 11
+2023-Mar-03 23:31:56.510427: INFO: *** Finalize iteration: 12
+2023-Mar-03 23:31:58.259732: INFO: *** Finalize iteration: 13
+2023-Mar-03 23:32:00.016032: INFO: *** Finalize iteration: 14
+2023-Mar-03 23:32:01.782054: INFO: *** Finalize iteration: 15
+2023-Mar-03 23:32:03.684962: INFO: *** Finalize iteration: 16
+2023-Mar-03 23:32:05.471131: INFO: *** Finalize iteration: 17
+2023-Mar-03 23:32:07.254479: INFO: *** Finalize iteration: 18
+2023-Mar-03 23:32:09.020824: INFO: *** Finalize iteration: 19
