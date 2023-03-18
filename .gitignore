@@ -30,7 +30,11 @@ IPM_HDEV_2/OPD/
 optislang_wks.code-workspace
 HDEV_Code3/PYTHON/HDEV_ob2o22i20si1f1.py
 **/Lab/LabTemp_ExternalCircuit
-*.opf_utosave
+*.opf_autosave
 *.opx
 
 *.png
+*.inuse
+HDEV_Code3/OPD/HDEV_ob2o24i28si1f1.py.opf_autosave
+*\Sensitivity__f3*
+**/Sensitivity__f3*

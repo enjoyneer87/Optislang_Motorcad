@@ -9,7 +9,7 @@ paretofigure=figure(1)
 scatter(lowfidel_designtable.obj_o_Weight_Act,lowfidel_designtable.obj_o_Wh_Loss);
 aAxes=paretofigure.Children;
 
-sc=aAxes.Children;
+sc=aAxes.Children;//
 sc.DisplayName='NonFeasible';
 sc.MarkerEdgeColor=grayColor;
 hold on
