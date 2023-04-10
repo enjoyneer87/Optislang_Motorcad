@@ -1,0 +1,4 @@
+constr_o_Op2_max_temp	"180"	CONSTRAINT_LESS	"o_Op2_max_temp"
+obj_o_Wh_Loss	"o_Wh_Loss"	OBJECTIVE_MINIMIZE	""
+obj_o_Weight_Act	"o_Weight_Act"	OBJECTIVE_MINIMIZE	""
+constr_o_Maxtorque	"1200"	CONSTRAINT_GREATER	"o_Maxtorque"

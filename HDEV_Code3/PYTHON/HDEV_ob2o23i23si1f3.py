@@ -7,8 +7,9 @@
 # PYTHON    : v3.8
 # ----------------------------
 """
+# -*- coding: utf-8 -*- 
 ## comments
-# add input i_TurnLab
+# add input i_turns 
 # 
 # add output
 # o_Maxtorque,o_TorqueVolumeDensity,o_TorqueWeightDensity
@@ -21,33 +22,35 @@
 
 #  HDEV_code3
 
-# 1. Lab build                       : ???? 
-# 2. single duty cycle (temp rise)  : ?? ?? op1, op2, op3 ?? (1. 130???, 2. closed coupled)
-# 3. driving duty cycle (driving loss) : ?? ?? (1. 130???, 2. closed coupled)
+# 1. Lab build                       : 해석시간 
+# 2. single duty cycle (temp rise)  : 해석 시간 op1, op2, op3 전체 (1. 130도기준, 2. closed coupled)
+# 3. driving duty cycle (driving loss) : 해석 시간 (1. 130도기준, 2. closed coupled)
 
-# 1.  op?? torque? output?? ?? x ,  ???? or ????(?? ????)
-#  -> Optislang?? output?? 
-# -> i_TurnLab? output?? ??  i_TurnLab
+# 1.  op들의 torque는 output으로 사용 x ,  전류밀도 or 온도추출(온도 제한조건)
+#  -> Optislang에서 output제거 
+# -> i_TurnLab도 output에서 제거  i_TurnLab=i_TurnLabs
 # o_Op1_ShaftToruqe
 # o_Op2_ShaftToruqe
 # o_Op3_ShaftToruqe
 
-# 2.  ???? ?? ????, ?? ??(????? ?? ?? ?? , ???? ??)
-# unfeasible? ?????...
-# ?? 
+# 2.  전류턴에 따른 최대토크, 최대 출력(온도일단은 온도 해석 제거 , 온도해석 포함)
+# unfeasible로 걸러내기만...
+# 둘다 
 #####
 # code3 case, lf
-# i_turn??
-# Ampere Lab ???? dependent?? ??, AmpT_rms ???? ??, calc Lab?? ??)
+# i_turn가변
+# Ampere Lab 외부에서 dependent하게 변경, AmpT_rms 외부에서 고정, calc Lab에서 바꿈)
 ## code 4  lf
-# ????? ??? 
-# Ampered Lab? ??-> i_AmpT_rms? ?? optislang ???? ??x -> Build Lab?? ??? Calc Lab?? ???
-# output ->?? ?? ?? ????, ????, 
-# ????, ????(??) ??????  (because ??? ??? ?? ???)
-# Op1,Op2,Op3? ???? ??-> ????? ??,??? ???
+# 최대전류를 바꿀지 
+# Ampered Lab을 바꿈-> i_AmpT_rms이 바뀜 optislang 입력으로 사용x -> Build Lab에서 바꿀지 Calc Lab에서 바꿀지
+# output ->온도 연동 안된 최대토크, 최대출력, 
+# 최대토크, 최대출력(온도) 제약조건불가  (because 시간을 얼마로 할지 못정함)
+# Op1,Op2,Op3만 제약조건 가능-> 듀티사이클 손실,사이즈 최소화
 
 ## high fidel
-# duty cycle?? ?? ???? ???? fun_Driving_Duty
+# duty cycle에서 온도 빼는것도 추가필요 fun_Driving_Duty
+
+
 
 #-----------------------------------------------------      Packages        ----------------------------------------------------
 
@@ -108,7 +111,10 @@ else:                                                          # Working in IDE 
 # ------------------------------------------------------------------------------------------------------------------------------
 # --------------------------------------------------    USER-DEFINED   ---------------------------------------------------------
 # ------------------------------------------------------------------------------------------------------------------------------
+
 #-------------------------------------------------       Functions        ------------------------------------------------------
+
+
 ## Post Work flow
   #check function variable should be list
   #inside function variable should be str or int
@@ -757,15 +763,28 @@ if run_mode.endswith('run'):
     o_Op1_Jrms=fun_scail_J_by_Turn(Op1_current_density,p_init_Turns_Coil,i_TurnLab)
     # Temperature rise check
     # o_Op2_ipk,OP2_beta,o_Op2_ShaftToruqe,Op2_after,Op2_current_density,o_Op2_copper_area =fun_Find_Ipk_4Trq65C_mk_dat(OP2,i_TurnLab)
-    o_Op3_ipk,OP3_beta,o_Op3_ShaftToruqe,Op3_after,Op3_current_density,o_Op3_copper_area =fun_Find_Ipk_4Trq65C_mk_dat(OP3,i_TurnLab)
+    # o_Op3_ipk,OP3_beta,o_Op3_ShaftToruqe,Op3_after,Op3_current_density,o_Op3_copper_area =fun_Find_Ipk_4Trq65C_mk_dat(OP3,i_TurnLab)
 
     o_Op2_max_temp,Op2_max_pos,Op2_temp_dic, o_Op2_ipk,Op2_beta,Op2_after,o_Op2_ShaftToruqe, Op2_current_density,o_Op2_copper_area=fun_OP_temp_contraints(OP2,i_TurnLab,OP2thermalCouplingType)
-    # o_Op3_max_temp,Op3_max_pos,Op3_temp_dic, o_Op3_ipk,Op3_beta,Op3_after,o_Op3_ShaftToruqe, Op3_current_density,o_Op3_copper_area=fun_OP_temp_contraints(OP3,i_TurnLab,OP3thermalCouplingType)
+    o_Op3_max_temp,Op3_max_pos,Op3_temp_dic, o_Op3_ipk,Op3_beta,Op3_after,o_Op3_ShaftToruqe, Op3_current_density,o_Op3_copper_area=fun_OP_temp_contraints(OP3,i_TurnLab,OP3thermalCouplingType)
 
 
     o_TorqueVolumeDensity = fun_TorqueVolumeDensity(o_Maxtorque, o_Active_Volume)   # In [Nm/m3]
     o_TorqueWeightDensity = fun_TorqueWeightDensity(o_Maxtorque,o_Weight_Act)   # In [Nm/kg]
     o_LabCurrentJ,o_Labcopper_area = fun_current_density_cal(i_lineCurrentLabpk,i_TurnLab)
+
+    if (o_Op1_ShaftToruqe ) < 0:
+    mcApp.SaveToFile(mot_file_new_path)  # Save design   
+    mcApp.Quit()                         # Close Motor-CAD
+    mcApp = 0                            # Reset mcApp variable  
+    time.sleep(0.5)                      # Frozen for 0.5s
+    raise Exception('[ERROR] {}: Op1 is fail failed'.format(OSL_DESIGN_NAME))
+    if (o_Op1_ShaftToruqe ) < 0:
+    mcApp.SaveToFile(mot_file_new_path)  # Save design   
+    mcApp.Quit()                         # Close Motor-CAD
+    mcApp = 0                            # Reset mcApp variable  
+    time.sleep(0.5)                      # Frozen for 0.5s
+    raise Exception('[ERROR] {}: Op1 is fail failed'.format(OSL_DESIGN_NAME))
 
 #   Raise exception if negative value    
     if (o_Op2_max_temp ) < 0:
@@ -774,6 +793,7 @@ if run_mode.endswith('run'):
         mcApp = 0                            # Reset mcApp variable  
         time.sleep(0.5)                      # Frozen for 0.5s
         raise Exception('[ERROR] {}:  Duty Cycle calculation failed'.format(OSL_DESIGN_NAME))
+    
     # if (o_Op3_max_temp ) < 0:
     #     mcApp.SaveToFile(mot_file_new_path)  # Save design   
     #     mcApp.Quit()                         # Close Motor-CAD
