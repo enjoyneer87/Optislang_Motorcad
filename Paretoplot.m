@@ -1,8 +1,8 @@
-mcApp = actxserver('MotorCAD.AppAutomation');
-mcApp.LoadFromFile('Z:\Thesis\Optislang_Motorcad\Validation\HDEV_Model2.mot')
-mcApp.DoWeightCalculation()                                          
-[a, initialValue.obj_o_Weight_Act]=mcApp.GetVariable("Weight_Calc_Total") 
-% [a, initialValue.obj_o_Weight_Act]=mcApp.GetVariable("Pole_Number")     
+% mcApp = actxserver('MotorCAD.AppAutomation');
+% mcApp.LoadFromFile('Z:\Thesis\Optislang_Motorcad\Validation\HDEV_Model2.mot')
+% mcApp.DoWeightCalculation()                                          
+% [a, initialValue.obj_o_Weight_Act]=mcApp.GetVariable("Weight_Calc_Total") 
+% % [a, initialValue.obj_o_Weight_Act]=mcApp.GetVariable("Pole_Number")     
 
 sensitivityTable=readtable('Samoo_HDEV_low_fidelity_sensitivity.csv');
 lowfidel_OptiPareto=readtable('Samoo_HDEV_low_fidelity_design_table.csv');
@@ -13,19 +13,19 @@ lowfidel_designtable_pareto=readtable('Samoo_HDEV_low_fidelity_pareto.csv');
 directDesigntable=readtable('DirectOpti_HDEV_low_fidelity_designTable.csv');
 
 % initialValue.obj_o_Weight_Act=43.75+20.45+41.15+5.099+9.919;
-initialValue.obj_o_Wh_Loss=641.73;
-initialValue.dutyCycleTemp=78;
+% initialValue.obj_o_Wh_Loss=641.73;
+% initialValue.dutyCycleTemp=78;
 
-%% Initial Value
-grayColor = [.7 .7 .7];
-
-paretofigure=figure(1)
-
-
-initialPlot=scatter(initialValue.obj_o_Weight_Act,initialValue.obj_o_Wh_Loss);
-initialPlot.DisplayName='Initial Design'
-initialPlot.MarkerFaceColor='y';
-hold on
+% %% Initial Value
+% grayColor = [.7 .7 .7];
+% 
+% paretofigure=figure(1)
+% 
+% 
+% initialPlot=scatter(initialValue.obj_o_Weight_Act,initialValue.obj_o_Wh_Loss);
+% initialPlot.DisplayName='Initial Design'
+% initialPlot.MarkerFaceColor='y';
+% hold on
 
 
 %% DOE
