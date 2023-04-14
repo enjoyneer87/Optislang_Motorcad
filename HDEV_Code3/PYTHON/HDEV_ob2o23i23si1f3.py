@@ -575,6 +575,8 @@ if run_mode.endswith('run'):
     mcApp.SetVariable('Tooth_Tip_Angle'     , p_Tooth_Tip_Angle)                  # Tooth tip angle
     o_Active_Volume  = fun_Active_Volume(i_Stator_OD, i_Active_Length)     # In [m3]
     #### Ratio
+    mcApp.SetVariable('Ratio_Bore', i_Split_Ratio)
+
     ex, i_Tooth_Width                   = mcApp.GetVariable("Tooth_Width")           # Absolute Tooth_Width
     i_MinBackIronThickness              = fun_YtoT(i_YtoT,i_Tooth_Width) 
     mcApp.SetVariable("Ratio_SlotDepth_ParallelTooth"           , p_Slot_Depth_Ratio     )        #Ratio_SlotDepth_ParallelTooth" )   %% Fixed     
@@ -602,7 +604,7 @@ if run_mode.endswith('run'):
     # mcApp.SetArrayVariable("VShapeMagnetSegments_Array"           , 0, L1_Magnet_Segments)             # Layer 1 Magnet_Segments
     # mcApp.SetArrayVariable("VShapeMagnetSegments_Array"           , 1, L2_Magnet_Segments)             # Layer 2 Magnet_Segments
 
-    #### Ratio
+#     #### Ratio
     mcApp.SetArrayVariable(    'RatioArray_PoleArc'                    ,0,L1_Pole_Arc            )         # %Layer 1     RatioArray_PoleArc
     mcApp.SetArrayVariable(    'RatioArray_PoleArc'                    ,1,L2_Pole_Arc            )         # %Layer 2     RatioArray_PoleArc
 

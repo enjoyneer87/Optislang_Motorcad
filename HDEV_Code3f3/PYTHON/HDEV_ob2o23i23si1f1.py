@@ -564,11 +564,13 @@ if run_mode.endswith('run'):
     mcApp.SetVariable('Housing_Dia', i_Stator_OD+40)                    # Stator lamination pack length
     #### Absoulute Input (left table)
     mcApp.SetVariable('Stator_Lam_Dia'      , i_Stator_OD)                        # Stator OD 
+
     mcApp.SetVariable('Slot_Corner_Radius'  , i_Slot_Corner_Radius)               # Slot_Corner_Radius      
     mcApp.SetVariable('Tooth_Tip_Depth'     , p_Tooth_Tip_Depth)                  # Tooth tip depth
     mcApp.SetVariable('Tooth_Tip_Angle'     , p_Tooth_Tip_Angle)                  # Tooth tip angle
     o_Active_Volume  = fun_Active_Volume(i_Stator_OD, i_Active_Length)     # In [m3]
     #### Ratio
+    mcApp.SetVariable('Ratio_Bore', i_Split_Ratio)
     ex, i_Tooth_Width                   = mcApp.GetVariable("Tooth_Width")           # Absolute Tooth_Width
     i_MinBackIronThickness              = fun_YtoT(i_YtoT,i_Tooth_Width) 
     mcApp.SetVariable("Ratio_SlotDepth_ParallelTooth"           , p_Slot_Depth_Ratio     )        #Ratio_SlotDepth_ParallelTooth" )   %% Fixed     

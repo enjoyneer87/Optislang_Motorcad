@@ -569,6 +569,7 @@ if run_mode.endswith('run'):
     ### Stator
     mcApp.SetVariable('Housing_Dia', i_Stator_OD+40)                    # Stator lamination pack length
     #### Absoulute Input (left table)
+    mcApp.SetVariable('Ratio_Bore', i_Split_Ratio)
     mcApp.SetVariable('Stator_Lam_Dia'      , i_Stator_OD)                        # Stator OD 
     mcApp.SetVariable('Slot_Corner_Radius'  , i_Slot_Corner_Radius)               # Slot_Corner_Radius      
     mcApp.SetVariable('Tooth_Tip_Depth'     , p_Tooth_Tip_Depth)                  # Tooth tip depth
