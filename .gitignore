@@ -1,26 +1,27 @@
+#https://git-scm.com/docs/gitignore#_pattern_format
 **/IPM_HDEV_2/MCAD/
 **/IPM_HDEV_2/OPD/
 
 **/Motor
-**/MCAD/
+# **/MCAD/
 *.zip
 *.bak
 **/backup/
 **/MessageLogs/
 **/Matlab
 *.dat
-*.mot
+# *.mot
 *.zip
 **/IPM using Integrated Export/
 
 %% Resulst
-**/MCAD/
+# **/MCAD/
 **/MotorLAB_drivecycledata/
 **/MotorLAB_elecdata/
 **/FEResultsData/
 **/DutyCycleData/**
-
-/MotorCAD_code2
+**Lab/
+**/MotorCAD_Code2/
 /transientResults/
 /Rotem_HDEV/
 /IPM_HDEV_122/
@@ -42,6 +43,13 @@ HDEV_Code3/PYTHON/HDEV_ob2o22i20si1f1.py
 **/Manual_Validate/De*
 **.omdb
 HDEV_Code2/OPD/.HDEV_Pj1_ob2o18i20si1f3.opf.inuse
+.opf_autosave
 **.omdb/*
+**.opd
+# */**opd/
 
-*/**opd/
+**/HDEV_Code2/
+**/HDEV_Code3/
+**/CalibrationBEMF/
+**/testThermalModelcalibration/
+**/test_run/
