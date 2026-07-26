@@ -19,8 +19,8 @@ torque_cell = VariableNames(constr_idx);
 
 %% DOE
 
-constr_cell{1}
-resultTable.(constr_cell{1})
+% constr_cell{1}
+% resultTable.(constr_cell{1})
 
 
 
